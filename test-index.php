@@ -1,28 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-      <link href="js/thumbnail-slider.css" rel="stylesheet" type="text/css" />
-      <script src="js/thumbnail-slider.js" type="text/javascript"></script>
-      <style>
-         .carousel-inner > .item > img,
-         .carousel-inner > .item > a > img {
-         width: 25%;
-         margin: auto;}
-      </style>
-      <title>Pixly </title>
-      <!-- Bootstrap Core CSS -->
-      <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href="css/social.css" rel="stylesheet">
-      <!-- Custom CSS -->
-      <link href="css/scrolling-nav.css" rel="stylesheet">
+      <?php
+         include("includes/head.php");
+      ?>
    </head>
    <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -60,57 +41,6 @@
          </div>
          <!-- /.container -->
       </nav>
-      <!-- Intro Section -->
-      <section id="intro" class="intro-section">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-12">
-                  <h1>Feautured Events</h1>
-               </div>
-            </div>
-         </div>
-         <!--start of thumbnails carousel-->
-         <div id="thumbnail-slider">
-            <div class="inner">
-               <ul>
-                  <li>
-                     <a class="thumb" href="img/2.jpg"></a>
-                  </li>
-                  <li>
-                     <a class="thumb" href="img/3.jpg"></a>
-                  </li>
-                  <li>
-                     <a class="thumb" href="img/4.jpg"></a>
-                  </li>
-                  <li>
-                     <a class="thumb" href="img/5.jpg"></a>
-                  </li>
-                  <li>
-                     <a class="thumb" href="img/6.jpg"></a>
-                  </li>
-                  <li>
-                     <a class="thumb" href="img/7.jpg"></a>
-                  </li>
-                  <li>
-                     <a class="thumb" href="img/8.jpg"></a>
-                  </li>
-                  <li>
-                     <a class="thumb" href="img/9.jpg"></a>
-                  </li>
-                  <li>
-                     <a class="thumb" href="img/10.jpg"></a>
-                  </li>
-                  <li>
-                     <a class="thumb" href="img/11.jpg"></a>
-                  </li>
-                  <li>
-                     <a class="thumb" href="img/12.jpg"></a>
-                  </li>
-               </ul>
-            </div>
-         </div>
-         </div>
-      </section>
       <!-- About Section -->
       <section id="events" class="about-section">
          <div class="container">
@@ -179,140 +109,6 @@
             </div>
          </div>
       </section>
-      <!-- Services Section -->
-      <section id="about" class="services-section">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-12">
-                  <h1>About</h1>
-                  <p>Lorem ipsum dolor sit amet, in soluta senserit appellantur nec, pro graece percipitur at, ei veri repudiare conclusionemque qui.
-                     Oportere salutandi democritum pro te. Cum nulla pertinax intellegat ea. Vis in movet nostrud contentiones, vix ex nihil officiis probatus.
-                     Eos errem utinam signiferumque id, at detracto adolescens voluptatum eam. Iusto intellegat id sea, verterem phaedrum pro et. An aliquid omittam
-                     verterem vel. Quod enim ei nec, no fugit fabellas verterem nec. Viris nihil eu cum, veritus rationibus sententiae id per, te nullam dicunt eum.
-                     Mel quis munere iriure ut.An luptatum quaerendum pri, purto vituperata pro te. Ullum postulant te duo, aperiri albucius an pro. Ut vim everti 
-                     noluisse delectus. Sanctus euripidis moderatius pro cu, ne vix postea audiam, adhuc persequeris eos ut. Labore possim adipiscing usu at.
-                     Indoctum comprehensam usu id. Ex cum assum verear sensibus.Probo vivendum adipisci ius an, sit populo vidisse cu. Fierent constituto contentiones
-                     nec ne, ei eum justo error. Tamquam scripserit instructior qui ea, usu cu latine ocurreret definitionem. Eam epicurei deseruisse in, vis ea eius causae.
-                     Usu soluta principes laboramus ex. Cu est munere mediocritatem, prima tincidunt voluptatibus eum cu, prima comprehensam et vis.Ubique luptatum maiestatis mei 
-                     te, nec solum recteque te. Virtute consectetuer ei vix. Cu tale eripuit ponderum quo. Has brute pericula contentiones cu, at mel errem cetero. Duis utinam duo te
-                  </p>
-                  <br /> <br /><br /> <br /><br /> <br />
-               </div>
-               <div class="container content">
-                  <div class="heading">
-                     <h2>Our <strong>Great Team</strong></h2>
-                     <p>To try the most advanced business</p>
-                  </div>
-                  <!-- //end heading -->
-                  <div class="row">
-                     <div class="col-sm-3">
-                        <div class="team-members">
-                           <div class="team-avatar">
-                              <img class="img-responsive" src="http://keenthemes.com/assets/bootsnipp/member1.png" alt="">
-                           </div>
-                           <div class="team-desc">
-                              <h4> Don whelan</h4>
-                              <span>Security Expert</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-sm-3">
-                        <div class="team-members">
-                           <div class="team-avatar">
-                              <img class="img-responsive" src="http://keenthemes.com/assets/bootsnipp/member1.png" alt="">
-                           </div>
-                           <div class="team-desc">
-                              <h4>Giuseppe Stirpee</h4>
-                              <span>Web Developer</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-sm-3">
-                        <div class="team-members">
-                           <div class="team-avatar">
-                              <img class="img-responsive" src="http://keenthemes.com/assets/bootsnipp/member2.png" alt="">
-                           </div>
-                           <div class="team-desc">
-                              <h4>Shane O'Mahony</h4>
-                              <span>Cloud Expert</span>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-sm-3">
-                        <div class="team-members">
-                           <div class="team-avatar">
-                              <img class="img-responsive" src="http://keenthemes.com/assets/bootsnipp/member3.png" alt="">
-                           </div>
-                           <div class="team-desc">
-                              <h4>Patrick King</h4>
-                              <span>Marketin and Pubblication</span>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- //end row -->
-               </div>
-            </div>
-         </div>
-      </section>
-      <!-- Contact Section -->
-      <section id="contact" class="contact-section">
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-12">
-               <h1>Contact Section</h1>
-            </div>
-         </div>
-      </div>
-      <!-- Footer section -->
-      <div class="footer">
-         <div class="row">
-            <div class="btn-group btn-group-justified">
-               <div class="btn-group">
-                  <button type="button" class="btn btn-nav">
-                     <span class="fa fa-twitter fa-5x"></span>
-                     <p>Twitter</p>
-                  </button>
-               </div>
-               <div class="btn-group">
-                  <button type="button" class="btn btn-nav">
-                     <span class="fa fa-facebook fa-5x"></span>
-                     <p>Facebook</p>
-                  </button>
-               </div>
-               <div class="btn-group">
-                  <button type="button" class="btn btn-nav">
-                     <span class="fa fa-youtube fa-5x"></span>
-                     <p>Youtube</p>
-                  </button>
-               </div>
-               <div class="btn-group">
-                  <button type="button" class="btn btn-nav">
-                     <span class="fa fa-google-plus fa-5x"></span>
-                     <p>Google+</p>
-                  </button>
-               </div>
-               <div class="btn-group">
-                  <button type="button" class="btn btn-nav">
-                     <span class="fa fa-instagram fa-5x"></span>
-                     <p>Instagram</p>
-                  </button>
-               </div>
-               <div class="btn-group">
-                  <button type="button" class="btn btn-nav">
-                     <span class="fa fa-pinterest fa-5x"></span>
-                     <p>Pinterest</p>
-                  </button>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- jQuery -->
-      <script src="js/jquery.js"></script>
-      <!-- Bootstrap Core JavaScript -->
-      <script src="js/bootstrap.min.js"></script>
-      <!-- Scrolling Nav JavaScript -->
-      <script src="js/jquery.easing.min.js"></script>
-      <script src="js/scrolling-nav.js"></script>
+      
    </body>
-</html>
+      
