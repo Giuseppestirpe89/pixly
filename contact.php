@@ -86,13 +86,13 @@
                         <p class="section-description text-center">We are a small team with great skills. See the faces behind the lines of code. </p>
                         <div class="row member-content">
                             <div class="col-sm-3 col-sm-offset-1 member-thumb  fade-right in">
-                                <img class="img-responsive img-center img-thumbnail img-circle" src="http://bootdey.com/img/Content/User_for_snippets.png" alt="">
-                                <h4>Don Whelan- The Slugger</h4>
+                                <img class="img-responsive img-center img-thumbnail img-circle" src="http://bootdey.com/img/Content/avatar/avatar6.png" alt="">
+                                <h4>Don Whelan </h4>
                                 <p class="title">Security Expert &amp; Php Admin</p>
                             </div>
                             <div class="col-sm-7">
                                 <div class="details">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                    <p>Don is all about security. He is concern about everything that can be hacked. With him the world is a safe place.</p>
                                     <ul class="social-content">
                                         <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
                                         <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
@@ -105,13 +105,13 @@
 
                         <div class="row member-content right">
                             <div class="col-sm-3 col-sm-push-8 member-thumb">
-                                <img class="img-responsive img-center img-thumbnail img-circle" src="http://bootdey.com/img/Content/user-453533-fdadfd.png" alt="">
-                                <h4>Giuseppe Stirpe -Pep </h4>
+                                <img class="img-responsive img-center img-thumbnail img-circle" src="http://bootdey.com/img/Content/User_for_snippets.png" alt="">
+                                <h4>Giuseppe Stirpe </h4>
                                 <p class="title">Web Designer</p>
                             </div>
                             <div class="col-sm-7 col-sm-pull-2">
                                 <div class="details">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                    <p>Giuseepe like designing, creating and coding. If he has an idea in mind and it can be coded he will deliver.</p>
                                     <ul class="social-content">
                                        <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
                                         <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
@@ -124,13 +124,13 @@
 
                         <div class="row member-content">
                             <div class="col-sm-3 col-sm-offset-1 member-thumb">
-                                <img class="img-responsive img-center img-thumbnail img-circle" src="http://bootdey.com/img/Content/HexGames349.jpg" alt="">
-                                <h4>Shane O'Mahony - The dickpicks</h4>
+                                <img class="img-responsive img-center img-thumbnail img-circle" src="http://bootdey.com/img/Content/user-453533-fdadfd.png" alt="">
+                                <h4>Shane O'Mahony</h4>
                                 <p class="title">Cloud Developer</p>
                             </div>
                             <div class="col-sm-7   ">
                                 <div class="details">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                    <p>Shane doesn't believe in physical storage on your local machine. For him the future is the sky, perharps the Cloud.</p>
                                     <ul class="social-content">
                                         <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
                                         <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
@@ -142,13 +142,13 @@
                         </div>
                          <div class="row member-content right">
                             <div class="col-sm-3 col-sm-push-8 member-thumb">
-                                <img class="img-responsive img-center img-thumbnail img-circle" src="http://bootdey.com/img/Content/user-453533-fdadfd.png" alt="">
-                                <h4>Patrick King- El Patricia</h4>
+                                <img class="img-responsive img-center img-thumbnail img-circle" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                                <h4>Patrick King</h4>
                                 <p class="title">Marketing Analyst</p>
                             </div>
                             <div class="col-sm-7 col-sm-pull-2">
                                 <div class="details">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                    <p>Patrick has a good nose for selling software or application where anybody would go. If there is a samll opportunity Patrick will sell you everything.</p>
                                     <ul class="social-content">
                                         <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
                                         <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
