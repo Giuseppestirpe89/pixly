@@ -42,7 +42,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-                <a class="navbar-brand page-scroll" href="index2.php">Home</a>
+                <a class="navbar-brand page-scroll" href="index.php">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -94,10 +94,10 @@
                                 <div class="details">
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                                     <ul class="social-content">
-                                        <li><a href="mailto:mail@example.com"><i class="fa fa-envelope fa-fw"></i></a></li>
-                                        <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
-                                        <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
-                                        <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
+                                        <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
+                                        <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
+                                        <li><a href="http://www.facebook.com" target="_blank"<i class="fa fa-facebook fa-fw"></i></a></li>
+                                        <li><a href="http://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -113,10 +113,10 @@
                                 <div class="details">
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                                     <ul class="social-content">
-                                        <li><a href="mailto:mail@example.com"><i class="fa fa-envelope fa-fw"></i></a></li>
-                                        <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
-                                        <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
-                                        <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
+                                       <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
+                                        <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
+                                        <li><a href="http://www.facebook.com" target="_blank"<i class="fa fa-facebook fa-fw"></i></a></li>
+                                        <li><a href="http://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -132,10 +132,10 @@
                                 <div class="details">
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                                     <ul class="social-content">
-                                        <li><a href="mailto:mail@example.com"><i class="fa fa-envelope fa-fw"></i></a></li>
-                                        <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
-                                        <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
-                                        <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
+                                        <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
+                                        <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
+                                        <li><a href="http://www.facebook.com" target="_blank"<i class="fa fa-facebook fa-fw"></i></a></li>
+                                        <li><a href="http://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -150,10 +150,10 @@
                                 <div class="details">
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                                     <ul class="social-content">
-                                        <li><a href="mailto:mail@example.com"><i class="fa fa-envelope fa-fw"></i></a></li>
-                                        <li><a href="#link"><i class="fa fa-twitter fa-fw"></i></a></li>
-                                        <li><a href="#link"><i class="fa fa-facebook fa-fw"></i></a></li>
-                                        <li><a href="#link"><i class="fa fa-linkedin fa-fw"></i></a></li>
+                                        <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
+                                        <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
+                                        <li><a href="http://www.facebook.com" target="_blank"<i class="fa fa-facebook fa-fw"></i></a></li>
+                                        <li><a href="http://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -163,6 +163,30 @@
                 </div>
             </div>
     </section>
+    <br /> <br /> <br />
+  <!--contact start--> 
+  <section class="contactDetails">
+    <div class="container"> 
+    <div class="heading">
+        <h2>Contact Details</h2>
+        <h3>Please feel free to contact me.</h3>       
+      </div>
+      <!--contact form start-->
+      <div class="row media">        
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 conForm text-center">
+        <div id="message"></div>
+        <form method="post" action="php/contact2.php" name="cform" id="cform">
+          <input name="name" id="name" type="text" class="col-xs-12 col-sm-12 col-md-8 col-lg-8" placeholder="Your name" >
+          <input name="email" id="email" type="email" class=" col-xs-12 col-sm-12 col-md-8 col-lg-8 noMarr" placeholder="Your email" >
+          <textarea name="comments" id="comments" cols=" " rows=" " class="col-xs-12 col-sm-12 col-md-8 col-lg-8" placeholder="Your message"></textarea>
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><input type="submit" id="submit" name="send" class="submitBnt" value="Send message"></div>
+          <div id="simple-msg"></div>
+        </form>
+        </div>
+      </div>  
+    </div>
+  </section>  
+  <!--contact end--> 
         
         <!-- Footer section -->
         <div class="footer">
