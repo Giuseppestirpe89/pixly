@@ -76,7 +76,7 @@
         <div class="container">
             <div class="col-xs-12">
                 <h3>Mysteryland</h3>
-                <div class="well">
+                <a  href="events.php"></a><div class="well"></a>
                     <div id="myCarousel" class="carousel slide">
                         <!-- Carousel items line 1-->
                         <div class="carousel-inner">
