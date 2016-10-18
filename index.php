@@ -76,23 +76,23 @@
         <div class="container">
             <div class="col-xs-12">
                 <h3>Mysteryland</h3>
-                <a  href="events.php"></a><div class="well"></a>
+                <div class="well">
                     <div id="myCarousel" class="carousel slide">
                         <!-- Carousel items line 1-->
                         <div class="carousel-inner">
                             <div class="item active">
                                 <div class="row">
                                     <div class="col-xs-3">
-                                        <a href="#x"><img src="img/pic4.jpg" alt="Image" class="img-responsive"></a>
+                                        <a href="events.php"><img src="img/pic4.jpg" alt="Image" class="img-responsive"></a>
                                     </div>
                                     <div class="col-xs-3">
-                                        <a href="#x"><img src="img/pic2.jpg" alt="Image" class="img-responsive"></a>
+                                        <a href="events.php"><img src="img/pic2.jpg" alt="Image" class="img-responsive"></a>
                                     </div>
                                     <div class="col-xs-3">
-                                        <a href="#x"><img src="img/pic3.png" alt="Image" class="img-responsive"></a>
+                                        <a href="events.php"><img src="img/pic3.png" alt="Image" class="img-responsive"></a>
                                     </div>
                                     <div class="col-xs-3">
-                                        <a href="#x"><img src="img/pic4.jpg" alt="Image" class="img-responsive"></a>
+                                        <a href="events.php"><img src="img/pic4.jpg" alt="Image" class="img-responsive"></a>
                                     </div>
                                 </div>
                                 <!--/row-->

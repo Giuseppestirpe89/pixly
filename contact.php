@@ -231,7 +231,6 @@
                 </div>
             </div>
         </div>
-            <h3> www.pixly.com &copy;</h3>
         </div>
         <!-- jQuery -->
         <script src="js/jquery.js"></script>
