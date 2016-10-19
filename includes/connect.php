@@ -1,40 +1,27 @@
 <?php
-// Define these as constants so that they can’t be changed
-DEFINE (‘DBUSER’, "a5270211_pixlys");
-DEFINE (‘DBPW’, "pixly1234");
-DEFINE (‘DBHOST’, "http://sql11.000webhost.com/");
-DEFINE (‘DBNAME’, "a5270211_pixly");
+//ref: http://www.newthinktank.com/2011/01/php-security/
 
-if ($dbc = mysql_connect (DBHOST, DBUSER, DBPW)) {
-    trigger_error("connect to MySQL");
+    define("HOST", "dublinscoffee.ie");
+    define("USER", "dubli653_dib");
+    define("PASS", "0u.ipTVc)zpq");
+    define("DB", "dubli653_ncirl");
+    
+    $connection = mysql_connect(HOST, USER, PASS);
+    if (!$connection) {
+        trigger_error("Could not select the database!<br />");
+        exit();
+    }
+    
+    $db_selected = mysql_select_db(DB,$connection);
+    if (!$db_selected) {
+        trigger_error("Could not select the database!<br />");
+        exit();
+    }
 
-
-$query = "SELECT * id";
-            $result = mysqli_query($connection, $query);
-            while ($row = mysqli_fetch_assoc($result)) {
-                //takes usename
-                echo"<h1>".$row["id"]."</h1>";
-            }
-
-
-
-if (!mysql_select_db (DBNAME)) { // If it can’t select the database.
-
-//vauge errors so as not to assist hackers
-trigger_error("Could not select the database!<br />");
-
-exit();
-
-}
-
-} else {
-
-trigger_error("Could not connect to MySQL!<br /> ");
-
-exit();
-
-}
-
-echo("here");
+    // $query = "SELECT * FROM test";
+    // $result = mysql_query($query);
+    // while ($row = mysql_fetch_assoc($result)) {
+    // echo $row['working'];
+    // }
 
 ?>
