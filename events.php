@@ -59,13 +59,11 @@
       <!-- /.container -->
    </nav>
    <!-- Intro Section -->
-
-
    <section id="intro" class="intro-section">
       <div class="container">
          <div class="row">
             <div class="col-lg-12">
-               <h1>Mysteryland 2016</h1>
+               <h1>Electric Picnic 2016</h1>
                <!-- photos section -->
                <section id="photos">
                   <div class='wrap'>
@@ -74,8 +72,9 @@
                         <h2>Add a picture!</h2>
                         <div id='popup'>
                            <form action="upload.php" method="post" enctype="multipart/form-data">
-                              Select image to upload: <input type="file" name="fileToUpload" id="fileToUpload">
-                              <input type="button" value="Upload Image" name="submit">
+                              Select image to upload:
+                              <input type="file" name="fileToUpload" id="fileToUpload">
+                              <input type="submit" value="Upload Image" name="submit">
                            </form>
                         </div>
                      </div>
