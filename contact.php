@@ -54,6 +54,9 @@
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
+                     <li>
+                        <a class="page-scroll" href="admin.php">Admin</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -165,7 +168,7 @@
     </section>
     <br /> <br /> <br />
   <!--contact start--> 
-  <section class="contactDetails">
+  <section id="contact" class="contactDetails">
     <div class="container"> 
     <div class="heading">
         <h2>Contact Details</h2>

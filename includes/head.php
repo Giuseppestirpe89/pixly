@@ -8,6 +8,8 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="js/thumbnail-slider.css" rel="stylesheet" type="text/css" />
     <script src="js/thumbnail-slider.js" type="text/javascript"></script>
+    <script src="../node_modules/chart.js/dist/Chart.bundle.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <style>
         .carousel-inner>.item>img,
         .carousel-inner>.item>a>img {

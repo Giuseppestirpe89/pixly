@@ -7,6 +7,5 @@ $handle = opendir(dirname(realpath(__FILE__)).'/event/Mysteryland/');
                 array_push($filenameArray, "$file");
             }
         }
-
 echo json_encode($filenameArray);
 

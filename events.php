@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
    <meta charset="utf-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +12,6 @@
    <link href="css/photos.css" rel="stylesheet" type="text/css" />
    <link href="js/photos.js" rel="stylesheet" type="text/css" />
    <script src="js/thumbnail-slider.js" type="text/javascript"></script>
-
    <title>Pixly </title>
    <!-- Bootstrap Core CSS -->
    <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -37,23 +35,26 @@
             <a class="navbar-brand page-scroll" href="#page-top">Menu</a>
          </div>
          <!-- Collect the nav links, forms, and other content for toggling -->
-         <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-               <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-               <li class="hidden">
-                  <a class="page-scroll" href="#page-top"></a>
-               </li>
-               <li>
-                  <a class="page-scroll" href="#events">Events</a>
-               </li>
-               <li>
-                  <a class="page-scroll" href="#about">About</a>
-               </li>
-               <li>
-                  <a class="page-scroll" href="#contact">Contact</a>
-               </li>
-            </ul>
-         </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#events">Events</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Location</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="contact.php">Contact</a>
+                    </li>
+                     <li>
+                        <a class="page-scroll" href="admin.php">Admim</a>
+                    </li>
+                </ul>
+            </div>
          <!-- /.navbar-collapse -->
       </div>
       <!-- /.container -->
@@ -64,6 +65,7 @@
          <div class="row">
             <div class="col-lg-12">
                <h1>Electric Picnic 2016</h1>
+               
                <!-- photos section -->
                <section id="photos">
                   <div class='wrap'>
