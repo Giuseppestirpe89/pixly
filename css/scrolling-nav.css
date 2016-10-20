@@ -52,8 +52,8 @@ of those sections to manage the look and feel of the site. */
     background: #fff;
 }
 
-.contact-section {
-    height: 100%;
+.location-section {
+    height: 80%;
     padding-top: 50px;
     text-align: center;
     background: #eee;

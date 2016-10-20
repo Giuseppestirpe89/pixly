@@ -286,7 +286,7 @@
     </section>
     
     <!-- Location Section -->
-    <section id="location" class="contact-section">
+    <section id="location" class="location-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
