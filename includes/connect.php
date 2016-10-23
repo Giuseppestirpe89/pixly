@@ -2,7 +2,7 @@
     //ref: http://www.newthinktank.com/2011/01/php-security/
     
     /*
-     *  DB details are defined as constants, to stop values from being altered.
+     *  DB details are defined as constants rather than variables, to stop values from being altered.
      */
 
     define("HOST", "dublinscoffee.ie");
@@ -22,33 +22,28 @@
      
     $connection = mysql_connect(HOST, USER, PASS);
     if (!$connection) {
+        //faild connections are exited and a non discript error is echo'd to the user
         trigger_error("Could not reach database!<br/>");
         exit();
     }
     
     $db_selected = mysql_select_db(DB,$connection);
     if (!$db_selected) {
+        //faild connections are exited and a non discript error is echo'd to the user
         trigger_error("Could not reach database!<br/>");
         exit();
     }
-
-    /* test query do not remove*/
     
-    // $query = "SELECT * FROM test";
-    // $result = mysql_query($query);
-    // while ($row = mysql_fetch_assoc($result)) {
-    // echo $row['working'];
-    // }
     
     /*
-     *  --Escape data function strips text that is being sent to the DB of harmful tags and characters --
+     *  --escape_data function strips text that is being sent to the DB of harmful tags and characters --
      *  mysql_real_escape_string() is a more secure method of scrubbing data so we check if it is available, as it rely's on a connection to the DB
      *  If available we trim() to remove whitespace, then put pass through the mysql_real_escape_string() to address the threat of SQL injection.
      *  The data is then run through strip_tags() to remove HTML tags like "<script>" to address XSS attacks.
      *
      *  If mysql_real_escape_string() in unavailable we do the same steps but using mysql_escape_string().
      *
-     *  !This function should be user for all text sent to the DB or files on the web/file directory!
+     *  !This function should be used for all text sent to the DB or files on the web/file directory!
      */
      
     function escape_data($dataFromForms) {
@@ -56,11 +51,9 @@
             global $connection;
             $dataFromForms = mysql_real_escape_string (trim($dataFromForms), $connection);
             $dataFromForms = strip_tags($dataFromForms);
-            echo ("mysql_real_escape_string was available");
         } else {
             $dataFromForms = mysql_escape_string (trim($dataFromForms));
             $dataFromForms = strip_tags($dataFromForms);
-            echo ("mysql_real_escape_string was not available");
         }
         return $dataFromForms;
     }
