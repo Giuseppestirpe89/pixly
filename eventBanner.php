@@ -10,13 +10,13 @@
     //$incrementDivId used it increment the <div id="myCarousel"> href for the toggle button left anr right as a unique ID is needed
     $incrementDivId = 1;
     while ($row = mysql_fetch_assoc($result)) {
-    
     /*
      * The if() checks how many images are in each event
      * There is a max of 3 slides on each event, with 4 pictures on each slide
      * The 4 images per slide are within <div class='item active'> or <div class='item'> pending on there order
-     * The if generates the correct number of these divs to suit the number of images between eg 1-4, 5-8 or 9+
-     * only the top 12 liked photos are shown in the preview slides
+     * The if generates the correct number of these divs 1,2 or 3 slides to suit the number of images, between 1-4, 5-8 or 9+
+     * Only the top 12 liked photos are shown in the preview slides
+     * Besides bringing the best contect to front it also lightins the load on the browser by not pulling up 1000s of images
      */
         if($row['numOfPhotos'] <= 4){
 ?>
@@ -32,6 +32,7 @@
                                 <div class='item active'>
                                     <div class='row'>
                                         <?php
+                                            //loops and prints HTML for 4 images in one preview slide
                                             $eventName = $row['eventName'];
                                             $iquery = "SELECT * FROM images WHERE event = '$eventName'";
                                             $iresult = mysql_query($iquery); 
