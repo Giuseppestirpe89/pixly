@@ -1,7 +1,7 @@
 <?php
     //ref: http://www.newthinktank.com/2011/01/php-security/
     
-    /*
+    /* Slug page
      *  DB details are defined as constants rather than variables, to stop values from being altered.
      */
 
