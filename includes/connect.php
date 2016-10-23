@@ -20,6 +20,11 @@
      *  https://www.owasp.org/index.php/PHP_Configuration_Cheat_Sheet
      */
      
+    //session_start will need to be on every page so we include it here as connect.php is included in all pages
+    session_start();
+    //http://blog.teamtreehouse.com/how-to-create-bulletproof-sessions
+
+     
     $connection = mysql_connect(HOST, USER, PASS);
     if (!$connection) {
         //faild connections are exited and a non discript error is echo'd to the user
