@@ -38,6 +38,7 @@ $(document).ready(function(){
 		}
 	});
 });
+
 $(document).ready(function(){
 	$.ajax({
 		url: "https://pixly3-giuseppestirpe89.c9users.io/data.php",
@@ -70,6 +71,47 @@ $(document).ready(function(){
 
 			var barGraph = new Chart(ctx, {
 				type: 'bar',
+				data: chartdata
+			});
+		},
+		error: function(data) {
+			console.log(data);
+		}
+	});
+})
+
+$(document).ready(function(){
+	$.ajax({
+		url: "https://pixly3-giuseppestirpe89.c9users.io/data.php",
+		method: "GET",
+		success: function(data) {
+			console.log(data);
+			var user = [];
+			var Picture = [];
+
+			for(var i in data) {
+				user.push("User " + data[i].users);
+				Picture.push(data[i].Picture);
+			}
+
+			var chartdata = {
+				labels: user,
+				datasets : [
+					{
+						label: 'Picture Liked',
+						backgroundColor: 'rgb(255, 221, 145)',
+						borderColor: 'rgba(248, 243, 190, 1)',
+						hoverBackgroundColor: 'rgba(224, 61, 230, 1)',
+						hoverBorderColor: 'rgba(248, 243, 190, 1)',
+						data: Picture
+					}
+				]
+			};
+
+			var ctx = $("#mycanvas3");
+
+			var barGraph = new Chart(ctx, {
+				type: 'polarArea',
 				data: chartdata
 			});
 		},

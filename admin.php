@@ -10,7 +10,6 @@
     ?>
 
 
-
 </head>
 
 <body>
@@ -20,27 +19,28 @@
             <div class="row">
                 <div class="col-md-6">
                     <div id="chart-container">
-                        <canvas id="mycanvas"></canvas>
-                        <canvas id="mycanvas2"></canvas>
+                        <canvas id="mycanvas"></canvas> <br/>
+                        <canvas id="mycanvas2"></canvas> <br/>
+                        <canvas id="mycanvas3"></canvas>
                     </div>
-                  
-                 </div>
+
                 </div>
-                    </div>
-               </div>
             </div>
         </div>
-     </section>
+        </div>
+        </div>
+        </div>
+    </section>
 
-		<!-- javascript -->
-		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-		<script type="text/javascript" src="js/Chart.min.js"></script>
-		<script type="text/javascript" src="js/app.js"></script>
-        
-        <br />
-        <section/>
-        <!-- Footer section -->
-        <?php
+    <!-- javascript -->
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/Chart.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <br />
+    <section/>
+    <!-- Footer section -->
+    <?php
             include("includes/footer.php");
         ?>
 </body>
