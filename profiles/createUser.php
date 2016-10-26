@@ -80,7 +80,7 @@
         <html>
             <head>
                 <?php
-                include('../includes/head.php');?>
+                include('../includes/profileHead.php');?>
             </head>
             <body>
                 <?php
@@ -88,9 +88,11 @@
                 ?>
                 <br>
                 <br>
-                <h1>hi user!</h1>
+                <br>
+                <br>
+                <h1>hi user! <?php echo $_SESSION['user']; ?></h1>
                 <?php
-                include ('../includes/footer.php');
+                include ('../includes/profileFooter.php');
                ?>
             </body>
         </html>";
