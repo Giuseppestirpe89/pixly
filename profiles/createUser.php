@@ -1,4 +1,12 @@
-<!--http://www.w3schools.com/php/php_file_create.asp-->
+<!-- 
+        --In createUser.php a few steps are handeled--
+        * user input is sanitised 
+        * passwords are hashed 
+        * their details a writen to the DB
+        * A session is created for the user
+        * Their profile page is created
+        * They are directed to their new profile page
+-->
 <?php
     session_start();
     include("../includes/connect.php");
@@ -39,7 +47,10 @@
         // if all input meet criteria of regular expressions the sanitised data it written to the DB 
         
         
-        
+        /* 
+         * Only if the details pass the reggular expressions, $passedRegex remains TRUE and the connection to the DB is run
+         * the sanitised info is then sent to the SQL server
+         */
        if($passedRegex){
             $conn = new mysqli(HOST, USER, PASS, DB);
             $sql = "INSERT INTO users (username, password)
@@ -51,11 +62,16 @@
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
             $conn->close();
-       }    
+       }   
        
+       
+       //session for user in then started
        $_SESSION['user'] = $username;
         
-        //makes file
+        /*
+         *A .php profile page is then created, the contents of a standard profile page are populated to the file
+         *and saved to the current directory under the users username
+         */
         //http://www.w3schools.com/php/php_file_create.asp-
         $myfile = fopen($username .".php", "w") or die("Unable to open file!");
         $txt = "
@@ -81,8 +97,8 @@
         fwrite($myfile, $txt);
         fclose($myfile);
         end;
-        //https://bestbook-donwhelan.c9users.io/restaurants/newuser.php
-        //echo "<a href='edit profile.php'>Your new profile is now available to view here</a>";
+        
+        //user then directed to their new profile
         header("Location: ../profiles/".$username.".php");
             
 ?>

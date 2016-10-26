@@ -1,3 +1,9 @@
+<!--
+    This is where new users details are taken befor being posted to createUser.php to create their account
+    Users are drected here from index.php to creates new accounts
+    basic user info is taken and posted to createUser.php
+-->
+
 <?php 
     session_start();
     include("../includes/connect.php");
@@ -10,23 +16,6 @@
 </head>
 
 <body>
-
-    <!--<form action='createUser.php' method='post'>-->
-    <!--    <label>Username</label>-->
-    <!--    <input type="text" class="form-control" id="username" placeholder="Username" name="username">-->
-    <!--    <label>Password</label>-->
-    <!--    <input type="password" class="form-control" id="password" placeholder="Password" name="password">-->
-    <!--    <label>Password (confirm)</label>-->
-    <!--    <input type="password" class="form-control" id="password" placeholder="Password" name="password">-->
-    <!--    <div class="checkbox">-->
-    <!--        <p><span class="glyphicon glyphicon-ok-circle"></span> 8 or more characters</p>-->
-    <!--        <span class="glyphicon glyphicon-ok-circle"></span> Upper and lower case</p>-->
-    <!--        <span class="glyphicon glyphicon-ok-circle"></span> At least number</p>-->
-    <!--        <span class="glyphicon glyphicon-ok-circle"></span> Passwords match</p>-->
-    <!--    </div>-->
-    <!--    <button type="submit" class="btn btn-default">Submit</button>-->
-    <!--</form>-->
-
 
     <div class="container" id="loginwrapper">
 

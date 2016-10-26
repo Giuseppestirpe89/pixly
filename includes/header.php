@@ -1,4 +1,9 @@
-<!--LOGIN FORM-->
+<!--    
+        LOGIN FORM!!
+        This modal acts as a loging for and also link to create new accounts
+        The login form is sent to includes/loginVal.php where the users info is validated, session created and then redrected to index.php
+        If a new account is needed theres a link to profiles/newUser.php
+-->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
