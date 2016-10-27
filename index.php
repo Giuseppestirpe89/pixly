@@ -90,7 +90,7 @@
         </section>
         
         <!-- Contact Section -->
-        <section id="contact" class="contact-section">
+        <section id="location" class="location-section">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -101,10 +101,11 @@
                 <div id="map" style="width:50%%;height:500px"></div>
                 <br />
             </div>
+ 
             <!-- Footer section -->
             <?php
                 include("includes/footer.php");
             ?>
+        </section>
     </body>
-
 </html>

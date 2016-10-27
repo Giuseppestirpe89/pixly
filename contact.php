@@ -167,13 +167,14 @@
             </div>
     </section>
     <br /> <br /> <br />
-
         
-        <!-- Footer section -->
-        <?php
-            include("includes/footer.php");
-        ?>
-        </div>
+        <section id="footer" class="footer-section">
+ 
+            <!-- Footer section -->
+            <?php
+                include("includes/footer.php");
+            ?>
+        </section>
         <!-- jQuery -->
         <script src="js/jquery.js"></script>
         <!-- Bootstrap Core JavaScript -->
