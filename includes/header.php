@@ -70,7 +70,7 @@
                     <a class="page-scroll" href="admin.php">Admin</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="includes/killSession.php">logout <?php echo $_SESSION['user'];?></a>
+                    <a class="page-scroll" href="includes/killSession.php">Logout <?php echo $_SESSION['user'];?></a>
                 </li>
 
 

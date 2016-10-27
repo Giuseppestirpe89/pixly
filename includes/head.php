@@ -11,8 +11,10 @@
     <title> Pixly &copy; </title>
     <!-- Bootstrap Core CSS -->
     <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+    <script type="text/javascript" src="../js/prof.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/social.css" rel="stylesheet">
+    <link href="../css/prof.css" rel="stylesheet">
     <link href="css/members.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
