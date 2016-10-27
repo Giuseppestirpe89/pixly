@@ -70,11 +70,12 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <!--Button for sign in model-->
-                <li>
-                    <?php  if($_SESSION['user']) { ?>
+               
+                <?php  if($_SESSION['user']) { ?>
 
-                    <li><a class="color_animation" href="<?php echo $_SESSION['user'];?>.php"><span class="glyphicon glyphicon-user white" style="text-color: white"></span> PROFILE</a></li>
-                    <?php  } ?>
+                <li><a class="color_animation" href="<?php echo $_SESSION['user'];?>.php"><span class="glyphicon glyphicon-user white" style="text-color: white"></span> PROFILE</a></li>
+                <?php  } ?>
+                 <li>    
                     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login </button>
                     <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog">

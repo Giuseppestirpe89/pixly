@@ -48,7 +48,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-            <a class="navbar-brand page-scroll" href="index.php">Home</a>
+            <a class="navbar-brand page-scroll" href="index.php">Menu</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -70,18 +70,19 @@
                     <a class="page-scroll" href="admin.php">Admin</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="includes/killSession.php">Logout <?php echo $_SESSION['user'];?></a>
+                    <a class="page-scroll" href="includes/killSession.php">logout <?php echo $_SESSION['user'];?></a>
                 </li>
 
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <!--Button for sign in model-->
-                <li>
-                    <?php  if($_SESSION['user']) { ?>
 
-                    <li><a class="color_animation" href="profiles/<?php echo $_SESSION['user'];?>.php"><span class="glyphicon glyphicon-user white" style="text-color: white"></span> PROFILE</a></li>
-                    <?php  } ?>
+                <?php  if($_SESSION['user']) { ?>
+
+                <li><a class="color_animation" href="profiles/<?php echo $_SESSION['user'];?>.php"><span class="glyphicon glyphicon-user white" style="text-color: white"></span> PROFILE</a></li>
+                <?php  } ?>
+                <li>
                     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login </button>
                     <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog">

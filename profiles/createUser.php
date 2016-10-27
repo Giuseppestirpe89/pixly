@@ -21,43 +21,46 @@
         
         //boolean variable used to trigger the SQL query
         $passedRegex = TRUE;
-        if (preg_match ('%^[A-Za-z0-9\.\' \-]{2,20}$%', stripslashes(trim($_POST['username'])))) {
-            $username = escape_data($_POST['username']);
+        $subjectUsername = stripslashes(trim($_POST['username']));
+        if (preg_match ('%^[A-Za-z0-9\.\' \-]{2,20}$%',$subjectUsername)) {
+            $username = escape_data($subjectUsername);
         } else {
             //If criteria is not met $passedRegex is set to false so the SQL will not be sent to the SQL server
             $passedRegex = FALSE;
             echo '<p><font color="red" size="+1">Please enter username!</font></p>';
         }
         
-        if (preg_match ('%^[A-za-z0-9]{4,20}$%', stripslashes(trim($_POST['password'])))) {
+        $subjectPassword = stripslashes(trim($_POST['password']));
+        if (preg_match ('%^[A-za-z0-9]{3,20}$%', $subjectPassword)) {
             $password = escape_data($_POST['password']);
         } else {
             $passedRegex = FALSE;
             echo '<p><font color="red" size="+1">Please enter a valid password!</font></p>';
         }
         
-        // ref:http://php.net/manual/en/function.password-hash.php
-        //http://php.net/manual/en/function.crypt.php
-        // $mysalt = [
-        //     'cost' => 11,
-        //     'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM),
-        // ];
-        // $Epassword =  password_hash($rawPassword, PASSWORD_BCRYPT, $mysalt)."\n";
-        
-        // if all input meet criteria of regular expressions the sanitised data it written to the DB 
-        
+
+        /*
+         * password_hash() was picked over MD5 as its outdated and unsecure and SHA1 as it dosnt provide the cost functinality that password_hash() does which will defend against brute force attacks
+         * password_hash() returns the algorithm, cost and salt as part of the returned hash. Therefore, 
+         * all information that's needed to verify the hash is included in it. 
+         * This allows the verify function to verify the hash without needing separate storage for the salt or algorithm information.
+         * password_hash() also allows us to use Blowfish encryption
+         */
+         
+        $userpasswordhashed = password_hash($password , CRYPT_BLOWFISH,['cost' => 8]);
+        //$userpasswordhashed = password_hash($password , PASSWORD_DEFAULT);
         
         /* 
-         * Only if the details pass the reggular expressions, $passedRegex remains TRUE and the connection to the DB is run
+         * Only if the details pass the reggular expressions, $passedRegex remains TRUE and the connection to the DB is run,
          * the sanitised info is then sent to the SQL server
          */
        if($passedRegex){
             $conn = new mysqli(HOST, USER, PASS, DB);
             $sql = "INSERT INTO users (username, password)
-            VALUES ('$username', '$password')";
+            VALUES ('$username', '$userpasswordhashed')";
             
             if ($conn->query($sql) === TRUE) {
-                echo "New record created successfully <br> user: ".$username."<br>pass: ".$password;
+                echo "New record created successfully <br> user: ".$username."<br>pass: ".$userpasswordhashed;
             } else {
                 echo "Error: " . $sql . "<br>" . $conn->error;
             }
@@ -90,7 +93,11 @@
                 <br>
                 <br>
                 <br>
-                <h1>hi user! <?php echo $_SESSION['user']; ?></h1>
+                <br>
+                <br>
+                <br>
+                <br>
+                <h1>hi user!</h1>
                 <?php
                 include ('../includes/profileFooter.php');
                ?>
