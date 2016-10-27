@@ -8,8 +8,14 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="js/thumbnail-slider.css" rel="stylesheet" type="text/css" />
     <script src="js/thumbnail-slider.js" type="text/javascript"></script>
-    <script src="../node_modules/chart.js/dist/Chart.bundle.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <title> Pixly &copy; </title>
+    <!-- Bootstrap Core CSS -->
+    <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/social.css" rel="stylesheet">
+    <link href="css/members.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
     <style>
         .carousel-inner>.item>img,
         .carousel-inner>.item>a>img {
@@ -19,12 +25,7 @@
     </style>
     <title> Pixly &copy; </title>
     <!-- Bootstrap Core CSS -->
-    <script type="text/javascript" src="js/jquery.placeholder.js"></script>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/social.css" rel="stylesheet">
-    <link href="css/members.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/scrolling-nav.css" rel="stylesheet">
+
         <!--google apis for the map -->
     <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
     <!--javascript to get map id and dispaly on contact section -->

@@ -32,7 +32,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Menu</a>
+            <a class="navbar-brand page-scroll" href="#page-top">Home</a>
          </div>
          <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -60,7 +60,7 @@
       <!-- /.container -->
    </nav>
    <!-- Intro Section -->
-   <section id="intro" class="intro-section">
+   <section id="intro" class="intro-section3">
       <div class="container">
          <div class="row">
             <div class="col-lg-12">

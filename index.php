@@ -70,7 +70,6 @@
                     </ul>
                 </div>
             </div>
-            </div>
         </section>
         <!-- About Section -->
         <section id="events" class="about-section">

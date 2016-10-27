@@ -15,7 +15,7 @@ if(!$mysqli){
 	die("Connection failed: " . $mysqli->error);
 }
 
-//query to get data from the table
+//query to get data from the table for the charts
 $query = sprintf("SELECT users, Picture FROM score ORDER BY users");
 
 //execute query

@@ -12,13 +12,6 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="js/thumbnail-slider.css" rel="stylesheet" type="text/css" />
     <script src="js/thumbnail-slider.js" type="text/javascript"></script>
-    <style>
-        .carousel-inner>.item>img,
-        .carousel-inner>.item>a>img {
-            width: 25%;
-            margin: auto
-        }
-    </style>
     <title> Pixly &copy; </title>
     <!-- Bootstrap Core CSS -->
     <script type="text/javascript" src="js/jquery.placeholder.js"></script>
@@ -50,9 +43,6 @@
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden">
                         <a class="page-scroll" href="#page-top"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                      <li>
                         <a class="page-scroll" href="admin.php">Admin</a>

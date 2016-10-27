@@ -48,7 +48,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-            <a class="navbar-brand page-scroll" href="index.php">Menu</a>
+            <a class="navbar-brand page-scroll" href="index.php">Home</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -70,7 +70,7 @@
                     <a class="page-scroll" href="admin.php">Admin</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="includes/killSession.php">logout <?php echo $_SESSION['user'];?></a>
+                    <a class="page-scroll" href="includes/killSession.php">Logout <?php echo $_SESSION['user'];?></a>
                 </li>
 
 
