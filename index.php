@@ -96,8 +96,8 @@
                         <h1>Location</h1>
                     </div>
                 </div> <br /> <br />
-                <!--map id uset for the function on line 39 -->
-                <div id="map" style="width:50%%;height:500px"></div>
+                <!--map id used for the function called in head.php-->
+                <div id="map" style="width:250px%;height:400px"></div>
                 <br />
             </div>
  

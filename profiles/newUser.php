@@ -14,15 +14,25 @@
 </head>
 <body>
 
-    <!--<div class="container" id="loginwrapper">-->
-
-    <!--    <form class="form-signin" action='createUser.php' method='post'>-->
-    <!--        <h2 class="form-signin-heading">Please sign in</h2>-->
-    <!--        <input type="username" class="form-control" placeholder="Username" name="username"required autofocus>-->
-    <!--        <label for="inputPassword" class="sr-only">Password</label>-->
-    <!--        <input type="password"  class="form-control" placeholder="Password" name="password" equired>-->
-    <!--        <input type="password"  class="form-control" placeholder="Confirm Password" name="passwordmatch" required>-->
-            
+<div class="container">
+    <div class="row" style="margin-top:20px">
+        <form class="form-signin" action='createUser.php' method='post'>
+           	
+		<hr class="colorgraph">
+		 <div class="form-group">
+            <h2 class="form-signin-heading">Please sign in</h2>
+         </div>
+         <div class="form-group">
+            <input type="username" class="form-control" placeholder="Username" name="username"required autofocus>
+         </div>
+         <div class="form-group">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password"  class="form-control" placeholder="Password" name="password" required>
+        </div>
+        <div class="form-group">
+            <input type="password"  class="form-control" placeholder="Confirm Password" name="passwordmatch" required>
+         </div>   
+         
             <!--IF TIME DEVELOP-->
             <!--http://bootsnipp.com/snippets/featured/change-password-form-with-validation-->
             <!--<div class="checkbox">-->
@@ -34,38 +44,40 @@
                 
             <!--    <span class="glyphicon glyphicon-ok-circle"></span> Passwords match</p>-->
             <!--</div>-->
-    <!--        <button class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>-->
-    <!--    </form>-->
-
-    <!--</div>-->
-<div class="container">
-
-<div class="row" style="margin-top:20px">
-    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-        <form class="form-signin" action='createUser.php' method='post'>
-			<fieldset>
-				<h2>Please Sign In</h2>
-				<hr class="colorgraph">
-				<div class="form-group">
-                   <input type="username" class="form-control" placeholder="Username" name="username"required autofocus>
-				</div>
-				<div class="form-group">
-                    <input type="password"  class="form-control" placeholder="Password" name="password" required>
-				</div>
-				<div class="form-group">
-                    <input type="password"  class="form-control" placeholder="Confirm Password" name="passwordmatch" required>
-				</div>
-
-				<hr class="colorgraph">
-				<div class="row">
-					<div class="col-xs-12 col-sm-8 col-md-6">
-						<a href="" class="btn btn-small  btn-primary center-block">Login</a>
-					</div>
-				</div>
-			</fieldset>
-		</form>
-	</div>
+            <button class="btn btn-small  btn-primary center-block">Create Account</button>
+        </form>
+    </div>
 </div>
+    
+    
+<!--<div class="container">-->
+<!--<div class="row" style="margin-top:20px">-->
+<!--    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">-->
+<!--        <form class="form-signin" action='createUser.php' method='post'>-->
+		
+<!--				<h2 class="form-signin-heading">Please sign in</h2>-->
+<!--				<hr class="colorgraph">-->
+<!--				<div class="form-group">-->
+<!--                   <input type="username" class="form-control" placeholder="Username" name="username" required autofocus>-->
+<!--				</div>-->
+<!--				<div class="form-group">-->
+<!--				    <label for="inputPassword" class="sr-only">Password</label>-->
+<!--                    <input type="password" class="form-control" placeholder="Password" name="password" required>-->
+<!--				</div>-->
+<!--				<div class="form-group">-->
+<!--                    <input type="password"  class="form-control" placeholder="Confirm Password" name="passwordmatch" required>-->
+<!--				</div>-->
+
+<!--				<hr class="colorgraph">-->
+<!--				<div class="row">-->
+<!--					<div class="col-xs-12 col-sm-8 col-md-6">-->
+<!--						<a href="" class="btn btn-small  btn-primary center-block">Login</a>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--		</form>-->
+<!--	</div>-->
+<!--</div>-->
+<!--</div>-->
 </body>
 </html>
 
