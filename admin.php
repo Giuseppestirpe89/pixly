@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
     <?php
         include("includes/headerAdmin.php");
@@ -10,6 +9,7 @@
     ?>
 </head>
 <body>
+    
 <!-- display chart section -->
     <section id="intro" class="intro-section2">
         <div class="container">
@@ -25,7 +25,6 @@
             </div>
         </div>
     </section>
-
     <!-- javascript -->
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/Chart.min.js"></script>
