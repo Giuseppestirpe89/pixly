@@ -20,5 +20,5 @@
     echo ("text");
     echo $sample;
     echo ("text");
-    
+    echo $_SERVER['PHP_SELF'];
 ?>

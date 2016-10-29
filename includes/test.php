@@ -53,4 +53,6 @@
             </div><!-- /.container-fluid -->
         </nav>
     ";
+    
+    include("securityLog.php");
 ?>
