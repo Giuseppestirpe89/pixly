@@ -1,12 +1,14 @@
 <?php
 
     include("connect.php");
+    
+    $v = "11111";
 
-    $query = "Select * from test";
+    $query = "Select * from users WHERE username = $v";
     $result = mysql_query($query);
     
     while ($row = mysql_fetch_assoc($result)) {
-    echo $row['working'];
+    echo $row['username']."<br>";
     }
     
     echo ("<br/><br/><br/>");

@@ -5,6 +5,12 @@
      *  
      */
     $query = "SELECT * FROM events ORDER BY eventId DESC";
+    
+    /*
+     * mysql_query() was chosen over the other connection functions as it only allows one query to be sent to the DB
+     * if a second query was introduced via SLQ injection the second query would not exacute 
+     */
+    
     $result = mysql_query($query); 
     
     //$incrementDivId used it increment the <div id="myCarousel"> href for the toggle button left anr right as a unique ID is needed

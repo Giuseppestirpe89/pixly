@@ -48,12 +48,12 @@
          */
          
         $userpasswordhashed = password_hash($password , CRYPT_BLOWFISH,['cost' => 8]);
-        //$userpasswordhashed = password_hash($password , PASSWORD_DEFAULT);
         
         /* 
          * Only if the details pass the reggular expressions, $passedRegex remains TRUE and the connection to the DB is run,
          * the sanitised info is then sent to the SQL server
          */
+         
        if($passedRegex){
             $conn = new mysqli(HOST, USER, PASS, DB);
             $sql = "INSERT INTO users (username, password)
@@ -77,7 +77,7 @@
          */
         //http://www.w3schools.com/php/php_file_create.asp-
         $myfile = fopen($username .".php", "w") or die("Unable to open file!");
-        $txt = "
+        $txt = " 
         <?php session_start(); 
         include('../includes/connect.php');?>
         <html>

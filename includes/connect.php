@@ -24,7 +24,12 @@
     session_start();
     //http://blog.teamtreehouse.com/how-to-create-bulletproof-sessions
 
-     
+    
+    /*
+     * mysql_query() was chosen over the other connection functions as it only allows one query to be sent to the DB
+     * if a second query was introduced via SLQ injection the second query would not exacute 
+     */
+    
     $connection = mysql_connect(HOST, USER, PASS);
     if (!$connection) {
         //faild connections are exited and a non discript error is echo'd to the user
