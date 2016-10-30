@@ -25,7 +25,7 @@
         if (preg_match ('%^[A-Za-z0-9\.\' \-]{2,20}$%',$subjectUsername)) {
             $username = escape_data($subjectUsername);
         } else {
-            //If criteria is not met $passedRegex is set to false so the SQL will not be sent to the SQL server
+            //If criteria is not met $passedRegex is set to false so the query will not be sent to the SQL server
             $passedRegex = FALSE;
             echo '<p><font color="red" size="+1">Please enter username!</font></p>';
         }
@@ -72,8 +72,8 @@
        $_SESSION['user'] = $username;
         
         /*
-         *A .php profile page is then created, the contents of a standard profile page are populated to the file
-         *and saved to the current directory under the users username
+         * A .php profile page is then created, the contents of a standard profile page are populated to the file
+         * and saved to the current directory under the users username
          */
         //http://www.w3schools.com/php/php_file_create.asp-
         $myfile = fopen($username .".php", "w") or die("Unable to open file!");

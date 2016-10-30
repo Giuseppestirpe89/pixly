@@ -86,12 +86,14 @@
             <input type="username" class="form-control" placeholder="Username" name="username"required autofocus>
          </div>
          <div class="form-group">
-            <label for="inputPassword" class="sr-only">Password</label>
             <input type="password"  class="form-control" placeholder="Password" name="password" required>
         </div>
         <div class="form-group">
             <input type="password"  class="form-control" placeholder="Confirm Password" name="passwordmatch" required>
-         </div>   
+        </div>  
+        <div class="form-group">
+            <input type="email"  class="form-control" placeholder="Email" name="email" required>
+         </div>  
          
             <!--IF TIME DEVELOP-->
             <!--http://bootsnipp.com/snippets/featured/change-password-form-with-validation-->

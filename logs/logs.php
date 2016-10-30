@@ -1,16 +1,17 @@
 
 <?php
-
-/*
- * This script is run anytime we get uneqpected results in querys after userdata has been sanitised 
- * as unexpected results after the data sanitization stage are an indicator that someone has been able to get neferious code past that stage
+ 
+ /*
+ * This script is run anytime we get unexpected results in query’s after user data has been sanitized 
+ * as unexpected results after the data sanitization stage are an indicator that someone has been able to get nefarious code past that stage
  * It records all of the $_SERVER[VAR]'s available with the php library
- * It save all of this server and client informantion
- * It also records the text entered into any on the input fields in the browser so as it can be reviwed
+ * It saves all of this server and client information
+ * It also records the text entered into any on the input fields in the browser so as it can be reviewed
  * and rights them all to a file which is saved under a file name of the current date and time in the logs directory
- * As wll as emails acopy to the pixly mailbox
+ * As will as emails a copy to the pixly mailbox
  * A administrator can the decide if it is a error or attacker and blacklist that IP from the server
  */
+
     $d = date('Y-m-d H:i:s');
     $myfile = fopen( "../logs/".$d.".php", "w") or die("Unable to open file!");
     $txt = " 
