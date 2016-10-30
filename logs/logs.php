@@ -1,9 +1,20 @@
 
 <?php
-    $n = date('Y-m-d H:i:s');
-    $myfile = fopen( $n.".php", "w") or die("Unable to open file!");
+
+/*
+ * This script is run anytime we get uneqpected results in querys after userdata has been sanitised 
+ * as unexpected results after the data sanitization stage are an indicator that someone has been able to get neferious code past that stage
+ * It records all of the $_SERVER[VAR]'s available with the php library
+ * It save all of this server and client informantion
+ * It also records the text entered into any on the input fields in the browser so as it can be reviwed
+ * and rights them all to a file which is saved under a file name of the current date and time in the logs directory
+ * As wll as emails acopy to the pixly mailbox
+ * A administrator can the decide if it is a error or attacker and blacklist that IP from the server
+ */
+    $d = date('Y-m-d H:i:s');
+    $myfile = fopen( "../logs/".$d.".php", "w") or die("Unable to open file!");
     $txt = " 
-        Date: " . date('Y-m-d H:i:s')."\n".
+        Date: " . $d ."\n".
         'PHP_SELF: ' . $_SERVER['PHP_SELF'] . "\n" .
         'argv: ' . $_SERVER['argv'] . "\n" . 
         'argc: ' . $_SERVER['argc'] . "\n" . 
@@ -43,9 +54,17 @@
         'PHP_AUTH_PW: ' . $_SERVER['PHP_AUTH_PW'] . "\n" . 
         'AUTH_TYPE: ' . $_SERVER['AUTH_TYPE'] . "\n" . 
         'PATH_INFO: ' . $_SERVER['PATH_INFO'] . "\n" . 
-        'ORIG_PATH_INFO: ' . $_SERVER['ORIG_PATH_INFO'] . "\n
+        'ORIG_PATH_INFO: ' . $_SERVER['ORIG_PATH_INFO'] . "\n" .
+        "Username: " . $_POST['username'] . "\n" .
+        "Password: " . $_POST['password'] . "\n
         ";
     fwrite($myfile, $txt);
     fclose($myfile);
     end;
+
+    //Emails a copy of the security incedent to the pixly team
+    $to = "info.pixley@gmail.com";
+    $subject = "Security incident ".$d;
+    mail($to,$subject,$txt);
+
 ?>

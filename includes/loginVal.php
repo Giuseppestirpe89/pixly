@@ -22,32 +22,59 @@
     
     $subjectPassword = stripslashes(trim($_POST['password']));
     if (preg_match ('%^[A-za-z0-9]{3,20}$%', $subjectPassword)) {
-        $formpassword = escape_data($_POST['password']);
+        $formpassword = escape_data($subjectPassword);
+        
+        
     } else {
         $passedRegex = FALSE;
         echo '<p><font color="red" size="+1">Please enter a valid password!</font></p>';
     }
     
-    $query = "SELECT * FROM users WHERE username = $formusername"; 
+    /*
+     * as we are using phps password hash we just check for the username, so we can pull the pass word hash from the DB to compair
+     */
+    $query = "SELECT * FROM users WHERE username = '$formusername'"; 
     
    /*
     * mysql_query() was chosen over the other connection functions as itonly allows one query to be sent to the DB
     * if a second query was introduced via SLQ injection the second query would not exacute 
     */
-   
+    
     $result = mysql_query($query); 
-
-    while ($row = mysql_fetch_assoc($result)) {
-        $dbUsername=$row['username'];
-        $dbPassword=$row['password'];
+    $numRows = mysql_num_rows($result);
+    
+    /*
+     * Before each user can set up account, there chosen username is checked against the DB to ensure that it is unique, so the username becomes a unique identifier
+     * Because of this a username query should only have one row effected
+     * If more than 1 row is effected that is a indication that SQL could have been injected into query to the DB
+     * So we create a security log by calling "/log/log.php" --- notes on this script in file
+     * this recored all the current server info, client info and what text was entered into the input fields
+     * this can then be reviewed in detail to see it was a potential attacker and if we want to blacklist the IP from the server
+     */
+     
+    if($numRows < 1){
+        //logs a security file
+        include("../logs/logs.php");
+        //closed the sql connection
+        mysql_close($connection);
+        //redirects user index
+        header("Location: ../index.php");
         
-        if($formusername == $dbUsername && password_verify($formpassword, $dbPassword)){
-            $_SESSION['user']=$dbUsername;
-            header("Location: ../index.php");
-        }else{
-            echo "nope";
+    }else{
+        while ($row = mysql_fetch_assoc($result)) {
+            $dbUsername=$row['username'];
+            $dbPassword=$row['password'];
+            // here the users password is verified from the originally hashed one from the db
+            if($formusername == $dbUsername && password_verify($formpassword, $dbPassword)){
+                $_SESSION['user']=$dbUsername;
+                header("Location: ../index.php");
+
+            }else{
+                echo "nope";
+            }
         }
     }
+    
     
 ?>  
     
