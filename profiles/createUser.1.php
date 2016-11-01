@@ -39,7 +39,6 @@
         exit();
     }
     
-
     if($pw != $pwm){
        header("Location: newUser.php?pmtc"); 
        exit();
@@ -50,7 +49,7 @@
     if (preg_match ('%^[A-Za-z0-9\.\' \-!_]{4,20}$%',$subjectUsername)) {
         $username = escape_data($subjectUsername);
     } else {
-        //If criteria is not met $passedRegex is set to false so the query will not be sent to the SQL server
+        //If criteria is not met $passedRegex is set to false so the query connection will not open
         $passedRegex = FALSE;
         //we redirect the user back to newUser.php but add info to thr URL yo we can read why the user has been sent back and display the correct error messege
         header("Location: newUser.php?char");
@@ -100,32 +99,33 @@
      */
      
    if($passedRegex){
-       
          
         /*
-         * as we are using php's password hash we just check for the username, so we can pull the pass word hash from the DB to compair
+         * We run a query to see if the username is already registered in the DB
          */
          
         $query = "SELECT * FROM users WHERE username = '$username'";   
         
         /*
-         * mysql_query() was chosen over the other connection functions as itonly allows one query to be sent to the DB
+         * mysql_query() was chosen over the other connection functions as it only allows one query to be sent to the DB
          * if a second query was introduced via SLQ injection the second query would not exacute 
          */
          
         $result = mysql_query($query); 
         $numRows = mysql_num_rows($result);
         
+        //variable to see if the username is free or not
+        $UserNameFree = true;
+        
         /*
          * Before each user can set up account, there chosen username is checked against the DB to ensure that it is unique, so the username becomes a unique identifier
-         * Because of this a username query should only have one row effected
-         * If more than 1 row is effected that is a indication that SQL could have been injected into query to the DB
-         * So we create a security log by calling "/log/log.php" --- notes on this script in file
-         * this recored all the current server info, client info and what text was entered into the input fields
+         * Because of this a username query, should only have 1 or 0 row effected
+         * If more than 1 row is effected that is a indication that SQL could have been injected into query to the DB and is effecting multible rows
+         * So we create a security log by calling "/log/logmail.php" --- notes on this script in file
+         * As as intruder could potentialy have penatrated as far as the SQL connection a mail is sent to the Pixly admin to notify them
+         * "/log/logmail.php" records all the current server info, client info and what text was entered into the input fields
          * this can then be reviewed in detail to see it was a potential attacker and if we want to blacklist the IP from the server
          */
-         
-        $UserNameFree = true;
         
         if($numRows > 1){
             //logs a security file
@@ -136,9 +136,15 @@
             header("Location: ../failedLogin.php?error");
             
         }else{
+            
+            /*
+             * else 1 or 0 rows are effected is the expected result so we check if the user name matches
+             */
             while ($row = mysql_fetch_assoc($result)) {
                 $dbUsername=$row['username'];
+                //if there is a match we redirect to newUser with userE in the url, we can then read that and display the correct error for the user
                 if($username == $dbUsername){
+                    //we mark the username as not free
                     $UserNameFree = false;
                     header("Location: newUser.php?userE");
                     exit();
@@ -146,60 +152,69 @@
             }
         } 
            
-       //}
-        if($UserNameFree){
-        $conn = new mysqli(HOST, USER, PASS, DB);
-        $sql = "INSERT INTO users (username, password, email)
-        VALUES ('$username', '$userpasswordhashed','$email')";
-        
-        if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully <br> user: ".$username."<br>pass: ".$userpasswordhashed;
-        } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-        $conn->close();
-        
-        //session for user in then started
-        $_SESSION['user'] = $username;
-        
         /*
-         * A .php profile page is then created, the contents of a standard profile page are populated to the file
-         * and saved to the current directory under the users username
+         * --If the username is free--
+         * we then log the user details to the DB
+         * create a session for the user
+         * write a profile file to the directory
+         * and redirect the user to the new profile
          */
-        //http://www.w3schools.com/php/php_file_create.asp-
-        $myfile = fopen($username .".php", "w") or die("Unable to open file!");
-        $txt = " 
-        <?php session_start(); 
-        include('../includes/connect.php');?>
-        <html>
-            <head>
-                <?php
-                include('../includes/profileHead.php');?>
-            </head>
-            <body>
-                <?php
-                include ('../includes/profileHeader.php');
-                ?>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <h1>hi user!</h1>
-                <?php
-                include ('../includes/profileFooter.php');
-               ?>
-            </body>
-        </html>";
-        fwrite($myfile, $txt);
-        fclose($myfile);
-        end;
-        
-        //user then directed to their new profile
-        header("Location: ../profiles/".$username.".php");
+         
+        if($UserNameFree){
+            
+            //we then log the user details to the DB
+            $conn = new mysqli(HOST, USER, PASS, DB);
+            $sql = "INSERT INTO users (username, password, email)
+            VALUES ('$username', '$userpasswordhashed','$email')";
+            
+            if ($conn->query($sql) === TRUE) {
+                echo "New record created successfully <br> user: ".$username."<br>pass: ".$userpasswordhashed;
+            } else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
+            $conn->close();
+            
+            //create a session for the user
+            $_SESSION['user'] = $username;
+            
+            /*
+             * A .php profile page is then created, the contents of a standard profile page are populated to the file
+             * and saved to the current directory under the users username
+             */
+            //http://www.w3schools.com/php/php_file_create.asp-
+            $myfile = fopen($username .".php", "w") or die("Unable to open file!");
+            $txt = " 
+            <?php session_start(); 
+            include('../includes/connect.php');?>
+            <html>
+                <head>
+                    <?php
+                    include('../includes/profileHead.php');?>
+                </head>
+                <body>
+                    <?php
+                    include ('../includes/profileHeader.php');
+                    ?>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h1>hi user!</h1>
+                    <?php
+                    include ('../includes/profileFooter.php');
+                   ?>
+                </body>
+            </html>";
+            fwrite($myfile, $txt);
+            fclose($myfile);
+            end;
+            
+            //user then directed to their new profile
+            header("Location: ../profiles/".$username.".php");
         }
         
    }else{//end of sql ----------------------------
