@@ -12,7 +12,7 @@
  */
 
     $d = date('Y-m-d H:i:s');
-    $myfile = fopen( "../logs/".$d."-regex.php", "w") or die("Unable to open file!");
+    $myfile = fopen( "logs/".$d."-regex.php", "w") or die("Unable to open file!");
     $txt = "\n" .
        "Date: " . $d ."\n".
         'PHP_SELF: ' . $_SERVER['PHP_SELF'] . "\n" .

@@ -7,18 +7,18 @@
                 <h4 class="modal-title">Log in</h4>
             </div>
             <div class="modal-body">
-                <form action='includes/loginVal.php' method='post' >
+                <form action='../includes/loginVal.php' method='post' >
                 <div class="form-group">
                     <label for="exampleInputEmail1">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+                    <input type="text" class="form-control" id="username" placeholder="Username" name="username" required autofocus>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                    <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
                 </div>
                 
                 <button type="submit" class="btn btn-default">Submit</button>
-                <a href="profiles/newUser.php"><p>Dont have a account?</p></a>
+                <a href="../profiles/newUser.php"><p>Dont have a account?</p></a>
                 </form>
             </div>
         </div>
@@ -26,10 +26,6 @@
 </div>
 </div>
 <!--END OF LOGIN-->
-
-
-
-
 
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -59,13 +55,14 @@
                 <li>
                     <a class="page-scroll" href="../contact.php">Contact</a>
                 </li>
+                <?php  if($_SESSION['user']) { ?>
                 <li>
                     <a class="page-scroll" href="../admin.php">Admin</a>
                 </li>
                  <li>
                     <a class="page-scroll" href="../includes/killSession.php">Logout <?php echo $_SESSION['user'];?></a>
                 </li>
-                  
+                 <?php  } ?> 
         
             </ul>
             <ul class="nav navbar-nav navbar-right">

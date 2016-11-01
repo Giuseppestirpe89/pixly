@@ -10,16 +10,21 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Log in</h4>
+                <!--is hidden when javascript is enabled -->
+                <noscript>
+                  This page needs JavaScript enabled. 
+                  <style>div { display:none; }</style>
+                </noscript>
             </div>
             <div class="modal-body">
                 <form action='includes/loginVal.php' method='post'>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Username</label>
-                        <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+                        <label for="exampleInputEmail1" id="t">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Username" name="username" required autofocus >
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                        <input type="password" class="form-control" id="password" placeholder="Password" name="password" required >
                     </div>
 
                     <button type="submit" class="btn btn-default">Submit</button>
@@ -66,12 +71,14 @@
                 <li>
                     <a class="page-scroll" href="contact.php">Contact</a>
                 </li>
+                <?php  if($_SESSION['user']) { ?>
                 <li>
                     <a class="page-scroll" href="admin.php">Admin</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="includes/killSession.php">Logout <?php echo $_SESSION['user'];?></a>
                 </li>
+                <?php  } ?>
 
 
             </ul>

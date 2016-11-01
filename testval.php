@@ -9,7 +9,7 @@
 -->
 <?php
     session_start();
-    include("../includes/connect.php");
+    include("includes/connect.php");
         
     /*
      *  --Regular Expressions(Regex) are used to check for characters that we dont want entered or that we would not expect to be entered into forms --
@@ -28,60 +28,69 @@
      * by changing $passedRegex to false, which will not let the connection to the DB open
      */
      
-     $un = $_POST['username'];
-     $pw = $_POST['password'];
-     $pwm = $_POST['passwordmatch'];
-     $em = $_POST['email'];
+    //  $un = $_POST['username'];
+    //  $pw = $_POST['password'];
+    //  $pwm = $_POST['passwordmatch'];
+    //  $em = $_POST['email'];
+     
+     $un = "11111";
+     $pw = "11111";
+     $pwm = "11111";
+     $em = "11@111.com";
      
     if(empty($un) || empty($pw) || empty($pwm) || empty($em)){
         $passedRegex = FALSE;
-        header("Location: newUser.php?tfmt");
-        exit();
+        //header("Location: newUser.php?char");
+        echo "1-";
     }
     
-
+    
     if($pw != $pwm){
-       header("Location: newUser.php?pmtc"); 
-       exit();
+      // header("Location: newUser.php?pmtc"); 
+      echo "2-";
     }
-
+    
     
     $subjectUsername = stripslashes(trim($un));
     if (preg_match ('%^[A-Za-z0-9\.\' \-!_]{4,20}$%',$subjectUsername)) {
         $username = escape_data($subjectUsername);
+        echo "3.1-";
     } else {
         //If criteria is not met $passedRegex is set to false so the query will not be sent to the SQL server
         $passedRegex = FALSE;
         //we redirect the user back to newUser.php but add info to thr URL yo we can read why the user has been sent back and display the correct error messege
-        header("Location: newUser.php?char");
-        exit();
+        //header("Location: newUser.php?char");
+        echo "3.2-";
     }
     
     $subjectPassword = stripslashes(trim($pw));
     if (preg_match ('%^[A-za-z0-9\.\' \-!_&@$~]{4,20}$%', $subjectPassword)) {
         $password = escape_data($subjectPassword);
+        echo "4.1-";
     } else {
         $passedRegex = FALSE;
-        header("Location: newUser.php?char");
-        exit();
+       // header("Location: newUser.php?char");
+       echo "4.1-";
     }
     
     $subjectPasswordm = stripslashes(trim($pwm));
     if (preg_match ('%^[A-za-z0-9\.\' \-!_&@$~]{4,20}$%', $subjectPasswordm)) {
         $passwordm = escape_data($subjectPasswordm);
+        echo "5.1-";
     } else {
         $passedRegex = FALSE;
-        header("Location: newUser.php?char");
-        exit();
+        //eader("Location: newUser.php?char");
+        echo "5.2-";
     }
     
     $subjectEmail = stripslashes(trim($em));
     if (preg_match ('%^[A-za-z0-9\.\' \-!_&@.$~]{4,20}$%', $subjectEmail)) {
         $email = escape_data($subjectEmail);
+        echo "6.1-";
     } else {
         $passedRegex = FALSE;
-        header("Location: newUser.php?char");
-        exit();
+       // header("Location: newUser.php?char");
+        echo "6.2-";
     }
 
     /*
@@ -100,14 +109,51 @@
      */
      
    if($passedRegex){
+       //---------------------------------------------------
+        $query = "SELECT * FROM users WHERE username = '$username'";   
+        
+        /*
+         * mysql_query() was chosen over the other connection functions as it only allows one query to be sent to the DB
+         * if a second query was introduced via SLQ injection the second query would not exacute 
+         */
+         
+        $result = mysql_query($query); 
+        $numRows = mysql_num_rows($result);
+        
+        /*
+         * Before each user can set up account, there chosen username is checked against the DB to ensure that it is unique, so the username becomes a unique identifier
+         * Because of this a username query should only have one row effected
+         * If more than 1 row is effected that is a indication that SQL could have been injected into query to the DB
+         * So we create a security log by calling "/log/log.php" --- notes on this script in file
+         * this recored all the current server info, client info and what text was entered into the input fields
+         * this can then be reviewed in detail to see it was a potential attacker and if we want to blacklist the IP from the server
+         */
+         
+        if($numRows > 1){
+            //logs a security file
+            include("../logs/logsMail.php");
+            //closed the sql connection
+            mysql_close($connection);
+            //redirects user index
+            header("Location: ../newUser.php?error");
+            
+        }else{
+            while ($row = mysql_fetch_assoc($result)) {
+                header("Location: ../newUser.php?userE");
+                
+            }
+        }
+       //-------------------------------------------------
+       
+        echo "passedRegex(sql added file wrote)-";
         $conn = new mysqli(HOST, USER, PASS, DB);
         $sql = "INSERT INTO users (username, password, email)
         VALUES ('$username', '$userpasswordhashed','$email')";
         
         if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully <br> user: ".$username."<br>pass: ".$userpasswordhashed;
+           // echo "New record created successfully <br> user: ".$username."<br>pass: ".$userpasswordhashed;
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+           // echo "Error: " . $sql . "<br>" . $conn->error;
         }
         $conn->close();
         
@@ -151,7 +197,7 @@
         end;
         
         //user then directed to their new profile
-        header("Location: ../profiles/".$username.".php");
+        //header("Location: ../profiles/".$username.".php");
     
    }else{
     
@@ -164,9 +210,13 @@
      * we then redirect the user to index.php
      */
      
-     include("../logs/logs.php");
-     header("Location: newUser.php?error");
+     //include("../logs/logs.php");
+     //header("Location: newUser.php?error");
+     echo "FAILEDRegex(log)-";
     }   
+   
+   
+   echo "fin";
             
 ?>
     

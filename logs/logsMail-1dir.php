@@ -2,19 +2,20 @@
 <?php
  
  /*
- * This script is run anytime we get unexpected results to the server from user data should been sanitized from the JS
- * as unexpected results after the data sanitization stage are an indicator that someone has been able to get nefarious code past javascript validation
+ * This script is run anytime we get unexpected results in SQL query’s after user data has been sanitized 
+ * as unexpected results after the data sanitization stage are an indicator that someone has been able to get nefarious code past that stage and into the query
  * It records all of the $_SERVER[VAR]'s available with the php library
  * It saves all of this server and client information
  * It also records the text entered into any on the input fields in the browser so as it can be reviewed
- * and rights them all to a file which is saved under a file name of the current date and time the -regex in the logs directory
+ * and rights them all to a file which is saved under a file name of the current date and time in the logs directory
+ * As the intruder has made it past all validation the script emails a copy of the file to the pixly mailbox
  * A administrator can the decide if it is a error or attacker and blacklist that IP from the server
  */
 
     $d = date('Y-m-d H:i:s');
-    $myfile = fopen( "../logs/".$d."-regex.php", "w") or die("Unable to open file!");
-    $txt = "\n" .
-       "Date: " . $d ."\n".
+    $myfile = fopen( "logs/".$d."-sql.php", "w") or die("Unable to open file!");
+    $txt = " 
+        Date: " . $d ."\n".
         'PHP_SELF: ' . $_SERVER['PHP_SELF'] . "\n" .
         'argv: ' . $_SERVER['argv'] . "\n" . 
         'argc: ' . $_SERVER['argc'] . "\n" . 
@@ -63,5 +64,10 @@
     fwrite($myfile, $txt);
     fclose($myfile);
     end;
+
+    //Emails a copy of the security incedent to the pixly team
+    $to = "info.pixly@gmail.com";
+    $subject = "Security incident ".$d;
+    mail($to,$subject,$txt);
 
 ?>

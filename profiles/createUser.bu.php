@@ -100,6 +100,7 @@
      */
      
    if($passedRegex){
+        
         $conn = new mysqli(HOST, USER, PASS, DB);
         $sql = "INSERT INTO users (username, password, email)
         VALUES ('$username', '$userpasswordhashed','$email')";
@@ -152,8 +153,8 @@
         
         //user then directed to their new profile
         header("Location: ../profiles/".$username.".php");
-    
-   }else{
+  //      }
+   }else{//end of sql ----------------------------
     
     /*
      * the regex on the clientside in JavaScript is the same as the regex on the serverside in PHP

@@ -1,6 +1,20 @@
  <?php
-    include('connect.php');
+ 
     session_start();
+    include('connect.php');
+ 
+    //boolean variable used to trigger the SQL query 
+    $passedRegex = TRUE;
+    
+    /*
+     * the "required" class is part of all of the inputs, so the form will not submit without input data
+     * If we get input without data its a indication that the HTML on the client side has been altered for we log the error and exit the login script
+     * by changing $passedRegex to false, which will not let the connection to the DB open
+     */
+     
+    if(empty($_POST['username']) || empty($_POST['password'])){
+        $passedRegex = FALSE;
+    }
     
     /*
      *  --Regular Expressions(Regex) are used to check for characters that we dont want entered or that we would not expect to be entered into forms --
@@ -9,44 +23,43 @@
      *  We use preg_match() to search the text, while validating it using regular expressions
      *  The text is then run through the the escape_data() function *notes in includes/connect.php
      */
- 
-    $passedRegex = TRUE;
+     
     $subjectUsername = stripslashes(trim($_POST['username']));
-    if (preg_match ('%^[A-Za-z0-9\.\' \-]{2,20}$%',$subjectUsername)) {
+    if (preg_match ('%^[A-Za-z0-9\.\'\-!_]{4,20}$%',$subjectUsername)) {
         $formusername = escape_data($subjectUsername);
     } else {
         //If criteria is not met $passedRegex is set to false so the SQL will not be sent to the SQL server
         $passedRegex = FALSE;
-        echo '<p><font color="red" size="+1">Please enter username!</font></p>';
+        header("Location: ../failedLogin.php?char");
     }
     
     $subjectPassword = stripslashes(trim($_POST['password']));
-    if (preg_match ('%^[A-za-z0-9]{3,20}$%', $subjectPassword)) {
+    if (preg_match ('%^[A-Za-z0-9\.\'\-!_]{4,20}$%',$subjectPassword)) {
         $formpassword = escape_data($subjectPassword);
-        
         
     } else {
         $passedRegex = FALSE;
-        echo '<p><font color="red" size="+1">Please enter a valid password!</font></p>';
+        header("Location: ../failedLogin.php?char");
     }
     
-    /*
-     * as we are using phps password hash we just check for the username, so we can pull the pass word hash from the DB to compair
-     */
-    $query = "SELECT * FROM users WHERE username = '$formusername'"; 
-    
-
-
     /* 
      * Only if the details pass the reggular expressions, $passedRegex remains TRUE and the connection to the DB is run,
      * The sanitised info is then aloud to be sent to the DB in a query
      */
+     
     if($passedRegex){
+
+        /*
+         * as we are using php's password hash we just check for the username, so we can pull the pass word hash from the DB to compair
+         */
+         
+        $query = "SELECT * FROM users WHERE username = '$formusername'";   
         
         /*
          * mysql_query() was chosen over the other connection functions as itonly allows one query to be sent to the DB
          * if a second query was introduced via SLQ injection the second query would not exacute 
          */
+         
         $result = mysql_query($query); 
         $numRows = mysql_num_rows($result);
         
@@ -59,13 +72,13 @@
          * this can then be reviewed in detail to see it was a potential attacker and if we want to blacklist the IP from the server
          */
          
-        if($numRows < 1){
+        if($numRows > 1){
             //logs a security file
-            include("../logs/logs.php");
+            include("../logs/logsMail.php");
             //closed the sql connection
             mysql_close($connection);
             //redirects user index
-            header("Location: ../index.php");
+            header("Location: ../failedLogin.php?error");
             
         }else{
             while ($row = mysql_fetch_assoc($result)) {
@@ -76,11 +89,11 @@
                     $_SESSION['user']=$dbUsername;
                     header("Location: ../index.php");
                 }else{
-                    echo "nope";
+                    header("Location: ../failedLogin.php?error");
                 }
             }
         }
-    //if $passedRegex is false    
+    //if $passedRegex is false .ie if we get any unexpected data from the user   
     }else{
         
         /*
@@ -91,8 +104,9 @@
          * we run log.php which records user input, the server and client data and notifies info.pixly
          * we then redirect the user to index.php
          */
+         
          include("../logs/logs.php");
-         header("Location: ../index.php");
+         header("Location: ../failedLogin.php?error");
     }
 ?>  
     

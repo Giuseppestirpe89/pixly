@@ -1,10 +1,15 @@
 <?php
+
+    //session_start will need to be on every page so we include it here as connect.php is included in all pages
+    session_start();
+    //http://blog.teamtreehouse.com/how-to-create-bulletproof-sessions
+    
     //ref: http://www.newthinktank.com/2011/01/php-security/
     
-    /* Slug page
+    /* 
      *  DB details are defined as constants rather than variables, to stop values from being altered.
      */
-
+    
     define("HOST", "dublinscoffee.ie");
     define("USER", "dubli653_dib");
     define("PASS", "0u.ipTVc)zpq");
@@ -20,11 +25,6 @@
      *  https://www.owasp.org/index.php/PHP_Configuration_Cheat_Sheet
      */
      
-    //session_start will need to be on every page so we include it here as connect.php is included in all pages
-    session_start();
-    //http://blog.teamtreehouse.com/how-to-create-bulletproof-sessions
-
-    
     /*
      * mysql_query() was chosen over the other connection functions as it only allows one query to be sent to the DB
      * if a second query was introduced via SLQ injection the second query would not exacute 
@@ -34,6 +34,9 @@
     if (!$connection) {
         //faild connections are exited and a non discript error is echo'd to the user
         trigger_error("Could not reach database!<br/>");
+        
+        //logs a incedent and notfies info.pixly of error
+        include("logs/logsMail-1dir.php");
         exit();
     }
     
@@ -41,9 +44,11 @@
     if (!$db_selected) {
         //faild connections are exited and a non discript error is echo'd to the user
         trigger_error("Could not reach database!<br/>");
+        
+        //logs a incedent and notfies info.pixly of error
+        include("logs/logsMail-1dir.php");
         exit();
     }
-    
     
     /*
      *  --escape_data function strips text that is being sent to the DB of harmful tags and characters --

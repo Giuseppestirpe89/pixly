@@ -20,9 +20,11 @@
                     <li>
                         <a class="page-scroll" href="events.php">Events</a>
                     </li>
+                    <?php  if($_SESSION['user']) { ?>
                     <li>
                         <a class="page-scroll" href="admin.php">Admin</a>
                     </li>
+                    <?php  } ?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
