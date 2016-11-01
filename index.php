@@ -98,8 +98,8 @@
                     </div>
                 </div> <br /> <br />
                 <!--map id used for the function called in head.php-->
-                <div id="map" style="width:250px%;height:400px"></div>
-                <br />
+                <div id="map" style="width:650px% ; height:650px"></div>
+                <br /> <br />
             </div>
  
             <!-- Footer section -->
