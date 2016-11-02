@@ -27,7 +27,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Feautured Events</h1>
+                        <h1>Pixly &copy;</h1>
+                        <h2> Events</h2>
                     </div>
                 </div>
             </div>
@@ -35,6 +36,9 @@
             <div id="thumbnail-slider">
                 <div class="inner">
                     <ul>
+                        <li>
+                            <a class="thumb" href="img/1.jpg"></a>
+                        </li>   
                         <li>
                             <a class="thumb" href="img/2.jpg"></a>
                         </li>
@@ -67,6 +71,15 @@
                         </li>
                         <li>
                             <a class="thumb" href="img/12.jpg"></a>
+                        </li>
+                          <li>
+                            <a class="thumb" href="img/13.jpg"></a>
+                        </li>
+                          <li>
+                            <a class="thumb" href="img/14.jpg"></a>
+                        </li>
+                          <li>
+                            <a class="thumb" href="img/15.jpg"></a>
                         </li>
                     </ul>
                 </div>

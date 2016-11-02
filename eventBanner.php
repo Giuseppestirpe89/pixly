@@ -23,6 +23,8 @@
      * The if generates the correct number of these divs 1,2 or 3 slides to suit the number of images, between 1-4, 5-8 or 9+
      * Only the top 12 liked photos are shown in the preview slides
      * Besides bringing the best contect to front it also lightins the load on the browser by not pulling up 1000s of images
+     
+     PICTURE AT THE EVENT PAGE ARE ALL OF THEM SIZE 1024 X 682 FOR BETTER VISIBILITY
      */
         if($row['numOfPhotos'] <= 4){
 ?>
