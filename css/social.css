@@ -68,7 +68,7 @@
 
 @media (max-width: 480px) {
     .btn-group {
-        display: block !important;
+        
         float: none !important;
         width: 100% !important;
         max-width: 100% !important;
