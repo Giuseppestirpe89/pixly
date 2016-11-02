@@ -68,13 +68,13 @@
 
 @media (max-width: 480px) {
     .btn-group {
-        margin-top:1775px;
-       
+        margin-top: 75px;
         float: none !important;
         width: 100% !important;
         max-width: 100% !important;
     }
 }
+
 @media (max-width: 600px) {
     .btn-nav .glyphicon {
         
@@ -86,8 +86,6 @@
 font-size: 5em;
 padding-top: 25px;
 }
-
-
 
 
 .mapArea{

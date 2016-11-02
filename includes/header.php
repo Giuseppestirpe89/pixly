@@ -40,9 +40,6 @@
 <!--END OF LOGIN-->
 
 
-
-
-
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -66,9 +63,6 @@
                     <a class="page-scroll" href="#events">Events</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#location">Location</a>
-                </li>
-                <li>
                     <a class="page-scroll" href="contact.php">Contact</a>
                 </li>
                 <?php  if($_SESSION['user']) { ?>
@@ -79,7 +73,6 @@
                     <a class="page-scroll" href="includes/killSession.php">Logout <?php echo $_SESSION['user'];?></a>
                 </li>
                 <?php  } ?>
-
 
             </ul>
             <ul class="nav navbar-nav navbar-right">

@@ -13,6 +13,38 @@
     <link href="js/thumbnail-slider.css" rel="stylesheet" type="text/css" />
     <script src="js/thumbnail-slider.js" type="text/javascript"></script>
     <title> Pixly &copy; </title>
+
+    <!--google apis for the map -->
+    <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+    <!--javascript to get map id and dispaly on contact section -->
+    <script type="text/javascript">
+        // When the window has finished loading create our google map below
+        google.maps.event.addDomListener(window, 'load', init);
+
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var mapOptions = {
+                // How zoomed in you want the map to start at (always required)
+                zoom: 14,
+
+                // The latitude and longitude to center the map (always required)
+                center: new google.maps.LatLng(53.3470497, -6.2444561), // Dublin
+                scrollwheel: false,
+            };
+            // Get the HTML DOM element that will contain your map 
+            // We are using a div with id="map" seen below in the <body>
+            var mapElement = document.getElementById('map');
+            // Create the Google Map using our element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+            // Let's also add a marker 
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(53.3486893, -6.2453144),
+                map: map,
+                title: 'NCI'
+            });
+        }
+    </script>
     <!-- Bootstrap Core CSS -->
     <script type="text/javascript" src="js/jquery.placeholder.js"></script>
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -25,7 +57,7 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <?php include("includes/header.php");?>
- <br /><br />  <br /><br /> 
+    <br /><br /> <br /><br />
     <!-- Services Section -->
     <section id="about" class="services-section">
         <div class="container">
@@ -61,7 +93,10 @@
                                     <ul class="social-content">
                                         <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
                                         <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
-                                        <li><a href="http://www.facebook.com" target="_blank"<i class="fa fa-facebook fa-fw"></i></a></li>
+                                        <li>
+                                            <a href="http://www.facebook.com" target="_blank" <i class="fa fa-facebook fa-fw"></i>
+                                            </a>
+                                        </li>
                                         <li><a href="http://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a></li>
                                     </ul>
                                 </div>
@@ -78,9 +113,12 @@
                                 <div class="details">
                                     <p>Giuseepe like designing, creating and coding. If he has an idea in mind and it can be coded he will deliver.</p>
                                     <ul class="social-content">
-                                       <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
+                                        <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
                                         <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
-                                        <li><a href="http://www.facebook.com" target="_blank"<i class="fa fa-facebook fa-fw"></i></a></li>
+                                        <li>
+                                            <a href="http://www.facebook.com" target="_blank" <i class="fa fa-facebook fa-fw"></i>
+                                            </a>
+                                        </li>
                                         <li><a href="http://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a></li>
                                     </ul>
                                 </div>
@@ -99,13 +137,16 @@
                                     <ul class="social-content">
                                         <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
                                         <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
-                                        <li><a href="http://www.facebook.com" target="_blank"<i class="fa fa-facebook fa-fw"></i></a></li>
+                                        <li>
+                                            <a href="http://www.facebook.com" target="_blank" <i class="fa fa-facebook fa-fw"></i>
+                                            </a>
+                                        </li>
                                         <li><a href="http://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                         <div class="row member-content right">
+                        <div class="row member-content right">
                             <div class="col-sm-3 col-sm-push-8 member-thumb">
                                 <img class="img-responsive img-center img-thumbnail img-circle" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
                                 <h4>Patrick King</h4>
@@ -117,35 +158,51 @@
                                     <ul class="social-content">
                                         <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
                                         <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
-                                        <li><a href="http://www.facebook.com" target="_blank"<i class="fa fa-facebook fa-fw"></i></a></li>
+                                        <li>
+                                            <a href="http://www.facebook.com" target="_blank" <i class="fa fa-facebook fa-fw"></i>
+                                            </a>
+                                        </li>
                                         <li><a href="http://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        </ <!-- //end row -->
+                         <!-- //end row memebr content right-->
                     </div>
-                    
+                     <!-- //end container bootstrap snippet -->
                 </div>
+                 <!-- //end container content -->
             </div>
-            
+             <!-- //end row -->
     </section>
-    <br /> <br /> <br />
-        
-        <section id="footer" class="footer-section">
- 
-            <!-- Footer section -->
-            <?php
+    <!-- Location Section -->
+    <section id="location" class="location-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Location</h1>
+                </div>
+            </div> <br /> <br />
+            <!--map id used for the function called in head.php-->
+            <div id="map" style="width:650px% ; height:650px"></div>
+            <br /> <br />
+        </div>
+    </section>
+    <!-- Footer Section -->
+    <section id="footer" class="footer-section">
+
+        <!-- Footer section -->
+        <?php
                 include("includes/footer.php");
             ?>
-        </section>
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
-        <!-- Scrolling Nav JavaScript -->
-        <script src="js/jquery.easing.min.js"></script>
-        <script src="js/scrolling-nav.js"></script>
+    </section>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/scrolling-nav.js"></script>
 </body>
 
 </html>

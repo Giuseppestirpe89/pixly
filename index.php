@@ -28,7 +28,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1>Pixly &copy;</h1>
-                        <h2> Events</h2>
+                        <h2>Best Events</h2>
                     </div>
                 </div>
             </div>
@@ -102,19 +102,6 @@
             ?>
         </section>
         
-        <!-- Contact Section -->
-        <section id="location" class="location-section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1>Location</h1>
-                    </div>
-                </div> <br /> <br />
-                <!--map id used for the function called in head.php-->
-                <div id="map" style="width:650px% ; height:650px"></div>
-                <br /> <br />
-            </div>
- 
             <!-- Footer section -->
             <?php
                 include("includes/footer.php");
