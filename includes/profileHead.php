@@ -17,7 +17,7 @@
             margin: auto
         }
     </style>
-    <title> Pixly &copy; </title>
+    <link href="css/prof.css" rel="stylesheet">
     <!-- Bootstrap Core CSS -->
     <script type="text/javascript" src="js/jquery.placeholder.js"></script>
     <link href="../css/bootstrap.min.css" rel="stylesheet">

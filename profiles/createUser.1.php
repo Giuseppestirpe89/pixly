@@ -189,7 +189,8 @@
             <html>
                 <head>
                     <?php
-                    include('../includes/profileHead.php');?>
+                    include('../includes/profileHead.php');
+                    ?>
                 </head>
                 <body>
                     <?php
