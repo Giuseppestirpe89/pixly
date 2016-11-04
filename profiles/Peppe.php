@@ -94,14 +94,11 @@
 
                                     <h2>john doe</h2>
                                     <p>
-                                        <strong>Jonnie Spratley</strong> <a href="#">http://info@you.google</a>
+                                        <strong>John Doe</strong> <a href="#">http://info@you.google</a>
                                     </p>
                                 </div>
                                 <div class="span6">
                                     <ul class="inline user-counts-list">
-                                        <li>Photos <span class="count">100</span></li>
-                                        <li>Followers <span class="count">50</span></li>
-                                        <li>Following <span class="count">130</span></li>
                                     </ul>
                                 </div>
                             </div>
