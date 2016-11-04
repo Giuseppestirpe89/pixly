@@ -17,7 +17,7 @@
     <br><br><br>
     <div class="container">
         <div class="row" >
-            <form class="form-signin" action='createUser.1.php' method='post'>
+            <form class="form-signin" action='createUser.php' method='post'>
                 <hr class="colorgraph">
                 <div class="form-group">
                     <h2 class="form-signin-heading">Please create an account</h2>
