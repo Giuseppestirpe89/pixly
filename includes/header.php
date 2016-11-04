@@ -50,7 +50,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-            <a class="navbar-brand page-scroll" href="index.php">Menu</a>
+            <a class="fa fa-home navbar-brand page-scroll" href="index.php"> Menu</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
