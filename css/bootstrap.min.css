@@ -5092,8 +5092,8 @@ textarea.input-group-sm>.input-group-btn>.btn {
 .container-fluid>.navbar-header,
 .container>.navbar-collapse,
 .container>.navbar-header {
-    margin-right: -15px;
-    margin-left: -15px
+    margin-right: 15px;
+    margin-left: 15px;
 }
 
 @media (min-width:768px) {
@@ -5101,8 +5101,8 @@ textarea.input-group-sm>.input-group-btn>.btn {
     .container-fluid>.navbar-header,
     .container>.navbar-collapse,
     .container>.navbar-header {
-        margin-right: 0;
-        margin-left: 0
+        margin-right: 15px;
+        margin-left: 15px;
     }
 }
 
@@ -5134,7 +5134,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 
 .navbar-fixed-top {
     top: 0;
-    border-width: 0 0 1px
+    border-width: 0 25 1px
 }
 
 .navbar-fixed-bottom {

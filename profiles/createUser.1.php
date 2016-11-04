@@ -185,17 +185,16 @@
             $myfile = fopen($username .".php", "w") or die("Unable to open file!");
             $txt = " 
             <?php session_start(); 
-            include('../includes/connect.php');?>
+            include('../includes/connect.php');
+            ?>
             <html>
                 <head>
                     <?php
-                    include('../includes/profileHead.php');
-                    ?>
+                    include('../includes/profileHead.php');?>
                 </head>
                 <body>
                     <?php
-                    include ('../includes/profileHeader.php');
-                    ?>
+                    include ('../includes/profileHeader.php');?>
                     <br>
                     <br>
                     <br>
@@ -210,6 +209,8 @@
                    ?>
                 </body>
             </html>";
+            
+            
             fwrite($myfile, $txt);
             fclose($myfile);
             end;
