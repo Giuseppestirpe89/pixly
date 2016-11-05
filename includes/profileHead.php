@@ -21,6 +21,25 @@
     <!-- Custom CSS -->
     <link href="../css/scrolling-nav.css" rel="stylesheet">
     <link href="../css/profilepage.css" rel="stylesheet">
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <title>Profile </title>
+    <!-- Bootstrap CSS -->    
+    <link href="../css2/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="../css2/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="../css2/elegant-icons-style.css" rel="stylesheet" />
+    <link href=".//css2/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="../css2/style.css" rel="stylesheet">
+    <link href="../css2/style-responsive.css" rel="stylesheet" />
+    <link href="../css2/profilepage.css" rel="stylesheet" />
     <title> Pixly &copy; </title>
     <!-- Bootstrap Core CSS -->
 

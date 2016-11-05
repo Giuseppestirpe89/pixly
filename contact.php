@@ -149,13 +149,12 @@
                 </div>
             </div> <br /> <br />
             <!--map id used for the function called in head.php-->
-            <div id="map" style="width:650px% ; height:650px"></div>
+            <div id="map" style="width:450px% ; height:450px"></div>
             <br /> <br />
         </div>
     </section>
     <!-- Footer Section -->
     <section id="footer" class="footer-section">
-
         <!-- Footer section -->
         <?php
                 include("includes/footerContact.php");

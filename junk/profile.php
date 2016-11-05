@@ -1,3 +1,7 @@
+<?php
+    
+    include("includes/connect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,7 +25,6 @@
     <link href="css2/style-responsive.css" rel="stylesheet" />
     <link href="css2/profilepage.css" rel="stylesheet" />
   </head>
-
   <body>
   <!-- container section start -->
   <section id="container" class="">
@@ -60,7 +63,7 @@
                               <div class="follow-ava">
                                   <img src="img/profile-avatar.jpg" alt="">
                               </div>
-                              <h6>Administrator</h6>
+                              <h6>Web</h6>
                             </div>
 
                           </div>
@@ -106,16 +109,16 @@
                                                   <p><span>Last Name </span>: Doe</p>
                                               </div>                                              
                                               <div class="bio-row">
-                                                  <p><span>Birthday</span>: 27 August 1987</p>
+                                                  <p><span>Birthday</span>: 27 August 1989</p>
                                               </div>
                                               <div class="bio-row">
-                                                  <p><span>Country </span>: United</p>
+                                                  <p><span>Country </span>: Ireland</p>
                                               </div>
                                               <div class="bio-row">
                                                   <p><span>Occupation </span>: UI Designer</p>
                                               </div>
                                               <div class="bio-row">
-                                                  <p><span>Email </span>:jenifer@mailname.com</p>
+                                                  <p><span>Email </span>:janedoe@mailname.com</p>
                                               </div>
                                               <div class="bio-row">
                                                   <p><span>Mobile </span>: (+6283) 456 789</p>
@@ -202,13 +205,7 @@
     <!--custome script for all page-->
     <script src="js2/scripts.js"></script>
 
-  <script>
-
-      //knob
-      $(".knob").knob();
-
-  </script>
-
+</body>
 
   </body>
 </html>

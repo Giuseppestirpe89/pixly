@@ -16,7 +16,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/social.css" rel="stylesheet">
     <link href="../css/prof.css" rel="stylesheet">
-    <link href="css/members.css" rel="stylesheet">
+    <link href="../css/members.css" rel="stylesheet">
     
     <!-- Custom CSS -->
     <link href="css/scrolling-nav.css" rel="stylesheet">

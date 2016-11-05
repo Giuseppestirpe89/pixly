@@ -48,7 +48,7 @@
             </div>
 
             <!--logo start-->
-            <a href="#" class="logo"> Pixly &copy; <span class="lite"> Admin</span></a>
+            <a href="#" class="logo"> Pixly &copy; <span class="lite"> Admin </span></a>
             <!--logo end-->
 
 
