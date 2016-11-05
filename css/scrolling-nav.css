@@ -84,7 +84,15 @@ of those sections to manage the look and feel of the site. */
 
 @media (max-width: 480px) {
     .location-section {
-        margin-top:1875px;
+        margin-top:1865px;
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+@media (max-width: 480px) {
+    .footer-section {
+        margin-top: -280px;
         float: none !important;
         width: 100% !important;
         max-width: 100% !important;
