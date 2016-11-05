@@ -9,19 +9,18 @@
     <link rel="shortcut icon" href="img/favicon.png">
 
     <title>Pixly admin</title>
-
     <!-- Bootstrap CSS -->    
     <link href="css2/bootstrap.min.css" rel="stylesheet">
     <!-- bootstrap theme -->
     <link href="css2/bootstrap-theme.css" rel="stylesheet">
     <!--external css-->
     <!-- font icon -->
-    <link href="css2/elegant-icons-style.css" rel="stylesheet" />
-    <link href="css2/font-awesome.min.css" rel="stylesheet" />    
+    <link href="../css2/elegant-icons-style.css" rel="stylesheet" />
+    <link href="../css2/font-awesome.min.css" rel="stylesheet" />    
     <!-- Custom styles -->
-    <link href="css2/style.css" rel="stylesheet">
+    <link href="../css2/style.css" rel="stylesheet">
     <link href="../css/social.css" rel="stylesheet">
-    <link href="css2/style-responsive.css" rel="stylesheet" />
+    <link href="./css2/style-responsive.css" rel="stylesheet" />
         <!-- javascript -->
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/Chart.min.js"></script>
@@ -49,7 +48,7 @@
             </div>
 
             <!--logo start-->
-            <a href="#" class="logo"> Pixly  &copy; <span class="lite"> Admin</span></a>
+            <a href="#" class="logo"> Pixly &copy; <span class="lite"> Admin</span></a>
             <!--logo end-->
 
 
@@ -63,8 +62,8 @@
 				<div class="col-lg-12">
 					<h3 class="page-header"><i class="icon_piechart"></i> Stats</h3>
 					<ol class="breadcrumb">
-						<li><i class="fa fa-home"></i><a href=index.php>Menu</a></li>
-						<li><i class="icon_piechart"></i>Charts</li>
+						<li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
+						<li><i class="icon_piechart"></i>Chart</li>
 						
 					</ol>
 				</div>
