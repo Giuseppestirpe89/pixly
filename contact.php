@@ -1,22 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
 <?php
     
     include("includes/connect.php");
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <?php
+        <?php
             include("includes/head.php");
         ?>
+    <!-- Bootstrap Core CSS -->
+    <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/footerContact.css" rel="stylesheet">
+    <link href="css/members.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/scrolling-nav.css" rel="stylesheet">
 </head>
 <!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
 
-    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-    
-        <?php
-            include("includes/header.php");
-        ?>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <?php include("includes/header.php");?>
     <br /><br /> <br /><br />
     <!-- Services Section -->
     <section id="about" class="services-section">
@@ -153,7 +158,7 @@
 
         <!-- Footer section -->
         <?php
-                include("includes/footer.php");
+                include("includes/footerContact.php");
             ?>
     </section>
     <!-- jQuery -->
