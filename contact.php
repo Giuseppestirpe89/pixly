@@ -140,19 +140,7 @@
             </div>
              <!-- //end row -->
     </section>
-    <!-- Location Section -->
-    <section id="location" class="location-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Location</h1>
-                </div>
-            </div> <br /> <br />
-            <!--map id used for the function called in head.php-->
-            <div id="map" style="width:450px% ; height:450px"></div>
-            <br /> <br />
-        </div>
-    </section>
+
     <!-- Footer Section -->
     <section id="footer" class="footer-section">
         <!-- Footer section -->

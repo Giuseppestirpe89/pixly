@@ -68,7 +68,6 @@
 
 @media (max-width: 480px) {
     .btn-group {
-        
         float: none !important;
         width: 100% !important;
         max-width: 100% !important;
@@ -77,11 +76,11 @@
 
 @media (max-width: 600px) {
     .btn-nav .glyphicon {
-       
         padding-top: 12px;
         font-size: 26px;
     }
 }
+
 .fa-5x {
 font-size: 5em;
 padding-top: 25px;
