@@ -195,15 +195,12 @@
                 <body>
                     <?php
                     include ('../includes/profileHeader.php');?>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <h1>hi user!</h1>
+                    
+                    
+                     <?php
+                    include ('../includes/container.php');?>
+              
+                    
                     <?php
                     include ('../includes/profileFooter.php');
                    ?>
