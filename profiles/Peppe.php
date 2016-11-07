@@ -9,7 +9,7 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <?php
-            include("../includes/header.php");
+            include("../includes/profileHeader.php");
         ?>
         <section id="container" class="">
             <!--header start-->
@@ -33,11 +33,11 @@
                             <div class="profile-widget profile-widget-info">
                                 <div class="panel-body">
                                     <div class="col-lg-2 col-sm-2">
-                                        <h4>Jane Doe </h4>
+                                        <h4>Peppe </h4>
                                         <div class="follow-ava">
-                                            <img src="../img/profile-avatar.jpg" alt="">
+                                            <img src="../img/profile-avatar2.jpg" alt="">
                                         </div>
-                                        <h6>Web</h6>
+                                        <h6>Web Designer</h6>
                                     </div>
 
                                 </div>
@@ -50,47 +50,48 @@
                             <section class="panel">
                                 <header class="panel-heading tab-bg-info">
                                     <ul class="nav nav-tabs">
-                                        <li>
+                                        <li class="active">
                                             <a data-toggle="tab" href="#profile">
                                                 <i class="icon-user"></i> Profile
                                             </a>
                                         </li>
                                         <li class="">
                                             <a data-toggle="tab" href="#edit-profile">
-                                                <i class="icon-envelope"></i> Picture Collection
+                                                <i class="icon-envelope"></i> Pictures Collection
                                             </a>
                                         </li>
                                     </ul>
                                 </header>
                                 <div class="panel-body">
                                     <div class="tab-content">
-
+                                        
                                         <!-- profile -->
-                                        <div id="profile" class="tab-pane">
+                                        <div id="profile" class="tab-pane active">
                                             <section class="panel">
                                                 <div class="bio-graph-heading">
-                                                    Hello I’m Jane Doe, a leading expert in interactive and creative design specializing in the mobile medium. My graduation from Massey University with a Bachelor of Design majoring in visual communication.
+                                                    Lorem ipsum dolor sit amet, in soluta senserit appellantur nec, pro graece percipitur at, ei veri repudiare conclusionemque qui. Oportere salutandi democritum pro te. Cum nulla pertinax intellegat ea. Vis in movet nostrud contentiones,
+                        vix ex n
                                                 </div>
                                                 <div class="panel-body bio-graph-info">
                                                     <h1>Bio Graph</h1>
                                                     <div class="row">
                                                         <div class="bio-row">
-                                                            <p><span>First Name </span>: Jane </p>
+                                                            <p><span>First Name </span>: Peppe </p>
                                                         </div>
                                                         <div class="bio-row">
-                                                            <p><span>Last Name </span>: Doe</p>
+                                                            <p><span>Last Name </span>: Roni</p>
                                                         </div>
                                                         <div class="bio-row">
-                                                            <p><span>Birthday</span>: 27 August 1989</p>
+                                                            <p><span>Birthday</span>: 03 January 1989</p>
                                                         </div>
                                                         <div class="bio-row">
                                                             <p><span>Country </span>: Ireland</p>
                                                         </div>
                                                         <div class="bio-row">
-                                                            <p><span>Occupation </span>: UI Designer</p>
+                                                            <p><span>Occupation </span>: Junior UI Designer</p>
                                                         </div>
                                                         <div class="bio-row">
-                                                            <p><span>Email </span>:janedoe@mailname.com</p>
+                                                            <p><span>Email </span>:pepperoni@mailname.com</p>
                                                         </div>
                                                         <div class="bio-row">
                                                             <p><span>Mobile </span>: (+6283) 456 789</p>
@@ -110,40 +111,89 @@
                                         <div id="edit-profile" class="tab-pane">
                                             <section class="panel">
                                                 <div class="panel-body bio-graph-info">
-                                                    <h1> Picture Collection</h1>
+                                                    <h1> Pictures Collection</h1>
                                                     <form class="form-horizontal" role="form">
                                                         <ul id="rig">
                                                             <li>
                                                                 <a class="rig-cell" href="#">
-                                                                    <img class="rig-img" src="../img/user22.png" />
+                                                                    <img class="rig-img" src="../img/1.jpg" />
                                                                     <span class="rig-overlay"></span>
                                                                     <span class="rig-text">Electric</span>
                                                                 </a>
                                                             </li>
                                                             <li>
                                                                 <a class="rig-cell" href="#">
-                                                                    <img class="rig-img" src="../img/user22.png" />
+                                                                    <img class="rig-img" src="../img/2.jpg" />
                                                                     <span class="rig-overlay"></span>
-                                                                    <span class="rig-text">Lorem Ipsum Dolor</span>
+                                                                    <span class="rig-text">Defqon 1</span>
                                                                 </a>
                                                             </li>
                                                             <li>
                                                                 <a class="rig-cell" href="#">
-                                                                    <img class="rig-img" src="../img/user22.png" />
+                                                                    <img class="rig-img" src="../img/3.jpg" />
                                                                     <span class="rig-overlay"></span>
-                                                                    <span class="rig-text">Lorem Ipsum Dolor</span>
+                                                                    <span class="rig-text">Mysteriland</span>
                                                                 </a>
                                                             </li>
                                                             <li>
                                                                 <a class="rig-cell" href="#">
-                                                                    <img class="rig-img" src="../img/user22.png" />
+                                                                    <img class="rig-img" src="../img/4.jpg" />
                                                                     <span class="rig-overlay"></span>
-                                                                    <span class="rig-text">Lorem Ipsum Dolor</span>
+                                                                    <span class="rig-text">Bloomberg</span>
                                                                 </a>
                                                             </li>
                                                             <li>
                                                                 <a class="rig-cell" href="#">
-                                                                    <img class="rig-img" src="../img/user22.png" />
+                                                                    <img class="rig-img" src="../img/5.jpg" />
+                                                                    <span class="rig-overlay"></span>
+                                                                    <span class="rig-text">Dominator</span>
+                                                                </a>
+                                                            </li>
+                                                             <li>
+                                                                <a class="rig-cell" href="#">
+                                                                    <img class="rig-img" src="../img/6.jpg" />
+                                                                    <span class="rig-overlay"></span>
+                                                                    <span class="rig-text">Lorem Ipsum Dolor</span>
+                                                                </a>
+                                                            </li>
+                                                              <li>
+                                                                <a class="rig-cell" href="#">
+                                                                    <img class="rig-img" src="../img/7.jpg" />
+                                                                    <span class="rig-overlay"></span>
+                                                                    <span class="rig-text">Lorem Ipsum Dolor</span>
+                                                                </a>
+                                                            </li>
+                                                              <li>
+                                                                <a class="rig-cell" href="#">
+                                                                    <img class="rig-img" src="../img/8.jpg" />
+                                                                    <span class="rig-overlay"></span>
+                                                                    <span class="rig-text">Lorem Ipsum Dolor</span>
+                                                                </a>
+                                                            </li>
+                                                              <li>
+                                                                <a class="rig-cell" href="#">
+                                                                    <img class="rig-img" src="../img/9.jpg" />
+                                                                    <span class="rig-overlay"></span>
+                                                                    <span class="rig-text">Lorem Ipsum Dolor</span>
+                                                                </a>
+                                                            </li>
+                                                              <li>
+                                                                <a class="rig-cell" href="#">
+                                                                    <img class="rig-img" src="../img/6.jpg" />
+                                                                    <span class="rig-overlay"></span>
+                                                                    <span class="rig-text">Lorem Ipsum Dolor</span>
+                                                                </a>
+                                                            </li>
+                                                              <li>
+                                                                <a class="rig-cell" href="#">
+                                                                    <img class="rig-img" src="../img/5.jpg" />
+                                                                    <span class="rig-overlay"></span>
+                                                                    <span class="rig-text">Lorem Ipsum Dolor</span>
+                                                                </a>
+                                                            </li>
+                                                              <li>
+                                                                <a class="rig-cell" href="#">
+                                                                    <img class="rig-img" src="../img/11.jpg" />
                                                                     <span class="rig-overlay"></span>
                                                                     <span class="rig-text">Lorem Ipsum Dolor</span>
                                                                 </a>
@@ -159,7 +209,6 @@
                             </section>
                         </div>
                     </div>
-
                     <!-- page end-->
                 </section>
             </section>
@@ -170,7 +219,6 @@
             ?>
         </section>
         </section>
-
         <!--main content end-->
         </section>
         <!-- container section end -->
@@ -185,7 +233,6 @@
         <!--custome script for all page-->
         <script src="js2/scripts.js"></script>
         <!-- Footer section -->
-
 </body>
 
 </html>

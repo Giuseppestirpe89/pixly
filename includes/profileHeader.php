@@ -50,7 +50,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-            <a class="navbar-brand page-scroll" href="../index.php">Menu</a>
+            <a class="fa fa-home navbar-brand page-scroll"  href="../index.php">Menu</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -60,14 +60,14 @@
                     <a class="page-scroll" href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="../index.php#events">Events</a>
+                    <a class="page-scroll" href="#">Events</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="../contact.php">Contact</a>
                 </li>
                 <?php  if($_SESSION['user']) { ?>
                 <li>
-                    <a class="page-scroll" href="admin.php">Admin</a>
+                    <a class="page-scroll" href="../admin.php">Admin</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="../includes/killSession.php">Logout <?php echo $_SESSION['user'];?></a>
