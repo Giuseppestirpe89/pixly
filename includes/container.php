@@ -1,6 +1,5 @@
         <section id="container" class="">
             <!--header start-->
-
             <!--main content start-->
             <section id="main-content">
                 <section class="wrapper">
@@ -8,7 +7,7 @@
                         <div class="col-lg-12">
                             <h3 class="page-header"><i class="fa fa-user-md"></i> Profile</h3>
                             <ol class="breadcrumb">
-                                <li><i class="fa fa-home"></i><a href="../index.php">Home</a></li>
+                                <li><i class="fa fa-home"></i><a href="../index.php"> Home</a></li>
                                 <li><i class="icon_documents_alt"></i>Pages</li>
                                 <li><i class="fa fa-user-md"></i>Profile</li>
                             </ol>
@@ -20,7 +19,7 @@
                             <div class="profile-widget profile-widget-info">
                                 <div class="panel-body">
                                     <div class="col-lg-2 col-sm-2">
-                                        <h4>Peppe </h4>
+                                        <h4> Peppe </h4>
                                         <div class="follow-ava">
                                             <img src="../img/profile-avatar2.jpg" alt="">
                                         </div>

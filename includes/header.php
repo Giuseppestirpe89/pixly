@@ -60,7 +60,7 @@
                     <a class="page-scroll" href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="../events.php">Events</a>
+                    <a class="page-scroll" href="#events">Events</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="contact.php">Contact</a>

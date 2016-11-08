@@ -10,16 +10,12 @@
    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
    <link href="js/thumbnail-slider.css" rel="stylesheet" type="text/css" />
    <link href="css/photos.css" rel="stylesheet" type="text/css" />
-   <link href="js/photos.js" rel="stylesheet" type="text/css" />
    <script src="js/thumbnail-slider.js" type="text/javascript"></script>
-   <title>Pixly </title>
-   <!-- Bootstrap Core CSS -->
+   <title>Pixly &copy; </title>
    <link href="css/bootstrap.min.css" rel="stylesheet">
    <link href="css/social.css" rel="stylesheet">
-   <!-- Custom CSS -->
    <link href="css/scrolling-nav.css" rel="stylesheet">
 </head>
-<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
    <!-- Navigation -->
@@ -32,7 +28,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-            <a class="navbar-brand page-scroll" href="#page-top">Home</a>
+            <a class="fa fa-home navbar-brand page-scroll" href=""> Menu</a>
          </div>
          <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -91,7 +87,6 @@
 
    <!-- jQuery -->
    <script src="js/photos.js"></script>
-
    <!-- Bootstrap Core JavaScript -->
    <script src="js/bootstrap.min.js"></script>
    <!-- Scrolling Nav JavaScript -->
