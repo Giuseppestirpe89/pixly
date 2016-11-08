@@ -18,7 +18,7 @@
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#events">Events</a>
+                        <a class="page-scroll" href="events.php">Events</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#location">Location</a>

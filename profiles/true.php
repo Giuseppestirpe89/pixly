@@ -10,12 +10,15 @@
                 <body>
                     <?php
                     include ('../includes/profileHeader.php');?>
-                    
-                    
-                     <?php
-                    include ('../includes/container.php');?>
-              
-                    
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h1>hi user!</h1>
                     <?php
                     include ('../includes/profileFooter.php');
                    ?>

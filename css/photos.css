@@ -144,7 +144,7 @@ a.button.active {
   transition: transform 0.5s;
 }
 
-#popup{
+.popup{
   margin-top: 20%;
   height: 100px;
 }
