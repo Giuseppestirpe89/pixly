@@ -1,20 +1,19 @@
 <?php
-    
     include("includes/connect.php");
 ?>
 
 <html lang="en">
 <head>
-  <?php
-            include("includes/head.php");
-        ?>
+<?php
+   include("includes/head.php");
+?>
 </head>
 
  <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-        <?php
-            include("includes/header.php");
-        ?>
+  <?php
+      include("includes/header.php");
+  ?>
    <section id="intro" class="intro-section3">
       <div class="container">
          <div class="row">
@@ -37,12 +36,17 @@
                   </div>
                   <a class='button glyphicon glyphicon-plus'></a>
                </section>
+               <br>
             </div>
          </div>
       </div>
-      </div>
+      
    </section>
-
+   <br><br>
+<?php
+    include("includes/footer.php");
+?>
+        
    <!-- jQuery -->
    <script src="js/photos.js"></script>
    <!-- Bootstrap Core JavaScript -->
