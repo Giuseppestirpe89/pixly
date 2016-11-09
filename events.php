@@ -1,5 +1,6 @@
 <?php
     include("includes/connect.php");
+    $url = $_SERVER['REQUEST_URI'];
 ?>
 
    <html lang="en">
@@ -48,11 +49,14 @@
                            </div>
                         </div>
                         <!--<a class='button glyphicon glyphicon-plus'></a>-->
-                     </section>
+                     </section><br><br>
 
 
                      <!-- html for the upload model when clicked-->
-                     <button type="button" class="btn btn-primary btn-circle" id="openUpload"><i class="glyphicon glyphicon-list"></i></button>
+                     <?php if($_SESSION['user'] || strpos($url, 'testtoken')){ ?>
+                     <button type="button" class="btn btn-primary btn-circle" id="openUpload"><i class="glyphicon glyphicon-list"></i></button><br>
+                     <?php } ?>
+                     
                      <div class="modal" id="uploadModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
                         <div class="modal-dialog">
                            <div class="modal-content">
