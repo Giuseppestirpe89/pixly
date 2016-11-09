@@ -19,7 +19,7 @@
                             <div class="profile-widget profile-widget-info">
                                 <div class="panel-body">
                                     <div class="col-lg-2 col-sm-2">
-                                        <h4> Peppe </h4>
+                                        <h4> <?php echo $_SESSION['user'];?></h4>
                                         <div class="follow-ava">
                                             <img src="../img/profile-avatar2.jpg" alt="">
                                         </div>

@@ -1,5 +1,6 @@
 <?php
 //setting header to json
+// this is the connection for the database to pull out data for dispalying the admin page within the charts
 header('Content-Type: application/json');
 
     define("HOST", "dublinscoffee.ie");
