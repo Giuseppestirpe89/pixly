@@ -56,7 +56,7 @@
         $query = "SELECT * FROM users WHERE username = '$formusername'";   
         
         /*
-         * mysql_query() was chosen over the other connection functions as itonly allows one query to be sent to the DB
+         * mysql_query() was chosen over the other connection functions as it only allows one query to be sent to the DB
          * if a second query was introduced via SLQ injection the second query would not exacute 
          */
          
@@ -65,11 +65,12 @@
         
         /*
          * Before each user can set up account, there chosen username is checked against the DB to ensure that it is unique, so the username becomes a unique identifier
-         * Because of this a username query should only have one row effected
+         * Because of this a username query should only have 0 or 1 row effected
          * If more than 1 row is effected that is a indication that SQL could have been injected into query to the DB
-         * So we create a security log by calling "/log/log.php" --- notes on this script in file
+         * So we create a security log by calling "/log/logMail.php" and notifies info.pixly --- notes on this script in file
          * this recored all the current server info, client info and what text was entered into the input fields
          * this can then be reviewed in detail to see it was a potential attacker and if we want to blacklist the IP from the server
+         * the sql connection is closed and the user redirected
          */
          
         if($numRows > 1){
@@ -100,9 +101,9 @@
          * the regex on the clientside in JavaScript is the same as the regex on the serverside in PHP
          * if user input fails the regex on the server side it would mean the regex on the client side may have been altered to allow other charicters through
          * this may be a dilberate move by a attacker to introduce potentialy harmful charicters, scripts or querys to the server side
-         * if if $passedRegex is false we do not open a connection to the DB
-         * we run log.php which records user input, the server and client data and notifies info.pixly
-         * we then redirect the user to index.php
+         * if $passedRegex is false we do not open a connection to the DB
+         * we run log.php which records user input, the server and client data
+         * we then redirect the user to failedLogin.php
          */
          
          include("../logs/logs.php");
