@@ -65,10 +65,14 @@
                 <li>
                     <a class="page-scroll" href="contact.php">Contact</a>
                 </li>
-                <?php  if($_SESSION['user']) { ?>
+                <?php  
+                if($_SESSION['user']) { 
+                            if($_SESSION['premium']=='true') { 
+                ?>
                 <li>
                     <a class="page-scroll" href="admin.php">Admin</a>
                 </li>
+                            <?php } ?>
                 <li>
                     <a class="page-scroll" href="includes/killSession.php">Logout <?php echo $_SESSION['user'];?></a>
                 </li>
