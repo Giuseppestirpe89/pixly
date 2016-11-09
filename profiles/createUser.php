@@ -114,7 +114,7 @@
         $result = mysql_query($query); 
         $numRows = mysql_num_rows($result);
         
-        //variable to see if the username is free or not
+        //variable to mark if the username is free or not
         $UserNameFree = true;
         
         /*
@@ -138,7 +138,7 @@
         }else{
             
             /*
-             * else 1 or 0 rows are effected is the expected result so we check if the user name matches
+             * else 1 or 0 rows are effected is the expected result so we check if the user name matches any existing usernames
              */
             while ($row = mysql_fetch_assoc($result)) {
                 $dbUsername=$row['username'];
@@ -216,7 +216,7 @@
             header("Location: ../profiles/".$username.".php");
         }
         
-   }else{//end of sql ----------------------------
+   }else{
     
     /*
      * the regex on the clientside in JavaScript is the same as the regex on the serverside in PHP

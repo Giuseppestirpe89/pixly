@@ -1,5 +1,10 @@
  <?php
  
+    /* 
+     * ---LoginVal.php----
+     * This page take the posted user details from header.php or profileHeader.php validateds the details and logs the user in by creating a seshion
+     */
+ 
     session_start();
     include('connect.php');
  
@@ -28,7 +33,7 @@
     if (preg_match ('%^[A-Za-z0-9\.\'\-!_]{4,20}$%',$subjectUsername)) {
         $formusername = escape_data($subjectUsername);
     } else {
-        //If criteria is not met $passedRegex is set to false so the SQL will not be sent to the SQL server
+        //If criteria is not met $passedRegex is set to false so the $formusername will not be sent to the SQL server
         $passedRegex = FALSE;
         header("Location: ../failedLogin.php?char");
     }

@@ -2,6 +2,7 @@
 <?php 
     session_start();
     include("../includes/connect.php");
+    //saves url so we can referance it for the appeneded errors from createUser.php
     $url = $_SERVER['REQUEST_URI'];
 ?>
 <html>
@@ -23,6 +24,10 @@
                     <h2 class="form-signin-heading">Please create an account</h2>
                 </div>
                 <?php
+                /*
+                 * in creatUser before we redirect back here we append a error code to the URL
+                 * we read this sp we know why the user has been redirected and display the appropriate error messege
+                 */
                     if (strpos($url, 'pmtc') !== false) {
                         echo " <div class='alert alert-warning'>
                                 Passwords must match.
