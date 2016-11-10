@@ -1,10 +1,8 @@
 <?php
-    
     include("includes/connect.php");
 ?>
   <!DOCTYPE html>
   <html lang="en">
-
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,7 +56,6 @@
                 <ol class="breadcrumb">
                   <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
                   <li><i class="icon_piechart"></i>Chart</li>
-
                 </ol>
               </div>
             </div>
@@ -120,7 +117,6 @@
                         </div>
                       </div>
                       <div class="row">
-
                         <!-- Pie -->
                         <div class="col-lg-6">
                           <section class="panel">
@@ -158,7 +154,6 @@
                 include("includes/footer.php");
             ?>
         </section>
-
         <!-- container section end -->
         <!-- javascripts -->
         <script src="js/jquery.js"></script>
@@ -173,7 +168,5 @@
         <script src="js/chartjs-custom.js"></script>
         <!--custome script for all page-->
         <script src="js/scripts.js"></script>
-
   </body>
-
   </html>

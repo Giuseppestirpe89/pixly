@@ -169,3 +169,20 @@ ol.upload-files-list .upload-file .upload-progress-bar {
 #drop input {
     display:none;
 }
+
+@media (max-width: 480px) {
+.modal-dialog {
+    position: relative;
+    width: 398px !important;
+    margin: 10px;
+}
+}
+
+/*@media (max-width: 600px) {*/
+/*.modal-dialog {*/
+/*    position: relative;*/
+/*    width: 450px !important;*/
+/*    margin: 10px;*/
+/*}*/
+/*}*/
+

@@ -92,13 +92,11 @@
                   </div>
                </div>
             </div>
-
-         </section>
-         <br><br>
          <?php
-    include("includes/footer.php");
-?>
-
+    include("includes/footerContact.php");
+     ?>
+         </section>
+     
             <!-- jQuery -->
             <script src="js/photos.js"></script>
             <!-- Bootstrap Core JavaScript -->
