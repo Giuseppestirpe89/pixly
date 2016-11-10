@@ -1,5 +1,6 @@
 <?php
     include("includes/connect.php");
+    $url = $_SERVER['REQUEST_URI'];
 ?>
 
    <html lang="en">
@@ -23,37 +24,7 @@
    </head>
 
    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
-      <?php
-      include("includes/header.php");
-  ?>
-         <section id="intro" class="intro-section3">
-            <div class="container">
-               <div class="row">
-                  <div class="col-lg-12">
-                     <h1>Electric Picnic 2016</h1>
-
-                     <!-- photos section -->
-                     <section id="photos">
-                        <div class='wrap'>
-                           <div class='content'>
-                              <div class="popup">
-                                 <h2>Add a picture!</h2>
-                                 <form action="../include/upload.php" method="post" enctype="multipart/form-data">
-                                    Select image to upload:
-                                    <input type="file" name="fileToUpload" id="fileToUpload">
-                                    <input type="submit" value="Upload Image" name="submit">
-                                 </form>
-                              </div>
-                           </div>
-                        </div>
-                        <!--<a class='button glyphicon glyphicon-plus'></a>-->
-                     </section>
-
-
-                     <!-- html for the upload model when clicked-->
-                     <button type="button" class="btn btn-primary btn-circle" id="openUpload"><i class="glyphicon glyphicon-list"></i></button>
-                     <div class="modal" id="uploadModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
+                           <div class="modal" id="uploadModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
                         <div class="modal-dialog">
                            <div class="modal-content">
                               <div class="modal-header">
@@ -88,10 +59,57 @@
                            </div>
                         </div>
                      </div>
+
+      <?php
+      include("includes/header.php");
+  ?>
+         <section id="intro" class="intro-section3">
+            <div class="container">
+               <div class="row">
+                  <div class="col-lg-12">
+                     <h1>Electric Picnic 2016</h1>
+
+                     <!-- photos section -->
+                     <section id="photos">
+                        <div class='wrap'>
+                           <div class='content'>
+                              <div class="popup">
+                                 <h2>Add a picture!</h2>
+                                 <form action="../include/upload.php" method="post" enctype="multipart/form-data">
+                                    Select image to upload:
+                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                                    <input type="submit" value="Upload Image" name="submit">
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                        <!--<a class='button glyphicon glyphicon-plus'></a>-->
+                     </section><br><br>
+
+
+                     <!-- html for the upload model when clicked-->
+                     
+                     <!--users can only upload to events id signed in or they have token, otherwise they will have to sign up for a account-->
+                     <?php if($_SESSION['user'] || strpos($url, 'testtoken')){ ?>
+                     <button type="button" class="btn btn-primary btn-circle" id="openUpload"><i class="glyphicon glyphicon-list"></i></button><br>
+                     <?php }else{ ?>
+                     <p>want to uplaod photos! create a account here</p>
+                     <a href="profiles/newUser.php"><button type="button" class="btn btn-primary">Create account</button></a><br>
+                     <?php } ?>
+                     <br>
+                     
+
                      <br>
                   </div>
                </div>
             </div>
+<<<<<<< HEAD
+=======
+
+         </section>
+         <br><br><br><br><br><br><br>
+         <br><br><br><br><br><br><br>
+>>>>>>> 0bf6f2633e052acc49c6049b99f948c2ddb7b62d
          <?php
     include("includes/footerContact.php");
      ?>

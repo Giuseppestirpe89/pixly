@@ -65,8 +65,10 @@
                 <li>
                     <a class="page-scroll" href="contact.php">Contact</a>
                 </li>
-                <?php  
+                <?php
+                //Content only becomes available to users logged in
                 if($_SESSION['user']) { 
+                            //only available to users with premium accounts
                             if($_SESSION['premium']=='true') { 
                 ?>
                 <li>

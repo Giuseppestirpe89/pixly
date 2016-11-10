@@ -93,6 +93,7 @@
                 // here the users password is verified from the originally hashed one from the db
                 if($formusername == $dbUsername && password_verify($formpassword, $dbPassword)){
                     $_SESSION['user']=$dbUsername;
+                    //stores to session if the user is a premium user (gets extra content)
                     $_SESSION['premium']=$row['Premium'];
                     header("Location: ../index.php");
                 }else{
