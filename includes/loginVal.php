@@ -36,6 +36,7 @@
         //If criteria is not met $passedRegex is set to false so the $formusername will not be sent to the SQL server
         $passedRegex = FALSE;
         header("Location: ../failedLogin.php?char");
+        exit();
     }
     
     $subjectPassword = stripslashes(trim($_POST['password']));
@@ -45,6 +46,7 @@
     } else {
         $passedRegex = FALSE;
         header("Location: ../failedLogin.php?char");
+        exit();
     }
     
     /* 
@@ -53,7 +55,7 @@
      */
      
     if($passedRegex){
-
+    
         /*
          * as we are using php's password hash we just check for the username, so we can pull the pass word hash from the DB to compair
          */
@@ -85,7 +87,7 @@
             mysql_close($connection);
             //redirects user index
             header("Location: ../failedLogin.php?error");
-            
+            exit();
         }else{
             while ($row = mysql_fetch_assoc($result)) {
                 $dbUsername=$row['username'];
@@ -96,10 +98,15 @@
                     //stores to session if the user is a premium user (gets extra content)
                     $_SESSION['premium']=$row['Premium'];
                     header("Location: ../index.php");
+                    exit();
+                    
                 }else{
                     header("Location: ../failedLogin.php?error");
+                    exit();
                 }
             }
+            header("Location: ../failedLogin.php?error");
+            exit();
         }
     //if $passedRegex is false .ie if we get any unexpected data from the user   
     }else{

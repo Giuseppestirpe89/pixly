@@ -20,54 +20,54 @@
 
 				<div class="row-fluid">
 					<div class="pricing-table row-fluid text-center">
-						<div class="span4">
+						<div class="span6">
 							<div class="plan">
 								<div class="plan-name">
 									<h2>Free</h2>
-									<p class="muted">Perfect for small budget</p>
+									<p class="muted">Cheaper than chips</p>
 								</div>
 								<div class="plan-price">
 									<b>$0</b> / month
 								</div>
 								<div class="plan-details">
 									<div>
-										<b>Limited</b> Download
+										<b>Unlimited</b> photo uploads
 									</div>
 									<div>
-										<b>Free</b> Browsing
+										<b>Metrics</b> admin page
 									</div>
 									<div>
-										<b>Limited</b> Warranty
+										<b>Events</b> create your own
 									</div>
 								</div>
 								<div class="plan-action">
-									<a href="#" class="btn btn-block btn-large">Choose Plan</a>
+									<a href="profiles/newUser.php?free" class="btn btn-block btn-large">Choose Plan</a>
 								</div>
 							</div>
 						</div>
 
-						<div class="span4">
+						<div class="span6">
 							<div class="plan prefered">
 								<div class="plan-name">
-									<h2>Preemium</h2>
-									<p class="muted">Perfect for medium budget</p>
+									<h2>Premium</h2>
+									<p class="muted">Low cost but high value</p>
 								</div>
 								<div class="plan-price">
 									<b>$39</b> / month
 								</div>
 								<div class="plan-details">
 									<div>
-										<b>Unlimited</b> Download
+										<b>Unlimited</b> photo uploads
 									</div>
 									<div>
-										<b>Free</b> Admin Page
+										<b>Metrics</b> admin page
 									</div>
 									<div>
-										<b>Unlimited</b> Warranty
+										<b>Events</b> create featured events
 									</div>
 								</div>
 								<div class="plan-action">
-									<a href="#" class="btn btn-success btn-block btn-large">Choose Plan</a>
+									<a href="profiles/newUser.php?premium" class="btn btn-success btn-block btn-large">Choose Plan</a>
 								</div>
 							</div>
 						</div>

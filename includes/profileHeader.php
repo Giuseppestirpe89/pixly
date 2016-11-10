@@ -28,7 +28,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-default">Submit</button>
-                    <a href="profiles/newUser.php">
+                    <a href="priceplan.php">
                         <p>Dont have a account?</p>
                     </a>
                 </form>
