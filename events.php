@@ -9,6 +9,10 @@
       <?php
    include("includes/head.php");
 ?>
+
+            <?php
+      include("includes/header.php");
+  ?>
         
         <link href="css/photos2.css" rel="stylesheet" type="text/css" />
  <!--style for butto nupload -->
@@ -26,9 +30,7 @@
    </head>
    <!--conyainer to upload pictures -->
    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-            <?php
-      include("includes/header.php");
-  ?>
+
   
                      <div class="modal" id="uploadModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
                         <div class="modal-dialog">
@@ -43,15 +45,11 @@
                                     <div class="fileupload-buttonbar">
                                        <div>
                                           <h2>Add a picture!</h2>
-
                                           <form action="upload.php" method="post" enctype="multipart/form-data">
-
                                              <input type="file" class="btn btn-success start" name="fileToUpload" id="fileToUpload"> </br>
                                              <p>Select image to upload:</P>
                                              <input type="submit" class="btn btn-warning cancel" value="Upload Image" name="submit">
                                              </form>
-                                             
-                                             
                                        </div>
                                     </div>
                                     <!-- The table listing the files available for upload/download -->
@@ -80,12 +78,6 @@
                         <div class='wrap'>
                            <div class='content'>
                               <div class="popup">
-                                 <!--<h2>Add a picture!</h2>-->
-                                 <!--<form action="../include/upload.php" method="post" enctype="multipart/form-data">-->
-                                 <!--   Select image to upload:-->
-                                 <!--   <input type="file" name="fileToUpload" id="fileToUpload">-->
-                                 <!--   <input type="submit" value="Upload Image" name="submit">-->
-                                 <!--</form>-->
                               </div>
                            </div>
                         </div>
