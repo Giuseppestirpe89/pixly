@@ -9,7 +9,9 @@
       <?php
    include("includes/head.php");
 ?>
-         <link href="css/photos2.css" rel="stylesheet" type="text/css" />
+        
+        <link href="css/photos2.css" rel="stylesheet" type="text/css" />
+ <!--style for butto nupload -->
 <style> 
 .btn-circle {
         width: 10px;
@@ -22,11 +24,15 @@
 </style>
 
    </head>
-
+   <!--conyainer to upload pictures -->
    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-                           <div class="modal" id="uploadModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
+            <?php
+      include("includes/header.php");
+  ?>
+  
+                     <div class="modal" id="uploadModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
                         <div class="modal-dialog">
-                           <div class="modal-content">
+                           <div class="modal-content" style="text-align:center">
                               <div class="modal-header">
                                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                  <h4 class="modal-title" id="myModalLabel">Add new file</h4>
@@ -43,6 +49,9 @@
                                              <input type="file" class="btn btn-success start" name="fileToUpload" id="fileToUpload"> </br>
                                              <p>Select image to upload:</P>
                                              <input type="submit" class="btn btn-warning cancel" value="Upload Image" name="submit">
+                                             </form>
+                                             
+                                             
                                        </div>
                                     </div>
                                     <!-- The table listing the files available for upload/download -->
@@ -60,9 +69,6 @@
                         </div>
                      </div>
 
-      <?php
-      include("includes/header.php");
-  ?>
          <section id="intro" class="intro-section3">
             <div class="container">
                <div class="row">
@@ -74,12 +80,12 @@
                         <div class='wrap'>
                            <div class='content'>
                               <div class="popup">
-                                 <h2>Add a picture!</h2>
-                                 <form action="../include/upload.php" method="post" enctype="multipart/form-data">
-                                    Select image to upload:
-                                    <input type="file" name="fileToUpload" id="fileToUpload">
-                                    <input type="submit" value="Upload Image" name="submit">
-                                 </form>
+                                 <!--<h2>Add a picture!</h2>-->
+                                 <!--<form action="../include/upload.php" method="post" enctype="multipart/form-data">-->
+                                 <!--   Select image to upload:-->
+                                 <!--   <input type="file" name="fileToUpload" id="fileToUpload">-->
+                                 <!--   <input type="submit" value="Upload Image" name="submit">-->
+                                 <!--</form>-->
                               </div>
                            </div>
                         </div>
@@ -103,16 +109,11 @@
                   </div>
                </div>
             </div>
-<<<<<<< HEAD
-=======
-
+                  <?php
+      include("includes/footer.php");
+  ?>
          </section>
-         <br><br><br><br><br><br><br>
-         <br><br><br><br><br><br><br>
->>>>>>> 0bf6f2633e052acc49c6049b99f948c2ddb7b62d
-         <?php
-    include("includes/footerContact.php");
-     ?>
+
          </section>
      
             <!-- jQuery -->

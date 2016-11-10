@@ -18,6 +18,7 @@ ol.upload-files-list {
     border-left: none;
     border-right: none;
     overflow: hidden;
+    
 }
 ol.upload-files-list .upload-file:last-child {
     border-bottom: 1px solid #ddd;
@@ -178,11 +179,4 @@ ol.upload-files-list .upload-file .upload-progress-bar {
 }
 }
 
-/*@media (max-width: 600px) {*/
-/*.modal-dialog {*/
-/*    position: relative;*/
-/*    width: 450px !important;*/
-/*    margin: 10px;*/
-/*}*/
-/*}*/
 
