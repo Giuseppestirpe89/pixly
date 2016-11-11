@@ -99,8 +99,18 @@
                         
                      ?>
                      <!--ref: https://developers.google.com/chart/infographics/docs/qr_codes-->
+                     <a id="downloadLnk" download="YourFileName.jpg">
 			            <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?php echo $qrToken; ?>&choe=UTF-8"/>
-			            
+			            </a>
+			            <script>
+                       var img = document.images[0];
+                       img.onclick = function() {
+                         var url = img.src.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
+                        //  location.href = url;
+                        window.open(url);
+                       };
+                     </script>
+                     			            
                      <br>
                      <br>
                   </div>
