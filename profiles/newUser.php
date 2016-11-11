@@ -68,6 +68,16 @@
                 <div class="form-group input-lg">
                     <input type="email" class="form-control" placeholder="Email" name="email" >
                 </div>
+                <?php
+                /*
+                 * checks url for "free" or "premium" to know what account to pass tp createUsre.php
+                 */
+                if (strpos($url, 'premium') !== false) {
+                    echo "<input name='account' type='hidden' value='premium'/>";
+                }else{
+                    echo "<input name='account' type='hidden' value='free'/> ";                   
+                }
+                ?>
                 <button class="btn btn-small  btn-primary center-block">Create Account</button>
             </form>
         </div>

@@ -32,8 +32,14 @@
      $pw = $_POST['password'];
      $pwm = $_POST['passwordmatch'];
      $em = $_POST['email'];
+     $ac = $_POST['account'];
+     if($ac == "premium"){
+         $ac = "true";
+     }else{
+         $ac = "false";
+     }
      
-    if(empty($un) || empty($pw) || empty($pwm) || empty($em)){
+    if(empty($un) || empty($pw) || empty($pwm) || empty($em) || empty($ac)){
         $passedRegex = FALSE;
         header("Location: newUser.php?tfmt");
         exit();
@@ -77,6 +83,15 @@
     $subjectEmail = stripslashes(trim($em));
     if (preg_match ('%^[A-za-z0-9\.\' \-!_&@.$~]{4,20}$%', $subjectEmail)) {
         $email = escape_data($subjectEmail);
+    } else {
+        $passedRegex = FALSE;
+        header("Location: newUser.php?char");
+        exit();
+    }
+    
+    $acc = stripslashes(trim($ac));
+    if ($acc == "true" || $acc == "false") {
+        $accountType = escape_data($acc);
     } else {
         $passedRegex = FALSE;
         header("Location: newUser.php?char");
@@ -164,8 +179,8 @@
             
             //we then log the user details to the DB
             $conn = new mysqli(HOST, USER, PASS, DB);
-            $sql = "INSERT INTO users (username, password, email)
-            VALUES ('$username', '$userpasswordhashed','$email')";
+            $sql = "INSERT INTO users (username, password, email, Premium)
+            VALUES ('$username', '$userpasswordhashed','$email','$accountType')";
             
             if ($conn->query($sql) === TRUE) {
                 echo "New record created successfully <br> user: ".$username."<br>pass: ".$userpasswordhashed;
@@ -174,8 +189,9 @@
             }
             $conn->close();
             
-            //create a session for the user
+            //create a session for the user and sessions the account type
             $_SESSION['user'] = $username;
+            $_SESSION['premium'] = $accountType;
             
             /*
              * A .php profile page is then created, the contents of a standard profile page are populated to the file

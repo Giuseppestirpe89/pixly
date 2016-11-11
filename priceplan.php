@@ -20,6 +20,9 @@
 
 				<div class="row-fluid">
 					<div class="pricing-table row-fluid text-center">
+						<!--
+							FREE
+						-->
 						<div class="span6">
 							<div class="plan">
 								<div class="plan-name">
@@ -41,11 +44,14 @@
 									</div>
 								</div>
 								<div class="plan-action">
+									<!--appends "free" to the url to be read by newUser.php-->
 									<a href="profiles/newUser.php?free" class="btn btn-block btn-large">Choose Plan</a>
 								</div>
 							</div>
 						</div>
-
+						<!--
+							PREMIUM
+						-->
 						<div class="span6">
 							<div class="plan prefered">
 								<div class="plan-name">
@@ -67,6 +73,8 @@
 									</div>
 								</div>
 								<div class="plan-action">
+									
+									<!--appends "premium" to the url to be read by newUser.php-->
 									<a href="profiles/newUser.php?premium" class="btn btn-success btn-block btn-large">Choose Plan</a>
 								</div>
 							</div>
