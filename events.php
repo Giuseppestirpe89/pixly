@@ -89,24 +89,23 @@
                      <button type="button" class="btn btn-primary btn-circle" id="openUpload"><i class="glyphicon glyphicon-list"></i></button><br>
                      <?php }else{ ?>
                      <p>want to uplaod photos! create a account here</p>
-                     <a href="profiles/newUser.php"><button type="button" class="btn btn-primary">Create account</button></a><br>
+                     <a href="priceplan.php"><button type="button" class="btn btn-primary">Create account</button></a><br>
                      <?php } ?>
-                     <!--https://developers.google.com/chart/infographics/docs/qr_codes-->
+
                      <?php 
                         $token="testtoken";
                         $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
                         $qrToken = $actual_link."?".$token;
-                        
                      ?>
-                     <!--ref: https://developers.google.com/chart/infographics/docs/qr_codes-->
                      <a id="downloadLnk" download="YourFileName.jpg">
+                     <!--ref: https://developers.google.com/chart/infographics/docs/qr_codes-->
 			            <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?php echo $qrToken; ?>&choe=UTF-8"/>
 			            </a>
+			            <!--Opens QR code in new tab so it can be view or downloaded as a PNG-->
 			            <script>
                        var img = document.images[0];
                        img.onclick = function() {
                          var url = img.src.replace(/^data:image\/[^;]/, 'data:application/octet-stream');
-                        //  location.href = url;
                         window.open(url);
                        };
                      </script>
