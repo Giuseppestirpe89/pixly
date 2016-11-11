@@ -8,7 +8,7 @@
 <html>
 
 <head>
-    <?php include("../includes/head.php");?>
+    <?php include("../includes/addUserHead.php");?>
 </head>
 
 <body>
