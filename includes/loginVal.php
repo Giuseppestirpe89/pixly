@@ -27,6 +27,7 @@
      *  We run the text through trim() to remove unnessesry whitespace and then stripslashes() to unquote quoted strings.
      *  We use preg_match() to search the text, while validating it using regular expressions
      *  The text is then run through the the escape_data() function *notes in includes/connect.php
+     *  //ref: http://www.newthinktank.com/2011/01/php-security/
      */
      
     $subjectUsername = stripslashes(trim($_POST['username']));

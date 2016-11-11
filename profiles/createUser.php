@@ -81,7 +81,7 @@
     }
     
     $subjectEmail = stripslashes(trim($em));
-    if (preg_match ('%^[A-za-z0-9\.\' \-!_&@.$~]{4,20}$%', $subjectEmail)) {
+    if (preg_match ('%^[A-za-z0-9\.\' \-!_&@.$~]{4,30}$%', $subjectEmail)) {
         $email = escape_data($subjectEmail);
     } else {
         $passedRegex = FALSE;
@@ -234,17 +234,17 @@
         
    }else{
     
-    /*
-     * the regex on the clientside in JavaScript is the same as the regex on the serverside in PHP
-     * if user input fails the regex on the server side it would mean the regex on the client side may have been altered to allow other charicters through
-     * this may be a dilberate move by a attacker to introduce potentialy harmful charicters, scripts or querys to the server side
-     * if if $passedRegex is false we do not open a connection to the DB
-     * we run log.php which records user input, the server and client data and notifies info.pixly
-     * we then redirect the user to index.php
-     */
+        /*
+         * the regex on the clientside in JavaScript is the same as the regex on the serverside in PHP
+         * if user input fails the regex on the server side it would mean the regex on the client side may have been altered to allow other charicters through
+         * this may be a dilberate move by a attacker to introduce potentialy harmful charicters, scripts or querys to the server side
+         * if if $passedRegex is false we do not open a connection to the DB
+         * we run log.php which records user input, the server and client data and notifies info.pixly
+         * we then redirect the user to index.php
+         */
      
-     include("../logs/logs.php");
-     header("Location: newUser.php?error");
+        include("../logs/logs.php");
+        header("Location: newUser.php?error");
     }   
             
 ?>

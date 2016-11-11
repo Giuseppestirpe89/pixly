@@ -28,6 +28,7 @@
                  * in creatUser before we redirect back here we append a error code to the URL
                  * we read this sp we know why the user has been redirected and display the appropriate error messege
                  */
+                    //  !== false:  true, position is 0, ref http://us2.php.net/manual/en/language.operators.comparison.php
                     if (strpos($url, 'pmtc') !== false) {
                         echo " <div class='alert alert-warning'>
                                 Passwords must match.
@@ -35,7 +36,7 @@
                     }
                     if (strpos($url, 'char') !== false) {
                         echo " <div class='alert alert-warning'>
-                                One or more fields contains forbidden characters.
+                                One or more fields contains forbidden characters or has too few characters.
                                 </div>";
                     }
                     if (strpos($url, 'error') !== false) {
@@ -56,17 +57,17 @@
                  ?>    
                 <div class="form-group input-lg">
                     
-                    <input type="username" class="form-control" placeholder="Username" name="username"  autofocus>
+                    <input type="username" class="form-control" placeholder="Username" name="username"  required autofocus>
                 </div>
                 <div class="form-group input-lg">
-                    <input type="password" class="form-control" placeholder="Password" name="password" >
+                    <input type="password" class="form-control" placeholder="Password" name="password" required>
                 </div>
                 <div class="form-group input-lg">
-                    <input type="password" class="form-control" placeholder="Confirm Password" name="passwordmatch" >
+                    <input type="password" class="form-control" placeholder="Confirm Password" name="passwordmatch" required>
                     <!--<p>Between 4 and 20 characters</p>-->
                 </div>
                 <div class="form-group input-lg">
-                    <input type="email" class="form-control" placeholder="Email" name="email" >
+                    <input type="email" class="form-control" placeholder="Email" name="email" required>
                 </div>
                 <?php
                 /*

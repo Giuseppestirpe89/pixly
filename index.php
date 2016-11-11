@@ -101,6 +101,7 @@
                 <?php
                 include("eventBanner.php");
             ?>
+            
             </section>
 
             <!-- Footer section -->

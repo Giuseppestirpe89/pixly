@@ -11,7 +11,7 @@ $qr =  new Endroid\QrCode\QrCode();
 
 
 //
-$qr->setText ($_SERVER['REQUEST_URI']);
+$qr->setText ("https://fuckgithub-donwhelan.c9users.io/events.php?testtoken");
 $qr->setSize(200);
 $qr->setPadding(10);
 

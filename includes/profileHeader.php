@@ -65,7 +65,7 @@
                 </li>
                 <?php  
                     if($_SESSION['user']) {   
-                        if($_SESSION['premium']=='true') { 
+                        if($_SESSION['premium'] == 'true') { 
                 ?>
                 <li>
                     <a class="page-scroll" href="../admin.php">Admin</a>
@@ -86,7 +86,7 @@
 
                 <?php  if($_SESSION['user']) { ?>
 
-                <li><a class="color_animation" href="profiles/<?php echo $_SESSION['user'];?>.php"><span class="glyphicon glyphicon-user white" style="text-color: white"></span> PROFILE</a></li>
+                <li><a class="color_animation" href="<?php echo $_SESSION['user'];?>.php"><span class="glyphicon glyphicon-user white" style="text-color: white"></span> PROFILE</a></li>
                 <?php  } ?>
                 <li>
                     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login </button>
