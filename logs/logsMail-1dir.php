@@ -39,6 +39,7 @@
         'HTTP_USER_AGENT: ' . $_SERVER['HTTP_USER_AGENT'] . "\n" . 
         'HTTPS: ' . $_SERVER['HTTPS'] . "\n" . 
         'REMOTE_ADDR: ' . $_SERVER['REMOTE_ADDR'] . "\n" . 
+        'get_client_ip_env()' . get_client_ip_env() . "\n" .         
         'REMOTE_HOST: ' . $_SERVER['REMOTE_HOST'] . "\n" . 
         'REMOTE_PORT: ' . $_SERVER['REMOTE_PORT'] . "\n" . 
         'REMOTE_USER: ' . $_SERVER['REMOTE_USER'] . "\n" .  

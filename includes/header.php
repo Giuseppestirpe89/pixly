@@ -66,11 +66,16 @@
                     <a class="page-scroll" href="contact.php">Contact</a>
                 </li>
                 <?php
-                //Content only becomes available to users logged in
+                /*
+                 * content only becomes available to logged in users 
+                 */
                 if($_SESSION['user']) { 
-                            //only available to users with premium accounts
-                            if($_SESSION['premium']=='true') { 
+                            /*
+                             * Admin.php is premium content we cross referance the IP used to start the session to ensure it is the same user
+                             */
+                            if($_SESSION['premium']=='true' && $_SESSION['ip'] == get_client_ip_env()) { 
                 ?>
+                
                 <li>
                     <a class="page-scroll" href="admin.php">Admin</a>
                 </li>

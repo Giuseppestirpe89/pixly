@@ -10,6 +10,29 @@
  * and rights them all to a file which is saved under a file name of the current date and time the -regex in the logs directory
  * A administrator can the decide if it is a error or attacker and blacklist that IP from the server
  */
+ 
+ 
+ function get_client_ip_env() {
+        $ipaddress = '';
+        if (getenv('HTTP_CLIENT_IP'))
+            $ipaddress = getenv('HTTP_CLIENT_IP');
+        else if(getenv('HTTP_X_FORWARDED_FOR'))
+            $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+        else if(getenv('HTTP_X_FORWARDED'))
+            $ipaddress = getenv('HTTP_X_FORWARDED');
+        else if(getenv('HTTP_FORWARDED_FOR'))
+            $ipaddress = getenv('HTTP_FORWARDED_FOR');
+        else if(getenv('HTTP_FORWARDED'))
+            $ipaddress = getenv('HTTP_FORWARDED');
+        else if(getenv('REMOTE_ADDR'))
+            $ipaddress = getenv('REMOTE_ADDR');
+        else
+            $ipaddress = 'UNKNOWN';
+     
+        return $ipaddress;
+  }
+ 
+ 
 
     $d = date('Y-m-d H:i:s');
     $myfile = fopen( "logs/".$d."-regex.php", "w") or die("Unable to open file!");
@@ -38,6 +61,7 @@
         'HTTP_USER_AGENT: ' . $_SERVER['HTTP_USER_AGENT'] . "\n" . 
         'HTTPS: ' . $_SERVER['HTTPS'] . "\n" . 
         'REMOTE_ADDR: ' . $_SERVER['REMOTE_ADDR'] . "\n" . 
+        'get_client_ip_env()' . get_client_ip_env() . "\n" . 
         'REMOTE_HOST: ' . $_SERVER['REMOTE_HOST'] . "\n" . 
         'REMOTE_PORT: ' . $_SERVER['REMOTE_PORT'] . "\n" . 
         'REMOTE_USER: ' . $_SERVER['REMOTE_USER'] . "\n" .  

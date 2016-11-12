@@ -98,6 +98,8 @@
                     $_SESSION['user']=$dbUsername;
                     //stores to session if the user is a premium user (gets extra content)
                     $_SESSION['premium']=$row['Premium'];
+                    //adds the users IP address to the session, this will be used for validation at different stages to stop session hijacking - get_client_ip_env() included from connect.php
+                    $_SESSION['ip']=get_client_ip_env();
                     header("Location: ../index.php");
                     exit();
                     

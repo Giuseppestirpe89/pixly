@@ -68,8 +68,11 @@
                 <?php
                 //Content only becomes available to users logged in
                 if($_SESSION['user']) { 
-                            //only available to users with premium accounts
-                            if($_SESSION['premium']=='true') { 
+                            /*
+                             * Admin.php is premium content we cross referance the IP used to start the session to ensure it is the same user
+                             * if($_SESSION['premium']=='true' && $_SESSON['ip']==$_SERVER['REMOTE_ADDR']) { 
+                             */
+                            if($_SESSION['premium']=='true' && $_SESSION['ip']==get_client_ip_env()) { 
                 ?>
                 <li>
                     <a class="page-scroll" href="../admin.php">Admin</a>
