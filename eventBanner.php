@@ -97,7 +97,7 @@
                                     <div class='row'>
                                         <?php
                                             $eventName = $row['eventName'];
-                                            $iquery = "SELECT * FROM images WHERE event = '$eventName' LIMIT 4,9";
+                                            $iquery = "SELECT * FROM images WHERE event = '$eventName' LIMIT 4,4";
                                             $iresult = mysql_query($iquery); 
                                             while ($irow = mysql_fetch_assoc($iresult)) {
                                         ?>

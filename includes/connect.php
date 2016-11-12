@@ -72,5 +72,19 @@
         }
         return $dataFromForms;
     }
+    
+    /*
+     * -- Custom Error handeling function -- ref: https://app.pluralsight.com/ - PHP Security corse
+     */
+     
+    set_error_handler(
+        function($Ecode,$Etext){
+            if(!(error_reporting() & $Ecode)){
+                return false;
+            }  
+            return false;
+        }
+    );
+    
 
 ?>
