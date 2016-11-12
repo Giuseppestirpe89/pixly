@@ -25,7 +25,7 @@
                 <form class="form-signin " action='includes/loginVal.php' method='post'>
         		 <div class="form-group">
                     <h2 class="form-signin-heading"> 
-                    Oops!
+                    Please Log in!
                   
                  </div>
                  <?php 
@@ -65,7 +65,7 @@
             </div>
         </div>
         </section>
-        <br>
+        <br><br><br><br><br><br><br>
         <section>    
             <?php
                 include("includes/footer.php");

@@ -91,11 +91,13 @@
                 <li>
                     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login </button>
                     <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
+                        <div class="modal-dialog"></div>
+                        </div>
+                            
                 </li>
             </ul>
-            </div>
+        </div>
             <!-- /.navbar-collapse -->
-            </div>
+    </div>
             <!-- /.container -->
 </nav>

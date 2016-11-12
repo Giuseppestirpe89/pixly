@@ -93,14 +93,17 @@
                      <?php } ?>
 
                      <?php 
+                     // TEST PHP TO GENERATE TOKEN
                         $token="testtoken";
                         $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
                         $qrToken = $actual_link."?".$token;
                      ?>
+                     
                      <a id="downloadLnk" download="YourFileName.jpg">
                      <!--ref: https://developers.google.com/chart/infographics/docs/qr_codes-->
 			            <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?php echo $qrToken; ?>&choe=UTF-8"/>
 			            </a>
+			            
 			            <!--Opens QR code in new tab so it can be view or downloaded as a PNG-->
 			            <script>
                        var img = document.images[0];

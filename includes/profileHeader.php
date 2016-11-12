@@ -17,7 +17,7 @@
                 </noscript>
             </div>
             <div class="modal-body">
-                <form action='includes/loginVal.php' method='post'>
+                <form action='../includes/loginVal.php' method='post'>
                     <div class="form-group">
                         <label for="exampleInputEmail1" id="t">Username</label>
                         <input type="text" class="form-control" id="username" placeholder="Username" name="username" required autofocus >
@@ -38,6 +38,8 @@
 </div>
 </div>
 <!--END OF LOGIN-->
+
+
 <!-- Navigation -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
@@ -48,7 +50,7 @@
                <span class="icon-bar"></span>
                <span class="icon-bar"></span>
                </button>
-            <a class="fa fa-home navbar-brand page-scroll"  href="../index.php"> Menu</a>
+            <a class="fa fa-home navbar-brand page-scroll" href="../index.php"> Menu</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -63,22 +65,20 @@
                 <li>
                     <a class="page-scroll" href="../contact.php">Contact</a>
                 </li>
-                <?php  
-                    if($_SESSION['user']) {   
-                        if($_SESSION['premium'] == 'true') { 
+                <?php
+                //Content only becomes available to users logged in
+                if($_SESSION['user']) { 
+                            //only available to users with premium accounts
+                            if($_SESSION['premium']=='true') { 
                 ?>
                 <li>
                     <a class="page-scroll" href="../admin.php">Admin</a>
                 </li>
-                <?php
-                        } 
-                ?>
+                            <?php } ?>
                 <li>
                     <a class="page-scroll" href="../includes/killSession.php">Logout <?php echo $_SESSION['user'];?></a>
                 </li>
-                <?php  
-                    } 
-                ?>
+                <?php  } ?>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
@@ -86,16 +86,18 @@
 
                 <?php  if($_SESSION['user']) { ?>
 
-                <li><a class="color_animation" href="<?php echo $_SESSION['user'];?>.php"><span class="glyphicon glyphicon-user white" style="text-color: white"></span> PROFILE</a></li>
+                <li><a class="color_animation" href="../profiles/<?php echo $_SESSION['user'];?>.php"><span class="glyphicon glyphicon-user white" style="text-color: white"></span> PROFILE</a></li>
                 <?php  } ?>
                 <li>
-                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login </button>
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
+                    <!--<button type="button" class="btn btn-info btn-lg"><a href="ss">Login</a></button>-->
+                    <a href="../failedLogin.php" style="padding: 0px;"><button type="button" class="btn btn-info btn-lg">Login</button></a>
+                    <!--<div class="modal fade" id="myModal" role="dialog">-->
+                        <!--<div class="modal-dialog"></div>-->
+                    <!--    </div>-->
                 </li>
             </ul>
-            </div>
+        </div>
             <!-- /.navbar-collapse -->
-            </div>
+    </div>
             <!-- /.container -->
 </nav>
