@@ -105,7 +105,7 @@
                     // That Id if given to the users session AND also the users cookie, so they can be compaired
                     $_SESSION['cookieId']=$randomID;
                     //HTTP only enabled cookie , short expire time, domain specified and path specified
-                    setcookie("TestCookie", $randomID, time()+3600, "/", "c9users.io", 1);
+                    setcookie('cookieid', $randomID, time()+3600, "/", "c9users.io", 1);
                     header("Location: ../index.php");
                     exit();
                     
