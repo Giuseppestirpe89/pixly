@@ -72,8 +72,9 @@
                 if($_SESSION['user']) { 
                             /*
                              * Admin.php is premium content we cross referance the IP used to start the session to ensure it is the same user
+                             * it also checks the ID string generated on login that is saved in a cookie and the session agains each other
                              */
-                            if($_SESSION['premium']=='true' && $_SESSION['ip'] == get_client_ip_env()) { 
+                            if($_SESSION['premium']=='true' && $_SESSION['ip'] == get_client_ip_env() && $_COOKIE["testCookie"] == $_SESSION['cookieid']) { 
                 ?>
                 
                 <li>

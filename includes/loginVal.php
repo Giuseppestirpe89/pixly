@@ -96,10 +96,16 @@
                 // here the users password is verified from the originally hashed one from the db
                 if($formusername == $dbUsername && password_verify($formpassword, $dbPassword)){
                     $_SESSION['user']=$dbUsername;
-                    //stores to session if the user is a premium user (gets extra content)
+                    // stores to session if the user is a premium user (gets extra content)
                     $_SESSION['premium']=$row['Premium'];
-                    //adds the users IP address to the session, this will be used for validation at different stages to stop session hijacking - get_client_ip_env() included from connect.php
+                    // adds the users IP address to the session, this will be used for validation at different stages to stop session hijacking - get_client_ip_env() included from connect.php
                     $_SESSION['ip']=get_client_ip_env();
+                    // random string is created as a ID
+                    $randomID = substr(sha1(rand()), 0, 27);
+                    // That Id if given to the users session AND also the users cookie, so they can be compaired
+                    $_SESSION['cookieId']=$randomID;
+                    //HTTP only enabled cookie , short expire time, domain specified and path specified
+                    setcookie("TestCookie", $randomID, time()+3600, "/", "c9users.io", 1);
                     header("Location: ../index.php");
                     exit();
                     
