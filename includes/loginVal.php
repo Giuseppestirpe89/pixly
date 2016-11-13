@@ -101,11 +101,11 @@
                     // adds the users IP address to the session, this will be used for validation at different stages to stop session hijacking - get_client_ip_env() included from connect.php
                     $_SESSION['ip']=get_client_ip_env();
                     // random string is created as a ID
-                    $randomID = substr(sha1(rand()), 0, 27);
+                    $randomID = substr(sha1(rand()), 0, 25);
                     // That Id if given to the users session AND also the users cookie, so they can be compaired
                     $_SESSION['cookieId']=$randomID;
                     //HTTP only enabled cookie , short expire time, domain specified and path specified
-                    setcookie('cookieid', $randomID, time()+3600, "/", "c9users.io", 1);
+                    setcookie('cookieId', $randomID, time()+3600, "/", "c9users.io", 1);
                     header("Location: ../index.php");
                     exit();
                     

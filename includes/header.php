@@ -70,15 +70,16 @@
                  * content only becomes available to logged in users 
                  */
                 if($_SESSION['user']) { 
-                            /*
-                             * Admin.php is premium content we cross referance the IP used to start the session to ensure it is the same user
-                             * it also checks the ID string generated on login that is saved in a cookie and the session agains each other
-                             */
-                            if($_SESSION['premium']=='true' && $_SESSION['ip'] == get_client_ip_env() && $_COOKIE['cookieid'] == $_SESSION['cookieid']) { 
+                        /*
+                         * Admin.php is premium content we cross referance the IP used to start the session with the one in the current client request to ensure it is the same user
+                         * it also checks the ID string generated on login that is saved in a cookie and the session against each other
+                         */
+                        if($_SESSION['premium']=='true' && $_SESSION['ip'] == get_client_ip_env() && $_COOKIE['cookieId'] == $_SESSION['cookieId']) { 
+                                    
                 ?>
                 
                 <li>
-                    <a class="page-scroll" href="admin.php">Admin</a>
+                    <a class="page-scroll" href="admin.php">Admin<?php echo $ee ?></a>
                 </li>
                             <?php } ?>
                 <li>
