@@ -1,6 +1,6 @@
 $(document).ready(function() {
 	$.ajax({
-		url: "https://pixly3-giuseppestirpe89.c9users.io/data.php",
+		url: "https://pixly4-giuseppestirpe89.c9users.io/data.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);
@@ -11,7 +11,6 @@ $(document).ready(function() {
 				user.push("User " + data[i].users);
 				Picture.push(data[i].Picture);
 			}
-
 			var chartdata = {
 				labels: user,
 				datasets: [{
@@ -41,7 +40,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$.ajax({
-		url: "https://pixly3-giuseppestirpe89.c9users.io/data.php",
+		url: "https://pixly4-giuseppestirpe89.c9users.io/data.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);
@@ -109,7 +108,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$.ajax({
-		url: "https://pixly3-giuseppestirpe89.c9users.io/data.php",
+		url: "https://pixly4-giuseppestirpe89.c9users.io/data.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);
@@ -161,7 +160,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$.ajax({
-		url: "https://pixly3-giuseppestirpe89.c9users.io/data.php",
+		url: "https://pixly4-giuseppestirpe89.c9users.io/data.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);
@@ -226,7 +225,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$.ajax({
-		url: "https://pixly3-giuseppestirpe89.c9users.io/data.php",
+		url: "https://pixly4-giuseppestirpe89.c9users.io/data.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);
@@ -291,7 +290,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$.ajax({
-		url: "https://pixly3-giuseppestirpe89.c9users.io/data.php",
+		url: "https://pixly4-giuseppestirpe89.c9users.io/data.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);

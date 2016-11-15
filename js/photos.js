@@ -15,35 +15,8 @@ $.ajax({
         console.log(value);
       });
       
-      
-        // $(data).find("a").attr("href", function (i, val) {
-        //     if( val.match(/\.(jpe?g|png|gif)$/) ) { 
-        //         $(".content").append( "<img src='"+ folder + val +"'>" );
-                
-        //     } 
-        // });
     }
 })
-
-
-// this is the function that made the navbar not to work. if you need it in the future let me know. kisses peppe
-
-// $('#photos').append(allImages);
-
-// $('a').on('click', function(){
-//   $('.wrap, a').toggleClass('active');
-  
-//   return false;
-// });
-
-
-//////// i dont know about this
-
-
-// for (var i = 0; i < 25; i++) {
-//   var width = getRandomSize(200, 400);
-//   var height =  getRandomSize(200, 400);
-//   allImages += '<img src="../event/Mysteryland/'+getRandomSize(1, 6)+'.jpg" alt="pretty kitty">';
 
 
 
@@ -118,10 +91,6 @@ $(function () {
             var rows = $();
             $.each(o.files, function (index, file) {
                 var row = $('<li class="template-download fade upload-file complete">' +
-                    '<div class="upload-progress-bar progress" style="width: 100%;"></div>' +
-                    '<div class="upload-file-info">' +
-                    '<div class="filename-col"><span class="filename"></span> - <span class="size"></span></div>' +
-                    '<div class="error-col"><span class="error"></span></div>' +
                     '</div>' +
                     '</li>');
 
@@ -149,11 +118,6 @@ $(function () {
         }
     });
 
-    /*$(document, '.removeFile').on('show.bs.tooltip', function (e) {
-        e.stopPropagation();
-    }).on('hide.bs.tooltip', function (e) {
-        e.stopPropagation();
-    });*/
 
     $('#upload').bind('fileuploadadd', function (e, data) {
         setTimeout(function () {

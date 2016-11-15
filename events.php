@@ -14,7 +14,7 @@
       include("includes/header.php");
   ?>
         
-        <link href="css/photos2.css" rel="stylesheet" type="text/css" />
+<link href="css/photos2.css" rel="stylesheet" type="text/css" />
  <!--style for butto nupload -->
 <style> 
 .btn-circle {
@@ -26,12 +26,9 @@
         border-radius: 25px;
       }
 </style>
-
    </head>
    <!--conyainer to upload pictures -->
    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
-  
                      <div class="modal" id="uploadModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
                         <div class="modal-dialog">
                            <div class="modal-content" style="text-align:center">
@@ -122,7 +119,6 @@
       include("includes/footer.php");
   ?>
          </section>
-
          </section>
      
             <!-- jQuery -->

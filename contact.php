@@ -54,7 +54,7 @@
                             </div>
                             <div class="col-sm-7">
                                 <div class="details">
-                                    <p>Don is all about security. He is concern about everything that can be hacked. With him the world is a safe place.</p>
+                                    <p>Don is all about security. He is concern about everything that can be hacked. With him the world is a safer place.</p>
                                     <ul class="social-content">
                                         <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
                                         <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
@@ -76,7 +76,7 @@
                             </div>
                             <div class="col-sm-7 col-sm-pull-2">
                                 <div class="details">
-                                    <p>Giuseepe like designing, creating and coding. If he has an idea in mind and it can be coded he will deliver.</p>
+                                    <p>Giuseepe like designing, creating and coding. If he has an idea in mind and it can be coded, he will deliver.</p>
                                     <ul class="social-content">
                                         <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
                                         <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
@@ -98,7 +98,7 @@
                             </div>
                             <div class="col-sm-7   ">
                                 <div class="details">
-                                    <p>Shane doesn't believe in physical storage on your local machine. For him the future is the sky, perharps the Cloud.</p>
+                                    <p>Shane doesn't believe in physical storage on local machine. For him the future is in the sky, perharps the Cloud.</p>
                                     <ul class="social-content">
                                         <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
                                         <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
@@ -119,7 +119,7 @@
                             </div>
                             <div class="col-sm-7 col-sm-pull-2">
                                 <div class="details">
-                                    <p>Patrick has a good nose for selling software or application where anybody would go. If there is a samll opportunity Patrick will sell you everything.</p>
+                                    <p>Patrick has a good nose for selling software or application where nobody would go. If there is a small opportunity Patrick will sell you everything.</p>
                                     <ul class="social-content">
                                         <li><a href="info.pixly@gmail.com"><i class="fa fa-envelope fa-fw"></i></a></li>
                                         <li><a href="http://www.twitter.com" target="_blank"><i class="fa fa-twitter fa-fw"></i></a></li>
