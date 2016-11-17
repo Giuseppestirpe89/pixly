@@ -1,43 +1,8 @@
 <!--    
         LOGIN FORM!!
-        This modal acts as a loging for and also link to create new accounts
         The login form is sent to includes/loginVal.php where the users info is validated, session created and then redrected to index.php
         If a new account is needed theres a link to profiles/newUser.php
 -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Log in</h4>
-                <!--is hidden when javascript is enabled -->
-                <noscript>
-                  This page needs JavaScript enabled. 
-                  <style>div { display:none; }</style>
-                </noscript>
-            </div>
-            <div class="modal-body">
-                <form action='../includes/loginVal.php' method='post'>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1" id="t">Username</label>
-                        <input type="text" class="form-control" id="username" placeholder="Username" name="username" required autofocus >
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Password" name="password" required >
-                    </div>
-
-                    <button type="submit" class="btn btn-default">Submit</button>
-                    <a href="priceplan.php">
-                        <p>Dont have a account?</p>
-                    </a>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<!--END OF LOGIN-->
 
 
 <!-- Navigation -->

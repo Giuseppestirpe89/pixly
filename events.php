@@ -17,14 +17,14 @@
 <link href="css/photos2.css" rel="stylesheet" type="text/css" />
  <!--style for butto nupload -->
 <style> 
-.btn-circle {
-        width: 10px;
-        height: 10px;
-        text-align: center;
-        padding: 6px 0;
-        font-size: 12px;
-        border-radius: 25px;
-      }
+/*.btn-circle {*/
+/*        width: 10px;*/
+/*        height: 10px;*/
+/*        text-align: center;*/
+/*        padding: 6px 0;*/
+/*        font-size: 12px;*/
+/*        border-radius: 25px;*/
+/*      }*/
 </style>
    </head>
    <!--conyainer to upload pictures -->

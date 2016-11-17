@@ -31,7 +31,7 @@
     <!-- Bootstrap CSS -->    
     <link href="../css2/bootstrap.min.css" rel="stylesheet">
     <!-- bootstrap theme -->
-    <link href="../css2/bootstrap-theme.css" rel="stylesheet">
+    <!--<link href="../css2/bootstrap-theme.css" rel="stylesheet">-->
     <!--external css-->
     <!-- font icon -->
     <link href="../css2/elegant-icons-style.css" rel="stylesheet" />
