@@ -17,6 +17,18 @@
 <link href="css/photos2.css" rel="stylesheet" type="text/css" />
 <link href="css/photos3.css" rel="stylesheet" type="text/css" />
  <script src="js/events2.js" type="text/javascript"></script>
+ <script src="https://platform.twitter.com/widgets.js"></script>
+ <div id="fb-root"></div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
  <!--style for butto nupload -->
 <style> 
 .btn-circle {
@@ -36,7 +48,7 @@
                <div class="row">
                   <div class="col-lg-12">
                      <h1>Electric Picnic 2016</h1>
-      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a></div>
+      <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 1" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350"></a> </div>
       <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 2" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/2255EE"></a></div>
       <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 3" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/449955/FFF"></a></div>
       <div class="col-lg-3 col-sm-4 col-xs-6"><a title="Image 4" href="#"><img class="thumbnail img-responsive" src="//placehold.it/600x350/992233"></a></div>
@@ -65,7 +77,11 @@
 		
 	</div>
 	<div class="modal-footer">
-		<button class="btn btn-default" data-dismiss="modal">Close</button>
+	<button class="btn btn-default" data-dismiss="modal" style="text-align=center">     
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>&emsp; 
+<a class="twitter-follow-button"
+  href="https://twitter.com/Pixly"
+  data-size="small">Follow us</a> &emsp; Close </button>
 	</div>
    </div>
   </div>
