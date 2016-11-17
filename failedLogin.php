@@ -59,8 +59,12 @@
                  <div class="form-group">
                     <input type="password"  class="form-control input-lg" placeholder="Password" name="password" required>
                 </div>
+                <div class="form-group text-center">
+                <a href="priceplan.php">
+                    <p>Dont have a account?</p>
+                </a>
+                </div>
                 <button class="btn btn-lg  btn-primary center-block">Submit</button>
-                
                 </form>
             </div>
         </div>

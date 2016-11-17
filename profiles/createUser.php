@@ -192,6 +192,12 @@
             //create a session for the user and sessions the account type
             $_SESSION['user'] = $username;
             $_SESSION['premium'] = $accountType;
+            // adds the users IP address to the session, this will be used for validation at different stages to stop session hijacking - get_client_ip_env() included from connect.php
+            $_SESSION['ip']=get_client_ip_env();
+            // random string is created as a ID
+            $randomID = substr(sha1(rand()), 0, 25);
+            // That Id if given to the users session AND also the users cookie, so they can be compaired
+            $_SESSION['cookieId']=$randomID;
             
             /*
              * A .php profile page is then created, the contents of a standard profile page are populated to the file

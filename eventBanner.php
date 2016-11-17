@@ -15,6 +15,7 @@
     
     //$incrementDivId used it increment the <div id="myCarousel"> href for the toggle button left anr right as a unique ID is needed
     $incrementDivId = 1;
+    // outer while loop extracts all images
     while ($row = mysql_fetch_assoc($result)) {
     /*
      * The if() checks how many images are in each event
@@ -26,13 +27,14 @@
      
      PICTURE AT THE EVENT PAGE ARE ALL OF THEM SIZE 1024 X 682 FOR BETTER VISIBILITY
      */
+     
         if($row['numOfPhotos'] <= 4){
 ?>
             <!--4 PHOTOS 1 SLIDE-->
             <div class="container">
                 <div class="col-xs-12">
                     <h3>
-                        <?php echo $row['eventName']?>
+                        <a href="eventPages/<?php echo $row['eventName']?>.php"><?php echo $row['eventName']?></a>
                     </h3>
                     <div class="well">
                         <div id="myCarousel<?php echo $incrementDivId ?>" class="carousel slide">
@@ -42,8 +44,9 @@
                                         <?php
                                             //loops and prints HTML for 4 images in one preview slide
                                             $eventName = $row['eventName'];
-                                            $iquery = "SELECT * FROM images WHERE event = '$eventName'";
+                                            $iquery = "SELECT * FROM images WHERE event = '$eventName' ORDER BY likes ASC";
                                             $iresult = mysql_query($iquery); 
+                                            //inner while loop populates the frame
                                             while ($irow = mysql_fetch_assoc($iresult)) {
                                         ?>
                                                 <div class="col-xs-3">
@@ -68,7 +71,7 @@
             <div class="container">
                 <div class="col-xs-12">
                     <h3>
-                        <?php echo $row['eventName']?>
+                        <a href="eventPages/<?php echo $row['eventName']?>.php"><?php echo $row['eventName']?></a>
                     </h3>
                     <div class="well">
                         <div id="myCarousel<?php echo $incrementDivId ?>" class="carousel slide">
@@ -78,7 +81,7 @@
                                     <div class='row'>
                                         <?php
                                             $eventName = $row['eventName'];
-                                            $iquery = "SELECT * FROM images WHERE event = '$eventName' LIMIT 0,4";
+                                            $iquery = "SELECT * FROM images WHERE event = '$eventName' ORDER BY likes ASC LIMIT 0,4";
                                             $iresult = mysql_query($iquery); 
                                             while ($irow = mysql_fetch_assoc($iresult)) {
                                         ?>
@@ -97,7 +100,7 @@
                                     <div class='row'>
                                         <?php
                                             $eventName = $row['eventName'];
-                                            $iquery = "SELECT * FROM images WHERE event = '$eventName' LIMIT 4,4";
+                                            $iquery = "SELECT * FROM images WHERE event = '$eventName' ORDER BY likes ASC LIMIT 4,4";
                                             $iresult = mysql_query($iquery); 
                                             while ($irow = mysql_fetch_assoc($iresult)) {
                                         ?>
@@ -125,7 +128,7 @@
             <div class="container">
                 <div class="col-xs-12">
                     <h3>
-                        <?php echo $row['eventName']?>
+                        <a href="eventPages/<?php echo $row['eventName']?>.php"><?php echo $row['eventName']?></a>
                     </h3>
                     <div class="well">
                         <div id="myCarousel<?php echo $incrementDivId ?>" class="carousel slide">
@@ -135,7 +138,7 @@
                                     <div class='row'>
                                         <?php
                                             $eventName = $row['eventName'];
-                                            $iquery = "SELECT * FROM images WHERE event = '$eventName' ORDER BY imageId ASC LIMIT 0,4";
+                                            $iquery = "SELECT * FROM images WHERE event = '$eventName' ORDER BY likes ASC LIMIT 0,4";
                                             $iresult = mysql_query($iquery); 
                                             while ($irow = mysql_fetch_assoc($iresult)) {
                                         ?>
@@ -154,7 +157,7 @@
                                     <div class='row'>
                                         <?php
                                             $eventName = $row['eventName'];
-                                            $iquery = "SELECT * FROM images WHERE event = '$eventName' ORDER BY imageId ASC LIMIT 4,4" ;
+                                            $iquery = "SELECT * FROM images WHERE event = '$eventName' ORDER BY likes ASC LIMIT 4,4" ;
                                             $iresult = mysql_query($iquery); 
                                             while ($irow = mysql_fetch_assoc($iresult)) {
                                         ?>
@@ -172,7 +175,7 @@
                                     <div class='row'>
                                         <?php
                                             $eventName = $row['eventName'];
-                                            $iquery = "SELECT * FROM images WHERE event = '$eventName' ORDER BY imageId ASC LIMIT 8,4" ;
+                                            $iquery = "SELECT * FROM images WHERE event = '$eventName' ORDER BY likes ASC LIMIT 8,4" ;
                                             $iresult = mysql_query($iquery); 
                                             while ($irow = mysql_fetch_assoc($iresult)) {
                                         ?>
