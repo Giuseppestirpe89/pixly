@@ -71,7 +71,7 @@
                      <h1>Electric Picnic 2016</h1>
 
                      <!-- photos section -->
-                     <section id="photos">
+                     <section id="photos" >
                         <div class='wrap'>
                            <div class='content'>
                               <div class="popup">
