@@ -41,10 +41,11 @@
                                     <div class="fileupload-buttonbar">
                                        <div>
                                           <h2>Add a picture!</h2>
-                                          <form action="upload.php" method="post" enctype="multipart/form-data">
+                                          <form action="../upload.php" method="post" enctype="multipart/form-data">
                                              <input type="file" class="btn btn-success start" name="fileToUpload" id="fileToUpload"> </br>
                                              <p>Select image to upload:</P>
                                              <input type="submit" class="btn btn-warning cancel" value="Upload Image" name="submit">
+                                             <input name='event' type='hidden' value='<?php echo $filename; ?>'/>
                                              </form>
                                        </div>
                                     </div>
@@ -70,6 +71,40 @@
               <div class="row">
                  <div class="container">
                  <h1><?php echo $filename; ?></h1>
+                <?php
+                    if (strpos($url, 'E1') !== false) {
+                            echo " <div class='alert alert-danger'>
+                                    File is not an image.
+                                    </div>";
+                    }
+                    if (strpos($url, 'E2') !== false) {
+                            echo " <div class='alert alert-danger'>
+                                    Sorry, file already exists.
+                                    </div>";
+                    }
+                    if (strpos($url, 'E3') !== false) {
+                            echo " <div class='alert alert-danger'>
+                                    Sorry, your file is too large.
+                                    </div>";
+                    }
+                    if (strpos($url, 'E4') !== false) {
+                            echo " <div class='alert alert-danger'>
+                                    Sorry, only JPG, JPEG, PNG & GIF files are allowed.
+                                    </div>";
+                    }
+                    if (strpos($url, 'E5') !== false) {
+                            echo " <div class='alert alert-danger'>
+                                    Sorry, your file was not uploaded.
+                                    </div>";
+                    }
+                    if (strpos($url, 'E6') !== false) {
+                            echo " <div class='alert alert-danger'>
+                                    Sorry, there was an error uploading your file.
+                                    </div>";
+                    }
+                    
+                ?>
+                 
                     <div class="row">
                         <?php
                             $query = "SELECT * FROM images WHERE event = '$filename' ORDER BY likes DESC";
