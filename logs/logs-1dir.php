@@ -82,6 +82,8 @@
         "Username: " . $_POST['username'] . "\n" .
         "password: " . $_POST['password'] . "\n" .
         "passwordMatch: " . $_POST['passwordmatch'] . "\n" .
+        "event: " . $_POST['event'] . "\n" .
+        "submit: " . $_POST['submit'] . "\n" .
         "Email: " . $_POST['email'] . "\n
         ";
     fwrite($myfile, $txt);

@@ -11,9 +11,30 @@
  * As the intruder has made it past all validation the script emails a copy of the file to the pixly mailbox
  * A administrator can the decide if it is a error or attacker and blacklist that IP from the server
  */
+ 
+ 
+  function get_client_ip_env() {
+        $ipaddress = '';
+        if (getenv('HTTP_CLIENT_IP'))
+            $ipaddress = getenv('HTTP_CLIENT_IP');
+        else if(getenv('HTTP_X_FORWARDED_FOR'))
+            $ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+        else if(getenv('HTTP_X_FORWARDED'))
+            $ipaddress = getenv('HTTP_X_FORWARDED');
+        else if(getenv('HTTP_FORWARDED_FOR'))
+            $ipaddress = getenv('HTTP_FORWARDED_FOR');
+        else if(getenv('HTTP_FORWARDED'))
+            $ipaddress = getenv('HTTP_FORWARDED');
+        else if(getenv('REMOTE_ADDR'))
+            $ipaddress = getenv('REMOTE_ADDR');
+        else
+            $ipaddress = 'UNKNOWN';
+     
+        return $ipaddress;
+  }
 
     $d = date('Y-m-d H:i:s');
-    $myfile = fopen( "../logs/".$d."-sql.php", "w") or die("Unable to open file!");
+    $myfile = fopen( "logs/".$d."-sql.php", "w") or die("Unable to open file!");
     $txt = " 
         Date: " . $d ."\n".
         'PHP_SELF: ' . $_SERVER['PHP_SELF'] . "\n" .
@@ -60,6 +81,8 @@
         "Username: " . $_POST['username'] . "\n" .
         "password: " . $_POST['password'] . "\n" .
         "passwordMatch: " . $_POST['passwordmatch'] . "\n" .
+        "event: " . $_POST['event'] . "\n" .
+        "submit: " . $_POST['submit'] . "\n" .
         "Email: " . $_POST['email'] . "\n
         ";
     fwrite($myfile, $txt);

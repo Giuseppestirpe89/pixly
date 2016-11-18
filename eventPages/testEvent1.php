@@ -64,7 +64,6 @@
                         </div>
                      </div>
         <link href="../css/photos3.css" rel="stylesheet">
-        <!--<script type="text/javascript" src="js/photos2.js"></script>-->
         <!-- Intro Section -->
         <section id="intro" class="intro-section">
            <div class="container">
