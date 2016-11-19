@@ -5,14 +5,16 @@
 -->
 
 <?php
-    
+    session_start();
     include("../includes/connect.php");
     $url = $_SERVER['REQUEST_URI'];
     //gets the name of the PHP file so it can be referanced for the SQL query
     $thisFile = $url;
+    //discatenates the url string to just the name of the file
     $file = basename($thisFile);         
     $filename = basename($thisFile, ".php");
-    $filename = "testEvent2";
+    $variable = substr($thisFile, 0, strpos($thisFile, "."));
+    $filename =  str_replace("/eventPages/","",$variable);
 ?>
 
     <!DOCTYPE html>
@@ -22,6 +24,10 @@
         <?php
             include("../includes/profileHead.php");
         ?>
+       <script>
+        $( document ).ready(function() {
+         $("#prompt").delay(2500).fadeOut("slow");
+        });</script>
     </head>
 
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -64,48 +70,49 @@
                         </div>
                      </div>
         <link href="../css/photos3.css" rel="stylesheet">
-        <!--<script type="text/javascript" src="js/photos2.js"></script>-->
         <!-- Intro Section -->
         <section id="intro" class="intro-section">
            <div class="container">
               <div class="row">
                  <div class="container">
                  <h1><?php echo $filename; ?></h1>
+                <div style = "height:70px">
                 <?php
                     if (strpos($url, 'E1') !== false) {
-                            echo " <div class='alert alert-danger'>
+                            echo " <div class='alert alert-danger' id='prompt'>
                                     File is not an image.
                                     </div>";
                     }
                     if (strpos($url, 'E2') !== false) {
-                            echo " <div class='alert alert-danger'>
+                            echo " <div class='alert alert-danger' id='prompt'>
                                     Sorry, file already exists.
                                     </div>";
                     }
                     if (strpos($url, 'E3') !== false) {
-                            echo " <div class='alert alert-danger'>
+                            echo " <div class='alert alert-danger' id='prompt'>
                                     Sorry, your file is too large.
                                     </div>";
                     }
                     if (strpos($url, 'E4') !== false) {
-                            echo " <div class='alert alert-danger'>
+                            echo " <div class='alert alert-danger' id='prompt'>
                                     Sorry, only JPG, JPEG, PNG & GIF files are allowed.
                                     </div>";
                     }
                     if (strpos($url, 'E5') !== false) {
-                            echo " <div class='alert alert-danger'>
+                            echo " <div class='alert alert-danger' id='prompt'>
                                     Sorry, your file was not uploaded.
                                     </div>";
                     }
                     if (strpos($url, 'E6') !== false) {
-                            echo " <div class='alert alert-danger'>
+                            echo " <div class='alert alert-danger' id='prompt'>
                                     Sorry, there was an error uploading your file.
                                     </div>";
                     }
                     
                 ?>
-                     <!--ref: http://bootsnipp.com/snippets/7XVM2-->
+                 </div>
                     <div class="row">
+                        <!--ref: http://bootsnipp.com/snippets/7XVM2-->
                         <?php
                             $query = "SELECT * FROM images WHERE event = '$filename' ORDER BY likes DESC";
                             $result = mysql_query($query); 
@@ -134,6 +141,7 @@
                        </div>
                     </div>
                  </div>
+                 <br><br>
                  
                   <!-- html for the upload model when clicked-->
                      <!--users can only upload to events id signed in or they have token, otherwise they will have to sign up for a account-->
@@ -150,7 +158,7 @@
                         $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
                         $qrToken = $actual_link."?".$token;
                      ?>
-                     
+                     <br><br>
                      <a id="downloadLnk" download="YourFileName.jpg">
                      <!--ref: https://developers.google.com/chart/infographics/docs/qr_codes-->
 			            <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?php echo $qrToken; ?>&choe=UTF-8"/>

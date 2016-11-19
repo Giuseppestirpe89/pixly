@@ -24,16 +24,19 @@
         <?php
             include("../includes/profileHead.php");
         ?>
-       <script>
+        <!--fades out error messege-->
+        <script>
         $( document ).ready(function() {
          $("#prompt").delay(2500).fadeOut("slow");
-        });</script>
+        });
+        </script>
     </head>
 
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
         <?php
             include("../includes/profileHeader.php");
         ?>
+        
                              <div class="modal" id="uploadModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
                         <div class="modal-dialog">
                            <div class="modal-content" style="text-align:center">

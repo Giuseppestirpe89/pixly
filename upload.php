@@ -125,7 +125,7 @@
                 include("logs/logsMail.php");
                 $conn->close();
                 // error: Sorry, there was an error uploading your file.
-                header("Location: eventPages/".$eventname.".php?E6");
+                header("Location: eventPages/".$eventname.".php?E61");
                 exit();
             }
             
@@ -161,7 +161,7 @@
                 include("logs/logsMail.php");
                 $conn->close();
                 // error: Sorry, there was an error uploading your file.
-                header("Location: eventPages/".$eventname.".php?E6");
+                header("Location: eventPages/".$eventname.".php?E62");
                 exit();
             }
              
@@ -172,7 +172,7 @@
             
         } else {
             // error: Sorry, there was an error uploading your file.
-            header("Location: eventPages/".$eventname.".php?E6");
+            header("Location: eventPages/".$eventname.".php?E63");
             exit();
         }
     }

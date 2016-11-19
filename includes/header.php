@@ -96,10 +96,14 @@
                 <li><a class="color_animation" href="profiles/<?php echo $_SESSION['user'];?>.php"><span class="glyphicon glyphicon-user white" style="text-color: white"></span> PROFILE</a></li>
                 <?php  } ?>
                 <li>
+                    <?php  if($_SESSION['user']) { ?>
+                    <a href="eventPages/createEventPage.php" style="padding: 0px;"><button type="button" class="btn btn-info btn-lg">Add Event</button></a>
+                    <?php  }else{ ?>
                     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login </button>
                     <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog"></div>
-                        </div>
+                    </div>
+                    <?php  } ?>
                             
                 </li>
             </ul>

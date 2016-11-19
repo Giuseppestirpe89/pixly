@@ -55,13 +55,13 @@
                 <?php  if($_SESSION['user']) { ?>
 
                 <li><a class="color_animation" href="../profiles/<?php echo $_SESSION['user'];?>.php"><span class="glyphicon glyphicon-user white" style="text-color: white"></span> PROFILE</a></li>
-                <?php  } ?>
+                <?php  }  ?>
                 <li>
-                    <!--<button type="button" class="btn btn-info btn-lg"><a href="ss">Login</a></button>-->
+                    <?php  if($_SESSION['user']) { ?>
+                    <a href="../eventPages/createEventPage.php" style="padding: 0px;"><button type="button" class="btn btn-info btn-lg">Add Event</button></a>
+                    <?php  }else{  ?>
                     <a href="../failedLogin.php" style="padding: 0px;"><button type="button" class="btn btn-info btn-lg">Login</button></a>
-                    <!--<div class="modal fade" id="myModal" role="dialog">-->
-                        <!--<div class="modal-dialog"></div>-->
-                    <!--    </div>-->
+                    <?php  }  ?>
                 </li>
             </ul>
         </div>
