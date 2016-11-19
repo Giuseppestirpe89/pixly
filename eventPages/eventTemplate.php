@@ -14,7 +14,8 @@
     $file = basename($thisFile);         
     $filename = basename($thisFile, ".php");
     $variable = substr($thisFile, 0, strpos($thisFile, "."));
-    $filename =  str_replace("/eventPages/","",$variable);
+    $filename2 =  str_replace("/eventPages/","",$variable);
+    $filename =  str_replace("%20","-",$filename2);
 ?>
 
     <!DOCTYPE html>
@@ -157,9 +158,8 @@
 
                      <?php 
                      // TEST PHP TO GENERATE TOKEN
-                        $token="testtoken";
                         $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-                        $qrToken = $actual_link."?".$token;
+                        $qrToken = $actual_link."?".$QRtoken;
                      ?>
                      <br><br>
                      <a id="downloadLnk" download="YourFileName.jpg">

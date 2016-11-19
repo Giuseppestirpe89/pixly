@@ -22,6 +22,9 @@
         exit();
     }
     
+    //handels whitespace in event names
+    $eventname =  str_replace(" ","-",$eventname);
+    
     if($passedRegex){
         
         $query = "SELECT * FROM events WHERE eventName = '$eventname'";   
@@ -84,6 +87,12 @@
             touch($filename);
             mkdir("../event/".$eventname);
             copy('eventTemplate.php', $filename);
+            
+            //creates QR token of a random string 25 charicters long
+            $QRtokenvalue =  substr(sha1(rand()), 0, 25);
+            $file_data = "<?php "."$"."QRtoken =  ".$QRtokenvalue."?>";
+            $file_data .= file_get_contents($filename);
+            file_put_contents($filename, $file_data);
             header("Location: $filename");
         }else{
             header("Location: createEventPage.php?userE4");
