@@ -9,10 +9,12 @@
 
 <head>
     <?php include("../includes/addUserHead.php");?>
+    <!--script has fade effect on error messeges-->
     <script>
         $( document ).ready(function() {
          $("#prompt").delay(2500).fadeOut("slow");
-        });</script>
+        });
+    </script>
     
 </head>
 
@@ -30,9 +32,10 @@
                 </div>
                 <div style = "height:70px">
                 <?php
+                
                 /*
-                 * in creatUser before we redirect back here we append a error code to the URL
-                 * we read this sp we know why the user has been redirected and display the appropriate error messege
+                 * in creatEvent.php before we redirect back here we append a error code to the URL
+                 * we read this so we know why the user has been redirected and display the appropriate error messege
                  */
                     //  !== false:  true, position is 0, ref http://us2.php.net/manual/en/language.operators.comparison.php
                     if (strpos($url, 'userE') !== false) {
