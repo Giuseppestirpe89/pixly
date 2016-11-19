@@ -42,6 +42,7 @@
             
         } else {
             $uploadOk = 0;
+            // error: File is not an image.
             header("Location: eventPages/".$eventname.".php?E1");
             exit();
         }
@@ -50,6 +51,7 @@
     // Check if file already exists
     if (file_exists($target_file)) {
         $uploadOk = 0;
+        // error: Sorry, file already exists.
         header("Location: eventPages/".$eventname.".php?E2");
         exit();
     }
@@ -57,6 +59,7 @@
     // Check file size
     if ($_FILES["fileToUpload"]["size"] > 500000) {
         $uploadOk = 0;
+        // error: Sorry, your file is too large.
         header("Location: eventPages/".$eventname.".php?E3");
         exit();
     }
@@ -65,14 +68,16 @@
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "gif" ) {
         $uploadOk = 0;
+        // error: Sorry, only JPG, JPEG, PNG & GIF files are allowed.
         header("Location: eventPages/".$eventname.".php?E4");
         exit();
     }
     
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
-        exit();
+        // error: Sorry, your file was not uploaded.
         header("Location: eventPages/".$eventname.".php?E5");
+        exit();
     // if everything is ok, try to upload file
     } else {
         
@@ -116,9 +121,10 @@
              * we close the connection, log a security incedent and email alert the admin
              */
              
-            if($rowsBefore == $rowsAfter-1){
+            if($rowsBefore != $rowsAfter-1){
                 include("logs/logsMail.php");
                 $conn->close();
+                // error: Sorry, there was an error uploading your file.
                 header("Location: eventPages/".$eventname.".php?E6");
                 exit();
             }
@@ -154,6 +160,7 @@
             if($rowsBefore == $rowsAfter){
                 include("logs/logsMail.php");
                 $conn->close();
+                // error: Sorry, there was an error uploading your file.
                 header("Location: eventPages/".$eventname.".php?E6");
                 exit();
             }
@@ -164,7 +171,7 @@
             exit();
             
         } else {
-            echo "Sorry, there was an error uploading your file.";
+            // error: Sorry, there was an error uploading your file.
             header("Location: eventPages/".$eventname.".php?E6");
             exit();
         }
