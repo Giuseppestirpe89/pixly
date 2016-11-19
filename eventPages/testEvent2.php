@@ -104,7 +104,7 @@
                     }
                     
                 ?>
-                 
+                     <!--ref: http://bootsnipp.com/snippets/7XVM2-->
                     <div class="row">
                         <?php
                             $query = "SELECT * FROM images WHERE event = '$filename' ORDER BY likes DESC";
