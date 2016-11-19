@@ -41,7 +41,6 @@
             $uploadOk = 1;
             
         } else {
-            echo "File is not an image.";
             $uploadOk = 0;
             header("Location: eventPages/".$eventname.".php?E1");
             exit();
@@ -50,7 +49,6 @@
     
     // Check if file already exists
     if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
         $uploadOk = 0;
         header("Location: eventPages/".$eventname.".php?E2");
         exit();
@@ -58,7 +56,6 @@
     
     // Check file size
     if ($_FILES["fileToUpload"]["size"] > 500000) {
-        echo "Sorry, your file is too large.";
         $uploadOk = 0;
         header("Location: eventPages/".$eventname.".php?E3");
         exit();
@@ -67,7 +64,6 @@
     // Allow certain file formats
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "gif" ) {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
         $uploadOk = 0;
         header("Location: eventPages/".$eventname.".php?E4");
         exit();
@@ -75,7 +71,6 @@
     
     // Check if $uploadOk is set to 0 by an error
     if ($uploadOk == 0) {
-        echo "Sorry, your file was not uploaded.";
         exit();
         header("Location: eventPages/".$eventname.".php?E5");
     // if everything is ok, try to upload file
@@ -121,7 +116,7 @@
              * we close the connection, log a security incedent and email alert the admin
              */
              
-            if($rowsBefore != $rowsAfter-1){
+            if($rowsBefore == $rowsAfter-1){
                 include("logs/logsMail.php");
                 $conn->close();
                 header("Location: eventPages/".$eventname.".php?E6");
