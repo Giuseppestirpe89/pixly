@@ -1,9 +1,12 @@
 <?php
     session_start();
+    //destroy teh session
     $_SESSION = array();
     session_unset();
     session_destroy(); 
+    //clears the data from the cookie
     setcookie("TestCookie", '', time() - 10, "", "","","");
+    // destroyes the cookie
     if (ini_get("session.use_cookies")) {
         $params = session_get_cookie_params();
         setcookie(session_name(), '', time() - 42000,
@@ -11,6 +14,7 @@
             $params["secure"], $params["httponly"]
         );
     }
+    //removes the cookie
     unset($_COOKIE["TestCookie"]);
     session_write_close();    
     header("Location: ../index.php");

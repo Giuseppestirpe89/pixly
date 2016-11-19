@@ -1,9 +1,18 @@
 <?php
 
+    /* --------------- This file containes the connection details to SQL server ----------------------------
+     * the login details to the DB are defined and a connection is establised
+     * This file is included to all pages where querys need to be made to the SQL DB
+     * We create a escape_data() function that scrubs user input of unwanted characters
+     * We create a custom error handler 
+     * We also have a get_client_ip_env() function that returns the clients IP address
+     * -----------------------------------------------------------------------------------------------------
+     */
+
+
     //session_start will need to be on every page so we include it here as connect.php is included in all pages
     session_start();
-    //http://blog.teamtreehouse.com/how-to-create-bulletproof-sessions
-    
+    //ref: http://blog.teamtreehouse.com/how-to-create-bulletproof-sessions
     //ref: http://www.newthinktank.com/2011/01/php-security/
     
     /* 

@@ -4,6 +4,17 @@
     include("../includes/connect.php");
     //saves url so we can referance it for the appeneded errors from createUser.php
     $url = $_SERVER['REQUEST_URI'];
+    
+    /*
+     * ----------------- This page sends the user input for new CreateEvents.php so as events can be created ------------------------- 
+     * We post the event name to the CreateEvents.php page
+     * This page also handels redirects from the CreateEvents.php page
+     * If the user input event name alrady exists or has invailed characters or is empty,
+     * A error code is appended to the end of the URL by the CreateEvents.php file
+     * This file reads the URL to see what error code was appended and displays the corresponding error messege to teh user
+     * -------------------------------------------------------------------------------------------------------------------------------
+     */
+     
 ?>
 <html>
 

@@ -3,6 +3,20 @@
     include("../includes/connect.php");
     
     /*
+     * ------ This file creates new events, which involves writes to the DB and creation of files and directories ------------------------
+     * There are several steps involved
+     * - Scrub user input
+     * - Check availablity of the event name in the 'events' table, and check the expected results from that query
+     * - Write the event details to the DB, and check the expected results from that write to the DB
+     * - Create a sub-directery for the photos to be stored in the 'event' directery
+     * - Create a PHP file in the 'eventPages' directory and name it to the event name
+     * - Copy the contents of the 'eventTemplate' into the new PHP file
+     * - Create a unique 25 character token for the QR token and append it to the top of the new PHP file
+     * - Redirect user to the new event page
+     * ------------------------------------------------------------------------------------------------------------------------------------
+     */
+    
+    /*
      * $passedRegex is set to true
      * If the user input fails any vailidation we change that to false
      * before we we start to read or write to teh DB we check that value
@@ -81,7 +95,7 @@
                  * if there is a match, it is unavailable adn we redirect to newUser with userE in the url
                  * we can then read that and display the correct error for the user
                  */
-                 
+                
                 if($dbEventName == $eventname){
                     //we mark the username as not free
                     $eventNameFree = false;
@@ -117,12 +131,14 @@
              * we make a new directory in 'events' and call it the event name
              * this is where the images for the event are stored
              */
+             
             mkdir("../event/".$eventname);
             
             /*
              * Creates QR token of a random string 25 charicters long
              * which is appended to the event URL before that full URL is generated into a QR code using the google API
              */
+             
             $QRtokenvalue =  substr(sha1(rand()), 0, 25);
             $file_data = "<?php "."$"."QRtoken =  '".$QRtokenvalue."';?>";
             

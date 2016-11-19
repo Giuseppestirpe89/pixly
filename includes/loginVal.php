@@ -1,14 +1,25 @@
- <?php
+<?php
  
     /* 
-     * ---LoginVal.php----
-     * This page take the posted user details from header.php or profileHeader.php validateds the details and logs the user in by creating a seshion
+     * ---------------- We take user credentials and validate them to log the user into their account ---------------------
+     * There are several steps to this:
+     * - Check we have all the nessesery information to check the credentials
+     * - Scrub the user data
+     * - Check if username is in the 'users' table, check the expected results for that query
+     * - If it is, we use password_verify() to check if the hashed passwords match
+     * - Create a session for the user
+     * - We add the usersname and access level of the user from the DB to the session
+     * - We add the IP address of the user to the session
+     * - We create a random 25 character long string as a token and add it to the session
+     * - We also add the token to a secure/HTTP only cookie and sent it to the clients browser
+     * - Finally we direct the user to index.php
+     * ---------------------------------------------------------------------------------------------------------------------
      */
- 
+  
     session_start();
     include('connect.php');
  
-    //boolean variable used to trigger the SQL query 
+    //boolean variable used to controle access to the SQL query 
     $passedRegex = TRUE;
     
     /*
@@ -104,7 +115,7 @@
                     $randomID = substr(sha1(rand()), 0, 25);
                     // That Id if given to the users session AND also the users cookie, so they can be compaired
                     $_SESSION['cookieId']=$randomID;
-                    //cookies expire within a hour, have a specified path, specifieddomain, are secure, and are httponly
+                    //cookies expires within a hour, has a specified path, specifieddomain, are secure flagged, and has HTTP Only flagged
                     setcookie('cookieId', $randomID, time()+3600, "/", "c9users.io", 1, 1);
                     header("Location: ../index.php");
                     exit();

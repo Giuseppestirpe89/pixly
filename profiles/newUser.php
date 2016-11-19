@@ -4,6 +4,16 @@
     include("../includes/connect.php");
     //saves url so we can referance it for the appeneded errors from createUser.php
     $url = $_SERVER['REQUEST_URI'];
+    
+    /*
+     * --------------------------------In newUser.php a few steps are handeled----------------------------------------------
+     * Posts user input to createUser.php to create a user profile
+     * This page also handels redirects from the createUser.php page
+     * If the user input event name alrady exists or has invailed characters or is empty,
+     * A error code is appended to the end of the URL by the createUser.php file
+     * This file reads the URL to see what error code was appended and displays the corresponding error messege to teh user
+     * ----------------------------------------------------------------------------------------------------------------------
+     */
 ?>
 <html>
 

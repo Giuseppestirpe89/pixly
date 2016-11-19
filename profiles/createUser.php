@@ -1,13 +1,23 @@
-<!-- 
-        --In createUser.php a few steps are handeled--
-        * user input is sanitised 
-        * passwords are hashed 
-        * their details a writen to the DB
-        * A session is created for the user
-        * Their profile page is created
-        * They are directed to their new profile page
--->
+
 <?php
+
+    /*
+     * -------------------------In createUser.php we create new user profiles----------------------------------------------------
+     * - user input is sanitised 
+     * - passwords are hashed 
+     * - Check if the user name is in the 'users' table on the the DB, and check the expected results from query to the DB
+     * - if the username is free, write the user details to the DB, and check the expected results from write to the DB
+     * - Create a session for the user
+     * - We add the usersname and access level of the user from the DB to the session
+     * - We add the IP address of the user to the session
+     * - We create a random 25 character long string as a token and add it to the session
+     * - We also add the token to a secure/HTTP only cookie and sent it to the clients browser
+     * - Create a file named after the username and write the PHP template code to the profile page
+     * - save the file to the profiles directory
+     * - Redirect the user their new profile page
+     * -------------------------------------------------------------------------------------------------------------------------
+     */
+    
     session_start();
     include("../includes/connect.php");
         
@@ -155,6 +165,7 @@
             /*
              * else 1 or 0 rows are effected is the expected result so we check if the user name matches any existing usernames
              */
+             
             while ($row = mysql_fetch_assoc($result)) {
                 $dbUsername=$row['username'];
                 //if there is a match we redirect to newUser with userE in the url, we can then read that and display the correct error for the user
@@ -203,6 +214,7 @@
              * A .php profile page is then created, the contents of a standard profile page are populated to the file
              * and saved to the current directory under the users username
              */
+             
             //http://www.w3schools.com/php/php_file_create.asp-
             $myfile = fopen($username .".php", "w") or die("Unable to open file!");
             $txt = " 
