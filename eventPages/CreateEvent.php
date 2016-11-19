@@ -124,7 +124,7 @@
              * which is appended to the event URL before that full URL is generated into a QR code using the google API
              */
             $QRtokenvalue =  substr(sha1(rand()), 0, 25);
-            $file_data = "<?php "."$"."QRtoken =  ".$QRtokenvalue."?>";
+            $file_data = "<?php "."$"."QRtoken =  '".$QRtokenvalue."';?>";
             
             // takes all the text from the new event page and stores it in $file_data
             $file_data .= file_get_contents($filename);
@@ -141,6 +141,5 @@
         }
         
     }
-    
     
 ?>

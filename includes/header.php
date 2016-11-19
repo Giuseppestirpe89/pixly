@@ -102,7 +102,10 @@
                     
                     <!--If not they get a login button-->
                     <?php  }else{  ?>
-                    <a href="failedLogin.php" style="padding: 0px;"><button type="button" class="btn btn-info btn-lg">Login</button></a>
+                    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login </button>
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog"></div>
+                    </div>
                     <?php  }  ?>
                 </li>
             </ul>

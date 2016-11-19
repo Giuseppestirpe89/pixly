@@ -149,7 +149,7 @@
                  
                   <!-- html for the upload model when clicked-->
                      <!--users can only upload to events id signed in or they have token, otherwise they will have to sign up for a account-->
-                     <?php if($_SESSION['user'] || strpos($url, 'testtoken')){ ?>
+                     <?php if($_SESSION['user'] || strpos($url, $QRtoken)){ ?>
                      <button type="button" class="btn btn-primary btn-circle" id="openUpload"><i class="glyphicon glyphicon-list"></i></button><br>
                      <?php }else{ ?>
                      <p>want to uplaod photos! create a account here</p>
