@@ -6,7 +6,7 @@
      * ------ This file creates new events, which involves writes to the DB and creation of files and directories ------------------------
      * There are several steps involved
      * - Scrub user input
-     * - Check availablity of the event name in the 'events' table, and check the expected results from that query
+     * - Check availablity of the event name in the 'events' DB table, and check the expected results from that query
      * - Write the event details to the DB, and check the expected results from that write to the DB
      * - Create a sub-directery for the photos to be stored in the 'event' directery
      * - Create a PHP file in the 'eventPages' directory and name it to the event name
