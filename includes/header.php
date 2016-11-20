@@ -80,14 +80,31 @@
                      
                     if($_SESSION['premium']=='true' && $_SESSION['ip'] == get_client_ip_env() && $_COOKIE['cookieId'] == $_SESSION['cookieId']) { 
                                     
-                ?>
-                <li>
-                    <a class="page-scroll" href="admin.php">Dashboard</a>
-                </li>
+                    ?>
+                    <li>
+                        <a class="page-scroll" href="admin.php">Dashboard</a>
+                    </li>
                     <?php } ?>
-                <li>
-                    <a class="page-scroll" href="includes/killSession.php">Logout <?php echo $_SESSION['user'];?></a>
-                </li>
+                    
+                    
+                    <?php 
+                    /*
+                     * The site administrators can view security logs and vet flagged content
+                     */
+                    if($_SESSION['premium']=='admin' && $_SESSION['ip'] == get_client_ip_env() && $_COOKIE['cookieId'] == $_SESSION['cookieId']) { 
+                    ?>
+                    <li>
+                    <a class="page-scroll" href="admin.php">Dashboard</a>
+                    </li>
+                    <li>
+                    <a class="page-scroll" href="admin/adminConsole.php">Admin Console</a>
+                    </li>
+                    <?php } ?>
+                    
+                    
+                    <li>
+                        <a class="page-scroll" href="includes/killSession.php">Logout</a>
+                    </li>
                 <?php  } ?>
 
             </ul>
@@ -96,7 +113,7 @@
                 <!--if signed in the "profile button is displayed"-->
                 <?php  if($_SESSION['user']) { ?>
 
-                <li><a class="color_animation" href="profiles/<?php echo $_SESSION['user'];?>.php"><span class="glyphicon glyphicon-user white" style="text-color: white"></span> PROFILE</a></li>
+                <li><a class="color_animation" href="profiles/<?php echo $_SESSION['user'];?>.php"><span class="glyphicon glyphicon-user white" style="text-color: white"></span>  <?php echo $_SESSION['user'];?></a></li>
                 <?php  } ?>
                 <li>
                     <!--If the user is logged in the see the 'Add Event' button-->
