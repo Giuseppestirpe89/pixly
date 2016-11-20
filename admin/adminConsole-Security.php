@@ -1,15 +1,14 @@
-
+ 
 <?php 
-session_start(); 
-include('../includes/connect.php');
+    session_start(); 
+    include('../includes/connect.php');
 ?>
 <html>
     <head>
-        <?phpinclude('../includes/profileHead.php');?>
+        <?php include('../includes/profileHead.php');?>
     </head>
     <body>
-        <?phpinclude ('../includes/profileHeader.php');?>
-
+        <?php include ('../includes/profileHeader.php');?>
         <section>
             <div class="container">
                 <div style="height:79px">
@@ -24,31 +23,31 @@ include('../includes/connect.php');
         <section>
             <div class="container">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="adminConsole.php">Home</a></li>
-                    <li><a href="adminConsole-Security.php">Security logs</a></li>
+                    <li><a href="adminConsole.php">Home</a></li>
+                    <li class="active"><a href="adminConsole-Security.php">Security logs</a></li>
                     <li><a href="adminConsole-Flagged.php">Flagged Photos</a></li>
                 </ul>
                 <br>
+                <form action action="SecurityLogs.php">
                 <?php
                     $dir = "../logs/records";
-                    $countOfLogs = 0;
                    // Open a directory, and read its contents
                     if (is_dir($dir)){
                       if ($dh = opendir($dir)){
                         while (($file = readdir($dh)) !== false){
-                          $countOfLogs++;
+                          echo "<a href='SecurityLogs.php?".$file."'>Log: " . $file . " </a><br>";
                          }
                         closedir($dh);
                       }
                     }
-                    echo ("<a href='adminConsole-Security.php'>You have ".$countOfLogs. " security loggs to review</a>");
                 ?>
+                </form>
                 <hr>
             </div>
         </section>
         <?php
             //include("includes/footer.php");
         ?>
-        </section>
+        </section>  
     </body>
 </html>

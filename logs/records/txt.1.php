@@ -1,7 +1,7 @@
 
 Date: 2016-11-20 13:27:06<br>
 PHP_SELF: /logs/logs.1.php<br>
-argv: ONE<br>
+<b>argv: </b>ONE<br>
 argc: <br>
 GATEWAY_INTERFACE: CGI/1.1<br>
 SERVER_ADDR: 172.17.2.166<br>
