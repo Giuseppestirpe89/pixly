@@ -40,10 +40,9 @@
                         if($_SESSION['premium']=='true' && $_SESSION['ip'] == get_client_ip_env() && $_COOKIE['cookieId'] == $_SESSION['cookieId']) { 
                 ?>
                 <li>
-                    <a class="page-scroll" href="../admin.php">Admin</a>
+                    <a class="page-scroll" href="../admin.php">Dashboard</a>
                 </li>
                             <?php } ?>
-                <li>
                     <a class="page-scroll" href="../includes/killSession.php">Logout <?php echo $_SESSION['user'];?></a>
                 </li>
                 <?php  } ?>

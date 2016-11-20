@@ -114,8 +114,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="left carousel-control" href="#myCarousel<?php echo $incrementDivId ?>" data-slide="prev">‹</a>
-                            <a class="right carousel-control" href="#myCarousel<?php echo $incrementDivId ?>" data-slide="next">›</a>
+                            <a class="left carousel-control" href="#myCarousel<?php echo $incrementDivId ?>" data-slide="prev"><strong><h1><</h1></strong></a>
+                            <a class="right carousel-control" href="#myCarousel<?php echo $incrementDivId ?>" data-slide="next"><strong><h1>></h1></strong></a>
                         </div>
                     </div>
                 </div>
@@ -189,8 +189,8 @@
                                     </div>
                                 </div>                        
                             </div>
-                            <a class="left carousel-control" href="#myCarousel<?php echo $incrementDivId ?>" data-slide="prev">‹</a>
-                            <a class="right carousel-control" href="#myCarousel<?php echo $incrementDivId ?>" data-slide="next">›</a>
+                            <a class="left carousel-control" href="#myCarousel<?php echo $incrementDivId ?>" data-slide="prev"><strong><h1><</h1></strong></a>
+                            <a class="right carousel-control" href="#myCarousel<?php echo $incrementDivId ?>" data-slide="next"><strong><h1>></h1></strong></a>
                         </div>
                     </div>
                 </div>

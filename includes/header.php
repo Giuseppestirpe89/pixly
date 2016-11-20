@@ -82,7 +82,7 @@
                                     
                 ?>
                 <li>
-                    <a class="page-scroll" href="admin.php">Admin<?php echo $ee ?></a>
+                    <a class="page-scroll" href="admin.php">Dashboard</a>
                 </li>
                     <?php } ?>
                 <li>

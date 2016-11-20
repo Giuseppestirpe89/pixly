@@ -37,7 +37,7 @@
     }
     
     /*
-     * scribs user data and runs it through the escape_data() function *notes in includes/connect.php
+     * scrubs user data and runs it through the escape_data() function *notes in includes/connect.php
      */
      
     $trimmedFormEventname = stripslashes(trim($formEventname));
@@ -85,21 +85,21 @@
             //closed the sql connection
             mysql_close($connection);
             //redirects user
-            header("Location: newUser.php?userE2");
+            header("Location: createEventPage.php?error");
         }else{
             while ($row = mysql_fetch_assoc($result)) {
-                $dbEventName=$row['eventName'];
+                $EventNameFromDB=$row['eventName'];
                 
                 /*
                  * we compare the event name the user wants against the ones in the DB
-                 * if there is a match, it is unavailable adn we redirect to newUser with userE in the url
+                 * if there is a match, it is unavailable and we redirect to newUser with userE in the url
                  * we can then read that and display the correct error for the user
                  */
                 
-                if($dbEventName == $eventname){
+                if($EventNameFromDB == $eventname){
                     //we mark the username as not free
                     $eventNameFree = false;
-                    header("Location: newUser.php?userE3");
+                    header("Location: createEventPage.php?userE3");
                     exit();
                 }
             }
@@ -123,9 +123,9 @@
              * then copys the contents from the eventTemplate.php to that new file
              */
              
-            $filename = $eventname.".php";
-            touch($filename);
-            copy('eventTemplate.php', $filename);
+            $newEventFile = $eventname.".php";
+            touch($newEventFile);
+            copy('eventTemplate.php', $newEventFile);
             
             /*
              * we make a new directory in 'events' and call it the event name
@@ -140,22 +140,26 @@
              */
              
             $QRtokenvalue =  substr(sha1(rand()), 0, 25);
-            $file_data = "<?php "."$"."QRtoken =  '".$QRtokenvalue."';?>";
+            $qrtokenstring = "<?php "."$"."QRtoken =  '".$QRtokenvalue."';?>";
             
-            // takes all the text from the new event page and stores it in $file_data
-            $file_data .= file_get_contents($filename);
+            // takes all the text from the new event page and stores it in $qrtokenstring
+            $qrtokenstring .= file_get_contents($newEventFile);
             
             /* 
              * Then puts the QR token in the new event file first, and the original contents in after
-             * This puts the QR token on the token of the file so it can be called on further done in it
+             * This puts the QR token on the token of the file so it can be called on further down in it
              */
              
-            file_put_contents($filename, $file_data);
-            header("Location: $filename");
+            file_put_contents($newEventFile, $qrtokenstring);
+            header("Location: $newEventFile");
         }else{
-            header("Location: createEventPage.php?userE4");
+            header("Location: createEventPage.php?error");
+            exit();
         }
         
+    }else{
+        header("Location: createEventPage.php?error");
+        exit();
     }
     
 ?>

@@ -64,6 +64,11 @@
                                 invalid characters
                                 </div>";
                     }
+                    if (strpos($url, 'error') !== false) {
+                        echo " <div class='alert alert-warning' id='prompt'>
+                                A error has occcured!
+                                </div>";
+                    }
                     
                  ?>  
                  </div>
