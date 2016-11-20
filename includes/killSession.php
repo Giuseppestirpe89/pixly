@@ -16,6 +16,12 @@
     }
     //removes the cookie
     unset($_COOKIE["TestCookie"]);
-    session_write_close();    
+    session_write_close();   
+    $url = $_SERVER['REQUEST_URI'];
+    if (strpos($url, 'inactive') !== false) {
+        header("Location: ../index.php?inactive");
+        exit();
+    }
+    
     header("Location: ../index.php");
 ?>

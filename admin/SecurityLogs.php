@@ -2,6 +2,9 @@
 <?php 
     session_start(); 
     include('../includes/connect.php');
+    if($_SESSION['premium'] != 'admin' || $_SESSION['ip'] != get_client_ip_env() || $_COOKIE['cookieId'] != $_SESSION['cookieId']) { 
+        header("Location: ../includes/killSession.php?inactive");
+    }
     
     $url = $_SERVER['REQUEST_URI'];
     $whatIWant = substr($url, strpos($url, "?") + 1);    
@@ -9,7 +12,7 @@
 
 <html>
     <head>
-        <?phpinclude('../includes/profileHead.php');?>
+        <?php include('../includes/profileHead.php');?>
     </head>
     <body>
     <?php

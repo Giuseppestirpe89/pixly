@@ -1,14 +1,17 @@
 
 <?php 
-session_start(); 
-include('../includes/connect.php');
+    session_start(); 
+    include('../includes/connect.php');
+    if($_SESSION['premium'] != 'admin' || $_SESSION['ip'] != get_client_ip_env() || $_COOKIE['cookieId'] != $_SESSION['cookieId']) { 
+        header("Location: ../includes/killSession.php?inactive");
+    }
 ?>
 <html>
     <head>
-        <?phpinclude('../includes/profileHead.php');?>
+        <?php include('../includes/profileHead.php');?>
     </head>
     <body>
-        <?phpinclude ('../includes/profileHeader.php');?>
+        <?php include ('../includes/profileHeader.php');?>
 
         <section>
             <div class="container">
@@ -36,7 +39,9 @@ include('../includes/connect.php');
                     if (is_dir($dir)){
                       if ($dh = opendir($dir)){
                         while (($file = readdir($dh)) !== false){
-                          $countOfLogs++;
+                            if (strpos($file, '.') == true) {
+                                $countOfLogs++;
+                            }
                          }
                         closedir($dh);
                       }

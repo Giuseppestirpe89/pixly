@@ -122,7 +122,21 @@
                             $result = mysql_query($query); 
                             // outer while loop extracts all images
                             while ($row = mysql_fetch_assoc($result)) { 
-                              echo "<div class='col-lg-3 col-sm-4 col-xs-6'><a title='Image 1' href='#'><img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'></a></div>";
+                               if (strpos($url, 'reportimage') !== false) {
+                                    echo " 
+                                    <div class='col-lg-3 col-sm-4 col-xs-6'>
+                                    <a title='Image 1' href='#'>
+                                     <img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'>
+                                    </a>
+                                    <a href='reportImage.php?".$row['event']."/".$row['imageName']."'>report</a>
+                                    </div>";
+                                }else{
+                                    echo "
+                                    <div class='col-lg-3 col-sm-4 col-xs-6'>
+                                    <a title='Image 1' href='#'>
+                                     <img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'>
+                                    </a>
+                                    </div>";
                             }
                         ?>
                        <hr>
@@ -161,6 +175,7 @@
                         $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
                         $qrToken = $actual_link."?".$QRtoken;
                      ?>
+                     <a href="<?php echo $url."?reportimage"?>"><span>report image</span></a>
                      <br><br>
                      <a id="downloadLnk" download="YourFileName.jpg">
                      <!--ref: https://developers.google.com/chart/infographics/docs/qr_codes-->

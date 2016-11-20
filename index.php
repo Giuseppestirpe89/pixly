@@ -5,7 +5,7 @@
 -->
 
 <?php
-    
+    $url = $_SERVER['REQUEST_URI'];
     include("includes/connect.php");
 ?>
 
@@ -16,6 +16,12 @@
         <?php
             include("includes/head.php");
         ?>
+        <!--script has fade effect on error messeges-->
+    <script>
+        $( document ).ready(function() {
+         $("#prompt").delay(2500).fadeOut("slow");
+        });
+    </script>
     </head>
 
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -29,6 +35,13 @@
                     <div class="col-lg-12">
                         <h1>Pixly &copy;</h1>
                         <h2>Best Events</h2>
+                        <?php
+                            if (strpos($url, 'inactive') !== false) {
+                                echo " <div class='alert alert-danger' id='prompt'>
+                                 You have been logged out due to inactivity.
+                                 </div>";
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
