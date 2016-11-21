@@ -32,6 +32,8 @@
                 </ul>
                 <br>
                 <form action action="SecurityLogs.php">
+                <p><strong>Important!</strong></p>
+            
                 <?php
                     $dir = "../logs/records";
                    // Open a directory, and read its contents
@@ -39,13 +41,37 @@
                       if ($dh = opendir($dir)){
                         while (($file = readdir($dh)) !== false){
                             if (strpos($file, '.') == true) {
-                                 echo "<a href='SecurityLogs.php?".$file."'>Log: " . $file . " </a><br>";
+                                if (strpos($file, 'sql') == true) {
+                                    echo "<a href='SecurityLogs.php?".$file."'>Log: " . $file . " </a><br>";
+                                }
                             }
                          }
                         closedir($dh);
                       }
                     }
-                ?>
+                    echo "<hr> <p><strong>Other</strong></p>";
+                    if (is_dir($dir)){
+                      if ($dh = opendir($dir)){
+                        while (($file = readdir($dh)) !== false){
+                            if (strpos($file, '.') == true) {
+                                if (strpos($file, 'regex') == true) {
+                                
+                            
+                                 echo "<a href='SecurityLogs.php?".$file."'>Log: " . $file . " </a><br>";
+                                }
+                            }
+                         }
+                        closedir($dh);
+                      }
+                    }
+                
+                
+                
+                
+        
+        
+        ?>
+                
                 </form>
                 <hr>
             </div>

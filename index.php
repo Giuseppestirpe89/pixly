@@ -41,6 +41,12 @@
                                  You have been logged out due to inactivity.
                                  </div>";
                             }
+                            
+                            if (strpos($url, 'reported') !== false) {
+                                echo " <div class='alert alert-danger' id='prompt'>
+                                 The Image has been reported.
+                                 </div>";
+                            }
                         ?>
                     </div>
                 </div>

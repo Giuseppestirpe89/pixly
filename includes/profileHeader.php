@@ -53,7 +53,7 @@
                     <a class="page-scroll" href="admin.php">Dashboard</a>
                     </li>
                     <li>
-                    <a class="page-scroll" href="admin/adminConsole.php">Admin Console</a>
+                    <a class="page-scroll" href="../admin/adminConsole.php">Admin Console</a>
                     </li>
                     <?php } ?>
                     <li>

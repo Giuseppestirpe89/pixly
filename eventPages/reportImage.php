@@ -47,13 +47,15 @@
                 echo "
                 <div>
                 <a title='Image 1' href='#'><img class='thumbnail img-responsive center-block' src='../event/".$filepath."'></a>
-                <a href='deleteLog.php?".$whatIWant."'><button type='button' class='btn btn-danger btn-md center-block' >Report</button></a>
-                </div> "
+                <a href='report.php?".$filepath."'><button type='button' class='btn btn-danger btn-md center-block' >Report</button></a>
+                </div> 
+                <br>
+                <hr>"
+                
             ;?>
         </section>
 
-
-        <section>
+        
         <!-- Footer section -->
         <?php
             // include("../includes/profileFooter.php");

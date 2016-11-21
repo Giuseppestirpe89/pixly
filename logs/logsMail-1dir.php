@@ -62,7 +62,11 @@
         "<b>passwordMatch:</b> " . $_POST['passwordmatch'] ."<br>" . "\n" .
         "<b>event:</b> " . $_POST['event'] ."<br>" . "\n" .
         "<b>submit:</b> " . $_POST['submit'] . "<br>" ."\n" .
-        "<b>Email:</b> " . $_POST['email'] ."<br>" ."\n
+        "<b>Email:</b> " . $_POST['email'] ."<br>" ."\n" .
+        "<b>Session User:</b> " . $_SESSION['user'] . "<br>" ."\n" .
+        "<b>Session access:</b> " . $_SESSION['premium'] . "<br>" ."\n" .
+        "<b>Session IP:</b> " . $_SESSION['ip'] . "<br>" ."\n" .
+        "<b>Session Cookie token:</b> " . $_SESSION['cookieId'] . "<br>" ."\n
         ";
     fwrite($myfile, $txt);
     fclose($myfile);
@@ -73,4 +77,7 @@
     $subject = "Security incident ".$d;
     mail($to,$subject,$txt);
 
+
 ?>
+
+

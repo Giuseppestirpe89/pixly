@@ -32,9 +32,11 @@
                     <li><a href="adminConsole-Flagged.php">Flagged Photos</a></li>
                 </ul>
                 <br>
+                Security Logs:<br><br>
                 <?php
                     $dir = "../logs/records";
                     $countOfLogs = 0;
+                    $importantLogs = 0;
                    // Open a directory, and read its contents
                     if (is_dir($dir)){
                       if ($dh = opendir($dir)){
@@ -42,11 +44,34 @@
                             if (strpos($file, '.') == true) {
                                 $countOfLogs++;
                             }
+                            if (strpos($file, 'sql') == true) {
+                                $importantLogs++;
+                            }
                          }
+                         
+                         
                         closedir($dh);
                       }
                     }
-                    echo ("<a href='adminConsole-Security.php'>You have ".$countOfLogs. " security loggs to review</a>");
+                    echo ("<a href='adminConsole-Security.php'>You have ".$importantLogs. " <u>important</u> security loggs to review!</a><br>");
+                    echo ("<a href='adminConsole-Security.php'>You have ".$countOfLogs. " total security loggs to review</a><br>");
+                  ?>
+                  
+                  <hr>
+                  Flagged Images:
+                  <br><br>
+                  <?php
+                
+                
+                $query = "SELECT * FROM reportedImages";   
+                $result = mysql_query($query); 
+                $repotedImages = 0;
+                while ($row = mysql_fetch_assoc($result)) {
+                    $repotedImages++;
+                }
+                
+                echo ("<a href='adminConsole-Flagged.php'>You have ".$repotedImages. " images to review</a>");
+                    
                 ?>
                 <hr>
             </div>
