@@ -69,12 +69,14 @@
                            </div>
                         </div>
                      </div>
+                    <br> <br> <br>
         <link href="../css/photos3.css" rel="stylesheet">
         <!-- Intro Section -->
-        <section id="intro" class="intro-section">
+        <section id="intro" class="about-section">
            <div class="container">
               <div class="row">
                  <div class="container">
+                     
                  <h1><?php echo $filename; ?></h1>
                 <div style = "height:70px">
                 <?php

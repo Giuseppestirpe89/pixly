@@ -63,7 +63,7 @@
                            </div>
                         </div>
                      </div>
-
+                     
          <section id="intro" class="intro-section3">
             <div class="container">
                <div class="row">
@@ -109,7 +109,6 @@
                         window.open(url);
                        };
                      </script>
-                     			            
                      <br>
                      <br>
                   </div>
@@ -120,7 +119,6 @@
   ?>
          </section>
          </section>
-     
             <!-- jQuery -->
             <script src="js/photos.js"></script>
             <!-- Bootstrap Core JavaScript -->
@@ -129,5 +127,4 @@
             <script src="js/jquery.easing.min.js"></script>
             <script src="js/scrolling-nav.js"></script>
    </body>
-
    </html>

@@ -69,9 +69,10 @@
                            </div>
                         </div>
                      </div>
+                     <br> <br> <br>
         <link href="../css/photos3.css" rel="stylesheet">
         <!-- Intro Section -->
-        <section id="intro" class="intro-section">
+        <section id="intro" class="about-section">
            <div class="container">
               <div class="row">
                  <div class="container">
