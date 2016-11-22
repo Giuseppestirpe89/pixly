@@ -81,7 +81,7 @@
                 </div>
                 
                                
-                                <?php
+                  <?php
                 /*
                  * checks url for "free" or "premium" to know what account to pass tp createUsre.php
                  */
@@ -94,7 +94,10 @@
                 <button class="btn btn-small  btn-primary center-block">Create Account</button>
             </form>
 
-                <!-- paypall button -->
+           <!-- paypall button-->
+           
+           <!-- so bro if the user as a premium url show buy now as this form -->
+           
                         <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 
                             <!-- Identify your business so that you can collect the payments. -->
@@ -111,12 +114,41 @@
                         
                             <!-- Display the payment button. -->
                             <input type="image" name="submit"
-                            <img alt="Donate Button with Credit Cards" src=" https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_cc_147x47.png" />
-
+                            src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_cc_171x47.png"
+                            alt="Subscribe">
                             <img alt="" width="1" height="1"
-                            src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+                            src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
 
                         </form>
+
+<!-- so bro if the user as a free url show buy now as this form -->
+
+<!-- i tried to inser tsome if and else buti couldt so can u chec kif u can do it. thanks man love u -->
+
+
+                        <!--<form action="https://www.paypal.com/cgi-bin/webscr" method="post">-->
+
+                            <!-- Identify your business so that you can collect the payments. -->
+                        <!--    <input type="hidden" name="business"-->
+                        <!--        value="donations@rently.ie">-->
+                        
+                            <!-- Specify a Donate button. -->
+                        <!--    <input type="hidden" name="cmd" value="_donations">-->
+                        
+                            <!-- Specify details about the contribution -->
+                        <!--    <input type="hidden" name="item_name" value="Friends of the Park">-->
+                        <!--    <input type="hidden" name="item_number" value="Fall Cleanup Campaign">-->
+                        <!--    <input type="hidden" name="currency_code" value="USD">-->
+                        
+                            <!-- Display the payment button. -->
+                        <!--    <input type="image" name="submit"-->
+                        <!--    src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_donate_92x26.png"-->
+                        <!--    alt="Subscribe">-->
+                        <!--    <img alt="" width="1" height="1"-->
+                        <!--    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >-->
+
+                        <!--</form>-->
+                        
         </div>
     </div>
 </body>

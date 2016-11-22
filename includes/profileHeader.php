@@ -70,7 +70,7 @@
                 </li>
                 <?php  }  ?>
                 <li>
-                    <!--If the user is logged in the see the 'Add Event' button-->
+                    <!--If the user is logged in they see the 'Add Event' button-->
                     <?php  if($_SESSION['user']) { ?>
                     <a href="../eventPages/createEventPage.php" style="padding: 0px;"><button type="button" class="btn btn-info btn-lg">Add Event</button></a>
                     
