@@ -34,7 +34,7 @@
         <?php
             include("../includes/profileHeader.php");
         ?>
-                             <div class="modal" id="uploadModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
+                <div class="modal" id="uploadModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
                         <div class="modal-dialog">
                            <div class="modal-content" style="text-align:center">
                               <div class="modal-header">
@@ -163,7 +163,7 @@
                      <?php if($_SESSION['user'] || strpos($url, 'testtoken')){ ?>
                      <button type="button" class="btn btn-primary btn-circle" id="openUpload"><i class="glyphicon glyphicon-list"></i></button><br>
                      <?php }else{ ?>
-                     <p>want to uplaod photos! create a account here</p>
+                     <p>Want to uplaod photos! create a account here</p>
                      <a href="../priceplan.php"><button type="button" class="btn btn-primary">Create account</button></a><br>
                      <?php } ?>
 
@@ -192,14 +192,12 @@
            </div>
         </section>
         <section>
-            
+            <br><br><br>
         </section>
-
-
         <section>
         <!-- Footer section -->
         <?php
-            // include("../includes/profileFooter.php");
+             include("../includes/profileFooter.php");
         ?>
         </section>
          <script src="../js/photos.js"></script>

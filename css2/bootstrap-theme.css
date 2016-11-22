@@ -1518,7 +1518,7 @@ input[type="checkbox"] {
   line-height: normal;
 }
 input[type="file"] {
-  display: block;
+display: none;
 }
 select[multiple],
 select[size] {
