@@ -118,7 +118,7 @@
                             $result = mysql_query($query); 
                             // outer while loop extracts all images
                             while ($row = mysql_fetch_assoc($result)) { 
-                                if (strpos($url, 'reportimage') !== false) {
+                               if (strpos($url, 'reportimage') !== false) {
                                     echo " 
                                     <div class='col-lg-3 col-sm-4 col-xs-6'>
                                     <a title='Image 1' href='#'>

@@ -5,18 +5,14 @@
     $url = $_SERVER['REQUEST_URI'];
     $urlfilepath = substr($url, strpos($url, "?") + 1);    
 
-    $passedRegex = false;
+
 
     $trimmedPfilepath = stripslashes(trim($urlfilepath));
-    if (preg_match ('%^[A-za-z0-9\.\' \-!_?/&@$~]{2,30}$%', $trimmedPfilepath)) {
-            $filepath = escape_data($trimmedPfilepath);
-            $passedRegex = true;
-    }else{
-        header("Location: ../index.php");
-        exit();
-    }
+    $escapedFilepath = escape_data($trimmedPfilepath);
+    $filepath =  str_replace("%20"," ",$escapedFilepath);
     
-    if($passedRegex){
+    
+   list($event, $file) = explode("/", $filepath);
         
         /*
          * We write to the 'reportedImages' table in the DB 
@@ -61,6 +57,5 @@
             header("Location: ../index.php");
             exit();
         }
-        header("Location: ../index.php?reported");
-    }
-?>
+        header("Location: ../eventPages/".$event.".php?reported");
+

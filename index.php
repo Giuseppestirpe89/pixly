@@ -35,6 +35,7 @@
                     <div class="col-lg-12">
                         <h1>Pixly &copy;</h1>
                         <h2>Best Events</h2>
+                        <div style=height:70px>
                         <?php
                             if (strpos($url, 'inactive') !== false) {
                                 echo " <div class='alert alert-danger' id='prompt'>
@@ -48,6 +49,7 @@
                                  </div>";
                             }
                         ?>
+                        </div>
                     </div>
                 </div>
             </div>

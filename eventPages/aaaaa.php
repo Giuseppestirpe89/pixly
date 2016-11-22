@@ -1,4 +1,4 @@
-<!--
+<?php $QRtoken =  'bc6415e76a582ed9c3538685f';?><!--
     index.php is the main page
     it displays the featured pages
     as well the events
@@ -108,6 +108,11 @@
                                     Sorry, there was an error uploading your file.
                                     </div>";
                     }
+                    if (strpos($url, 'reported') !== false) {
+                                echo " <div class='alert alert-danger' id='prompt'>
+                                 The Image has been reported.
+                                 </div>";
+                            }
                     
                 ?>
                  </div>

@@ -15,7 +15,7 @@
 
         <section>
             <div class="container">
-                <div style="height:79px">
+                <div style="height:79px">nnnn
                 </div>    
                 <div class="row">
                     <div class="col-lg-12">
@@ -53,8 +53,9 @@
                         closedir($dh);
                       }
                     }
+                    $normalLogs = $countOfLogs - $importantLogs;
                     echo ("<a href='adminConsole-Security.php'>You have ".$importantLogs. " <u>important</u> security loggs to review!</a><br>");
-                    echo ("<a href='adminConsole-Security.php'>You have ".$countOfLogs. " total security loggs to review</a><br>");
+                    echo ("<a href='adminConsole-Security.php'>You have ".$normalLogs. " standard loggs to review</a><br>");
                   ?>
                   
                   <hr>
