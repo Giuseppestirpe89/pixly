@@ -1,16 +1,16 @@
-<br><b>Date:</b> 2016-11-22-00:11:39<br>
+<br><b>Date:</b> 2016-11-23-00:48:35<br>
 <b>PHP_SELF:</b> /admin/deletePhoto.php<br>
 <b>argv:</b> <br>
 <b>argc:</b> <br>
 <b>GATEWAY_INTERFACE:</b> CGI/1.1<br>
-<b>SERVER_ADDR:</b> 172.17.2.166<br>
+<b>SERVER_ADDR:</b> 172.17.4.95<br>
 <b>SERVER_NAME: </b>pixly3-donwhelan.c9users.io<br>
 <b>SERVER_SOFTWARE:</b> Apache/2.4.7 (Ubuntu)<br>
 <b>SERVER_PROTOCOL:</b> HTTP/1.1<br>
 <b>REQUEST_METHOD:</b> GET<br>
-<b>REQUEST_TIME: </b>1479773497<br>
-<b>REQUEST_TIME_FLOAT:</b> 1479773497.978<br>
-<b>QUERY_STRING:</b> aaaaa/sc1.png<br>
+<b>REQUEST_TIME: </b>1479862113<br>
+<b>REQUEST_TIME_FLOAT:</b> 1479862113.119<br>
+<b>QUERY_STRING:</b> iweohf/sc1.png<br>
 <b>DOCUMENT_ROOT:</b> /home/ubuntu/workspace<br>
 <b>HTTP_ACCEPT:</b> text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8<br>
 <b>HTTP_ACCEPT_CHARSET:</b> <br>
@@ -18,12 +18,12 @@
 <b>HTTP_ACCEPT_LANGUAGE:</b> en-US,en;q=0.8<br>
 <b>HTTP_CONNECTION:</b> <br>
 <b>HTTP_HOST:</b> pixly3-donwhelan.c9users.io<br>
-<b>HTTP_REFERER:</b> https://pixly3-donwhelan.c9users.io/admin/FlaggedPhotos.php?27<br>
+<b>HTTP_REFERER:</b> https://pixly3-donwhelan.c9users.io/admin/FlaggedPhotos.php?73<br>
 <b>HTTP_USER_AGENT:</b> Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36<br>
 <b>HTTPS:</b> <br>
-<b>REMOTE_ADDR:</b> 10.240.0.224<br>
+<b>REMOTE_ADDR:</b> 10.240.1.31<br>
 <b>REMOTE_HOST:</b> <br>
-<b>REMOTE_PORT:</b> 49132<br>
+<b>REMOTE_PORT:</b> 60080<br>
 <b>REMOTE_USER:</b> <br>
 <b>REDIRECT_REMOTE_USER:</b> <br>
 <b>SCRIPT_FILENAME:</b> /home/ubuntu/workspace/admin/deletePhoto.php<br>
@@ -33,7 +33,7 @@
 <br>
 <b>PATH_TRANSLATED:</b> <br>
 <b>SCRIPT_NAME:</b> /admin/deletePhoto.php<br>
-<b>REQUEST_URI:</b> /admin/deletePhoto.php?aaaaa/sc1.png<br>
+<b>REQUEST_URI:</b> /admin/deletePhoto.php?iweohf/sc1.png<br>
 <b>PHP_AUTH_DIGEST:</b> <br>
 <b>PHP_AUTH_USER:</b> <br>
 <b>PHP_AUTH_PW:</b> <br>
@@ -49,6 +49,6 @@
 <b>Session User:</b> admin<br>
 <b>Session access:</b> admin<br>
 <b>Session IP:</b> 89.101.66.86<br>
-<b>Session Cookie token:</b> 3e19a4db28d8c99735414eed5<br>
+<b>Session Cookie token:</b> 3ba3b603b00d94d73ce4190f0<br>
 
         

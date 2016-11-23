@@ -154,10 +154,10 @@
             //check to see what the count of rows is after the update to DB
             $sql = "Select eventId FROM events";
             $result = mysql_query($sql); 
-            $rowsBefore = mysql_num_rows($result);
+            $rowsAfter = mysql_num_rows($result);
             
-            //check the umber of rows are the same, else start the security protocal
-            if($rowsBefore == $rowsAfter){
+            //check the number of rows are the same, else start the security protocal
+            if($rowsBefore != $rowsAfter){
                 include("logs/logsMail.php");
                 $conn->close();
                 // error: Sorry, there was an error uploading your file.

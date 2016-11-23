@@ -108,6 +108,11 @@
                                     Sorry, there was an error uploading your file.
                                     </div>";
                     }
+                    if (strpos($url, 'reported') !== false) {
+                            echo " <div class='alert alert-danger' id='prompt'>
+                                    This Image has been reported.
+                                    </div>";
+                    }
                     
                 ?>
                  </div>
@@ -160,7 +165,7 @@
                  
                   <!-- html for the upload model when clicked-->
                      <!--users can only upload to events id signed in or they have token, otherwise they will have to sign up for a account-->
-                     <?php if($_SESSION['user'] || strpos($url, 'testtoken')){ ?>
+                     <?php if($_SESSION['user'] || strpos($url, $QRtoken)){ ?>
                      <button type="button" class="btn btn-primary btn-circle" id="openUpload"><i class="glyphicon glyphicon-list"></i></button><br>
                      <?php }else{ ?>
                      <p>Want to uplaod photos! create a account here</p>
@@ -168,17 +173,16 @@
                      <?php } ?>
 
                      <?php 
-                     // TEST PHP TO GENERATE TOKEN
-                        $token="testtoken";
                         $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-                        $qrToken = $actual_link."?".$token;
+                        $QRlink = $actual_link."?".$QRtoken;
                      ?>
                      <a href="<?php echo $url."?reportimage"?>"><span>report image</span></a>
                      <br><br>
                      <a id="downloadLnk" download="YourFileName.jpg">
                      <!--ref: https://developers.google.com/chart/infographics/docs/qr_codes-->
-			            <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?php echo $qrToken; ?>&choe=UTF-8"/>
+			            <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?php echo $QRlink; ?>&choe=UTF-8"/>
 			            </a>
+			            <br><br><br><br><br><br>
 			            
 			            <!--Opens QR code in new tab so it can be view or downloaded as a PNG-->
 			            <script>
@@ -194,6 +198,7 @@
         <section>
             <br><br><br>
         </section>
+        <br><br><br><br><br><br><br>
         <section>
         <!-- Footer section -->
         <?php

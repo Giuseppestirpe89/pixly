@@ -22,14 +22,16 @@ session_start();
          */
          
         //check to see what the count of rows is after the delete to the DB
-        $sql = "SELECT * FROM reportedImages";
-        $result = mysql_query($sql); 
-        $rowsBefore = mysql_num_rows($result);
+        $query = "SELECT * FROM reportedImages";   
+        $result = mysql_query($query); 
+        $rowsBefore = 0;
+        while ($row = mysql_fetch_assoc($result)) {
+            $rowsBefore++;
+        }
         
         //write to the DB
         $conn = new mysqli(HOST, USER, PASS, DB);
-        $sql = "DELETE FROM reportedImages Where
-        src = '$filePath'";
+        $sql = "DELETE FROM reportedImages Where src = '$filePath'";
         if ($conn->query($sql) === TRUE) {
             echo "record has been removed from reportedImages<br>";
         } else {
@@ -38,10 +40,13 @@ session_start();
         $conn->close();
         
         //check to see what the count of rows is after the write to DB
-        $sql = "SELECT * FROM reportedImages";
-        $result = mysql_query($sql); 
-        $rowsAfter = mysql_num_rows($result);
-        echo " before=".$rowsBefor." after=".$rowsAfter;
+        $query = "SELECT * FROM reportedImages";   
+        $result = mysql_query($query); 
+        $rowsAfter = 0;
+        while ($row = mysql_fetch_assoc($result)) {
+            $rowsAfter++;
+        }
+        
         /*
          * if anything other than one row being deleted happens which is the expected result
          * we close the connection, log a security incedent and email alert the admin
@@ -57,32 +62,32 @@ session_start();
         
         
         
+       // ---------------------------
         
-        
-        
-        
-        
-        //check to see what the count of rows is after the delete to the DB
-        $sql = "SELECT * FROM images";
-        $result = mysql_query($sql); 
-        $rowsBefore = mysql_num_rows($result);
+        $query = "SELECT * FROM images";   
+        $result = mysql_query($query); 
+        $rowsBefore = 0;
+        while ($row = mysql_fetch_assoc($result)) {
+            $rowsBefore++;
+        }
         
         //write to the DB
         $conn = new mysqli(HOST, USER, PASS, DB);
-        $sql = "DELETE FROM images Where
-        imageName = '$file'";
+        $sql = "DELETE FROM images Where imageName = '$file'";
         if ($conn->query($sql) === TRUE) {
             echo "New record has been removed from images <br>";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
+        
+        $query = "SELECT * FROM images";   
+                $result = mysql_query($query); 
+                $rowsAfter = 0;
+                while ($row = mysql_fetch_assoc($result)) {
+                    $rowsAfter++;
+                }
+        
         $conn->close();
-        
-        //check to see what the count of rows is after the write to DB
-        $sql = "SELECT * FROM images";
-        $result = mysql_query($sql); 
-        $rowsAfter = mysql_num_rows($result);
-        
         /*
          * if anything other than one row being deleted happens which is the expected result
          * we close the connection, log a security incedent and email alert the admin
@@ -90,53 +95,71 @@ session_start();
          
         if($rowsBefore != $rowsAfter+1){
             include("../logs/logsMail-1dir.php");
-            $conn->close();
+            echo $rowsAfter.'count'.$rowsBefore;
             // error: Sorry, there was an error uploading your file.
             //header("Location: ../index.php?2");
             exit();
         }
         
         
+        //------------------------------------
         
+        $query = "SELECT * FROM events";   
+        $result = mysql_query($query); 
+        $rowsBefore = 0;
+        while ($row = mysql_fetch_assoc($result)) {
+            $rowsBefore++;
+        }
+            
+        $iquery = "SELECT * FROM events WHERE eventName = '$eventName'";
+        $iresult = mysql_query($iquery); 
+        while ($irow = mysql_fetch_assoc($iresult)) {
+            $valueBeforeUpdate = $irow['numOfPhotos'];
+            $valueAfterUpdate = $valueBeforeUpdate-1;
+        }
+        $numRows = mysql_num_rows($iresult);
+        //echo $numRows;
+        if($numRows != 0){
+            //logs a security file
+            include("../logs/logsMail-1dir.php");
+            //closed the sql connection
+            echo"forst";
+            //redirects user index
+            //header("Location: ../failedLogin.php?error");
+            exit();
+        }
         
-      
-        
+        //------------------------------------
         //write to the DB
         $conn = new mysqli(HOST, USER, PASS, DB);
-        $sql = "UPDATE events SET numOfPhotos = numOfPhotos - 1 WHERE eventName = '$event'";
+        $sql = "UPDATE events SET numOfPhotos = '$valueAfterUpdate' WHERE eventName = '$event'";
         if ($conn->query($sql) === TRUE) {
-            echo "New record updated in events";
+            echo "Updated num of photos in events<br>";
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
-        
-        
-        //check to see what the count of rows is after the write to DB
-        
-        $result = mysql_query($sql); 
-        $rowsAfter = mysql_num_rows($result);
-        echo "rowsAfter: ".$rowsAfter;
-        
-        /*
-         * if anything other than one row being deleted happens which is the expected result
-         * we close the connection, log a security incedent and email alert the admin
-         */
-         
-         $conn->close();
-        if($rowsAfter != 1){
+
+
+        $query = "SELECT * FROM events";   
+        $result = mysql_query($query); 
+        $rowsAfter = 0;
+        while ($row = mysql_fetch_assoc($result)) {
+            $rowsAfter++;
+        }
+        echo $rowsBefore."-". $rowsAfter;
+        if($rowsBefore != $rowsAfter){
+            //logs a security file
             include("../logs/logsMail-1dir.php");
-            
-            // error: Sorry, there was an error uploading your file.
-           // header("Location: ../index.php3");
+            echo"end";
+            //closed the sql connection
+            //redirects user index
+            //header("Location: ../failedLogin.php?error");
             exit();
         }
         
         
-       
-        
-        
-        
-    
-   // header("Location: adminConsole-Flagged.php?removed"); 
+  header("Location: adminConsole-Flagged.php?removed"); 
+  
+
             
 ?>

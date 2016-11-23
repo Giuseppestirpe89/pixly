@@ -24,15 +24,21 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h2>Admin Console</h2>
-                    </div>
-                    <div style="height:70px">
+                        <div style="height:55px">
+                    
                         <?php
                         if (strpos($url, 'removed') !== false) {
                                 echo " <div class='alert alert-danger' id='prompt'>
                                  The Image has been removed.
                                  </div>";
                             }
+                            if (strpos($url, 'released') !== false) {
+                                echo " <div class='alert alert-success' id='prompt'>
+                                 The Image has been released.
+                                 </div>";
+                            }
                             ?>
+                            </div>
                     </div>
                 </div>
             </div>

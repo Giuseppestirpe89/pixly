@@ -108,6 +108,16 @@
                                     Sorry, there was an error uploading your file.
                                     </div>";
                     }
+                    if (strpos($url, 'reported') !== false) {
+                            echo " <div class='alert alert-danger' id='prompt'>
+                                    This Image has bee reported.
+                                    </div>";
+                    }
+                    if (strpos($url, 'reported') !== false) {
+                            echo " <div class='alert alert-danger' id='prompt'>
+                                    This Image has been reported.
+                                    </div>";
+                    }
                     
                 ?>
                  </div>

@@ -15,11 +15,12 @@
 
         <section>
             <div class="container">
-                <div style="height:79px">nnnn
+                <div style="height:79px">
                 </div>    
                 <div class="row">
                     <div class="col-lg-12">
                         <h2>Admin Console</h2>
+                         <div style=height:55px></div>
                     </div>
                 </div>
             </div>
