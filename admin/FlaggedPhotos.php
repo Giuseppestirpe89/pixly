@@ -1,17 +1,38 @@
 
 <?php 
+
+    /*
+     *----------------- Displays the individual flagged images, and displays the list of reported images to review----------------------------------
+     * - Checks user has permission to view contents of the page
+     * - loops out the urgent and standard files from the logged directory
+     *----------------------------------------------------------------------------------------------------------------------------------------------
+     */
+
     session_start(); 
     include('../includes/connect.php');
+    
+    //Checkes the user has admin privileges and cross checks the IP logged and cookie generated at login
     if($_SESSION['premium'] != 'admin' || $_SESSION['ip'] != get_client_ip_env() || $_COOKIE['cookieId'] != $_SESSION['cookieId']) { 
+        //if any do not match the user is directed to KillSessiom which loggs the user out, the user will then get a prompt to say they have been logged out
         header("Location: ../includes/killSession.php?inactive");
     }
     
+    //gets the URL
     $url = $_SERVER['REQUEST_URI'];
-    $urlID = substr($url, strpos($url, "?") + 1);  
-    $urlID = stripslashes(trim($urlID));
-    $urlID = escape_data($urlID);
-    $urlID =  str_replace("%20"," ",$urlID);
-  $first = current(explode("?", $urlID));
+    
+    //Reads eveything after the ? 
+    $filePath = substr($url, strpos($url, "?") + 1); 
+    
+    //Scrubs the url of any dangerious charicters that could be entered by the end user
+    $filePath = stripslashes(trim($filePath));
+    $filePath = escape_data($filePath);
+    
+    //handels the whitespace placholder in the URL
+    $filePath =  str_replace("%20"," ",$filePath);
+    
+    //gets the
+    $first = current(explode("?", $urlID));
+
 ?>
 
 <html>
@@ -39,6 +60,7 @@
                     <li class="active">Photo</li>
                 </ol>
                 <?php
+                    //loops out the image for review
                     $query = "SELECT * FROM reportedImages WHERE id = '$urlID'";   
                     $result = mysql_query($query); 
                     while ($row = mysql_fetch_assoc($result)) {

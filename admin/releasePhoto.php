@@ -2,15 +2,22 @@
     
     /*
      *--------------------- This file releases the photo from the flagged photo log -----------------------------------------------
-     * We read the URL and take the filepath that was appended to the end of it in the adminConsole-Flagged.php file
-     * We use that to be the key value used to delete the recored from the database
-     * we check the delete in the db for the expected result, and log erregular ones.
-     * Finally we redirect the admin user to adminConsole-Flagged.php and display at "released messege"
+     * - Checks user has permission to view contents of the page
+     * - We read the URL and take the filepath that was appended to the end of it in the adminConsole-Flagged.php file
+     * - We use that to be the key value used to delete the recored from the database
+     * - we check the delete in the db for the expected result, and log erregular ones.
+     * - Finally we redirect the admin user to adminConsole-Flagged.php and display at "released messege"
      *-----------------------------------------------------------------------------------------------------------------------------
      */
 
     session_start(); 
     include('../includes/connect.php');
+    
+    //Checkes the user has admin privileges and cross checks the IP logged and cookie generated at login
+    if($_SESSION['premium'] != 'admin' || $_SESSION['ip'] != get_client_ip_env() || $_COOKIE['cookieId'] != $_SESSION['cookieId']) { 
+        //if any do not match the user is directed to KillSessiom which loggs the user out, the user will then get a prompt to say they have been logged out
+        header("Location: ../includes/killSession.php?inactive");
+    }
     
     //gets the URL
     $url = $_SERVER['REQUEST_URI'];
