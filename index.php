@@ -28,13 +28,28 @@
         <?php
             include("includes/header.php");
         ?>
+        <!--fancy header -->
+        <div class="demo-3">
+			<div class="content">
+                <div id="large-header" class="large-header">
+                    <canvas id="demo-canvas"></canvas>
+                    <h1 class="main-title">Pixly</h1>
+                </div>
+            </div>
+            <!-- Related demos -->
+		</div><!-- /container -->
+        <script src="js/TweenLite.min.js"></script>
+        <script src="js/EasePack.min.js"></script>
+        <script src="js/rAF.js"></script>
+        <script src="js/demo-3.js"></script>
+        
         <!-- Intro Section -->
         <section id="intro" class="intro-section">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1>Pixly &copy;</h1>
-                        <h2>Best Events</h2>
+                        
+                        <h2>Featured Event</h2>
                         <div style=height:70px>
                         <?php
                             if (strpos($url, 'inactive') !== false) {

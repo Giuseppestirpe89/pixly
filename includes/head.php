@@ -18,6 +18,9 @@
     <link href="css/photos.css" rel="stylesheet" type="text/css" />
     <!-- Custom CSS -->
     <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link href="css/scrolling-nav.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/component.css" />
     
     <style>
         .carousel-inner>.item>img,

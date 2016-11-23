@@ -1,4 +1,4 @@
-<!--
+<?php $QRtoken =  'b013a486b2ddc73431a1ef551';?><!--
     index.php is the main page
     it displays the featured pages
     as well the events
@@ -34,7 +34,7 @@
         <?php
             include("../includes/profileHeader.php");
         ?>
-                             <div class="modal" id="uploadModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
+                <div class="modal" id="uploadModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" style="overflow: hidden">
                         <div class="modal-dialog">
                            <div class="modal-content" style="text-align:center">
                               <div class="modal-header">
@@ -69,13 +69,14 @@
                            </div>
                         </div>
                      </div>
-                     <br> <br> <br>
+                    <br> <br> <br>
         <link href="../css/photos3.css" rel="stylesheet">
         <!-- Intro Section -->
         <section id="intro" class="about-section">
            <div class="container">
               <div class="row">
                  <div class="container">
+                     
                  <h1><?php echo $filename; ?></h1>
                 <div style = "height:70px">
                 <?php
@@ -107,11 +108,6 @@
                     if (strpos($url, 'E6') !== false) {
                             echo " <div class='alert alert-danger' id='prompt'>
                                     Sorry, there was an error uploading your file.
-                                    </div>";
-                    }
-                    if (strpos($url, 'reported') !== false) {
-                            echo " <div class='alert alert-danger' id='prompt'>
-                                    This Image has been reported.
                                     </div>";
                     }
                     
@@ -169,7 +165,7 @@
                      <?php if($_SESSION['user'] || strpos($url, 'testtoken')){ ?>
                      <button type="button" class="btn btn-primary btn-circle" id="openUpload"><i class="glyphicon glyphicon-list"></i></button><br>
                      <?php }else{ ?>
-                     <p>want to uplaod photos! create a account here</p>
+                     <p>Want to uplaod photos! create a account here</p>
                      <a href="../priceplan.php"><button type="button" class="btn btn-primary">Create account</button></a><br>
                      <?php } ?>
 
@@ -198,14 +194,12 @@
            </div>
         </section>
         <section>
-            
+            <br><br><br>
         </section>
-
-
         <section>
         <!-- Footer section -->
         <?php
-            // include("../includes/profileFooter.php");
+             include("../includes/profileFooter.php");
         ?>
         </section>
          <script src="../js/photos.js"></script>
