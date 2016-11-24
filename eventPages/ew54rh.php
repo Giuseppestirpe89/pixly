@@ -1,4 +1,4 @@
-<!--
+<?php $QRtoken =  '66b0255e9938ae83d817a4f4f';?><!--
     index.php is the main page
     it displays the featured pages
     as well the events

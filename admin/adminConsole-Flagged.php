@@ -1,8 +1,23 @@
  
 <?php 
+
+    /*
+     *-------------------------------------------------- Displays the individual flagged images to review------------------------------------------
+     * - Checks user has permission to view contents of the page
+     * - loops out the files from the logged directory and groups them by priority
+     *----------------------------------------------------------------------------------------------------------------------------------------------
+     */
+     
     session_start(); 
     include('../includes/connect.php');
+    
+    //Checkes the user has admin privileges and cross checks the IP logged and cookie generated at login
+    if($_SESSION['premium'] != 'admin' || $_SESSION['ip'] != get_client_ip_env() || $_COOKIE['cookieId'] != $_SESSION['cookieId']) { 
+        //if any do not match the user is directed to KillSessiom which loggs the user out, the user will then get a prompt to say they have been logged out
+        header("Location: ../includes/killSession.php?inactive");
+    }
     $url = $_SERVER['REQUEST_URI'];
+    
 ?>
 <html>
     <head>
@@ -50,18 +65,23 @@
                 </ul>
                 <br>
                 <?php
-                //loops out filepaths of flagged images to be reviewed        
+                    $flaggedImages = false;
+                    //loops out filepaths of flagged images to be reviewed        
                     $query = "SELECT * FROM reportedImages";   
                     $result = mysql_query($query); 
                     $flagcount = 0;
                     while ($row = mysql_fetch_assoc($result)) {
+                        //links to FlaggedPhotos.php and appends the image ID to the end of the URL
                         echo "<a href='FlaggedPhotos.php?".$row['id']."'>id :".$row['id']." - image: ".$row['src']."</a><br>";
                         $flagcount++;
+                        $flaggedImages = true;
+                        
                     }
                     if($flagcount == 0){
                         echo"There are no images flagged at this time";
                     }
                     
+                    // we dont check for expected results here ar there is no user input inserted into the SQL Query
                 ?>
                 <hr>
             </div>
@@ -72,4 +92,4 @@
         ?>
         </section>
     </body>
-</html>
+</html> 

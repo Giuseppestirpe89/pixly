@@ -2,7 +2,7 @@
 
 
     /*
-     *----------------This paged deletes images from the DB and webserver, it is triggered by the 'delete' button on FlaggedPhotos.php------------------------------
+     *----------------This paged deletes images from the DB and webserver, it is triggered by the 'delete' button on FlaggedPhotos.php-----------------------------
      * - Checks user has permission to view contents of the page
      * - It takes the file path from the user and decatenate it into the event name and file name
      * - Passes the URL infor through escape_data() to remove dangerous charecters

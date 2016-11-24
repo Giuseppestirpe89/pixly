@@ -4,7 +4,7 @@
     /*
      *----------------- Displays the individual flagged images, and displays the list of reported images to review----------------------------------
      * - Checks user has permission to view contents of the page
-     * - loops out the urgent and standard files from the logged directory
+     * - loops out the flagged image to be reviewed
      *----------------------------------------------------------------------------------------------------------------------------------------------
      */
 
@@ -29,9 +29,6 @@
     
     //handels the whitespace placholder in the URL
     $filePath =  str_replace("%20"," ",$filePath);
-    
-    //gets the
-    $first = current(explode("?", $urlID));
 
 ?>
 
@@ -60,17 +57,17 @@
                     <li class="active">Photo</li>
                 </ol>
                 <?php
-                    //loops out the image for review
-                    $query = "SELECT * FROM reportedImages WHERE id = '$urlID'";   
+                    //loops out the image for review from the DB
+                    $query = "SELECT * FROM reportedImages WHERE id = '$filePath'";   
                     $result = mysql_query($query); 
                     while ($row = mysql_fetch_assoc($result)) {
-                    echo "<a title='Image 1' href='#'><img class='thumbnail img-responsive center-block' src='../event/".$row['src']."'></a>";
-                    $filePath = $row['src'];
-
-
+                        //loops out image and appends the filrpath of the image  to the ens of the URL after the ?.
+                        echo "<a title='Image 1' href='#'><img class='thumbnail img-responsive center-block' src='../event/".$row['src']."'></a>";
+                        $filePath = $row['src'];
                     }
                 ?>
-                <br>
+                <br
+                <!--Directes the user to deletephoto.php and appends the filepathe to the end of the URL to be read-->
                 <a href="deletePhoto.php?<?php echo $filePath; ?>"><button type="button" class="btn btn-danger btn-md" >Delete</button></a>
                 <a href="releasePhoto.php?<?php echo $filePath; ?>"><button type="button" class="btn btn-success btn-md" >Release</button></a>
                 <hr>

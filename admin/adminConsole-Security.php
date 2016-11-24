@@ -4,7 +4,7 @@
     /*
      *----------------- Displays the individual security logs divided by priority, and displays the list of reported images to review---------------
      * - Checks user has permission to view contents of the page
-     * - loops out the urgent and standard files from the logged directory
+     * - loops out the files from the logged directory and groups them by priority
      *----------------------------------------------------------------------------------------------------------------------------------------------
      */
 
@@ -72,6 +72,11 @@
                     if (is_dir($dir)){
                       if ($dh = opendir($dir)){
                         while (($file = readdir($dh)) !== false){
+                            /*
+                             * when looping the files I was getting a "." and ".." looping out with the file names
+                             * from research this has to go with the directory 
+                             * so id it contains a "." we dont loop it
+                             */
                             if (strpos($file, '.') == true) {
                                 if (strpos($file, 'sql') == true) {
                                     echo "<a href='SecurityLogs.php?".$file."'>Log: " . $file . " </a><br>";
@@ -88,6 +93,7 @@
                     }
                     
                     echo "<hr> <p><strong>Standard</strong></p>";
+                    
                     // Open a directory, loops Standard logs out
                     if (is_dir($dir)){
                       if ($dh = opendir($dir)){

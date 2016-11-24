@@ -3,7 +3,7 @@
 
     /*---------- This file displays the admin console to users logged in as admnin where securuty logs and flagged images can be viewed ---------- 
      * - Checks user has permission to view contents of the page
-     * - The '/logs/records' directory is read and its contents are summerized by priority, and echoed to the user
+     * - The '/logs/records' directory is read and its contents are summerized by priority, and echod to the user
      * - A summery of reported images are displayed to the user
      *--------------------------------------------------------------------------------------------------------------------------------------------
      */
@@ -20,7 +20,6 @@
         header("Location: ../includes/killSession.php?inactive");
     }
 ?>
-
 
 <html>
     <head>
@@ -66,7 +65,6 @@
                                 $importantLogs++;
                             }
                          }
-                         
                          
                         closedir($dh);
                       }

@@ -28,6 +28,7 @@
         <?php
             include("includes/header.php");
         ?>
+        
         <!--fancy header -->
         <div class="demo-3">
 			<div class="content">
@@ -48,8 +49,6 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        
-                        <h2>Featured Event</h2>
                         <div style=height:70px>
                         <?php
                             if (strpos($url, 'inactive') !== false) {
@@ -65,6 +64,9 @@
                             }
                         ?>
                         </div>
+                        
+                        <h2>Featured Event</h2>
+                        
                     </div>
                 </div>
             </div>

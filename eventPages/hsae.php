@@ -1,4 +1,4 @@
-<!--
+<?php $QRtoken =  'add2ffe7d55a30830fb43d99d';?><!--
     index.php is the main page
     it displays the featured pages
     as well the events
@@ -78,6 +78,7 @@
                  <div class="container">
                      
                  <h1><?php echo $filename; ?></h1>
+                 <hr>
                 <div style = "height:70px">
                 <?php
                     if (strpos($url, 'E1') !== false) {
@@ -143,7 +144,9 @@
                                 }
                             }
                         ?>
+                    
                     </div>
+                   
                  </div>
                  <div tabindex="-1" class="modal fade" id="myModal1" role="dialog">
                     <div class="modal-dialog">

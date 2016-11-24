@@ -1,4 +1,4 @@
-<br><b>Date:</b> 2016-11-23-00:51:56<br>
+<br><b>Date:</b> 2016-11-24-07:32:57<br>
 <b>PHP_SELF:</b> /admin/deletePhoto.php<br>
 <b>argv:</b> <br>
 <b>argc:</b> <br>
@@ -8,22 +8,22 @@
 <b>SERVER_SOFTWARE:</b> Apache/2.4.7 (Ubuntu)<br>
 <b>SERVER_PROTOCOL:</b> HTTP/1.1<br>
 <b>REQUEST_METHOD:</b> GET<br>
-<b>REQUEST_TIME: </b>1479862314<br>
-<b>REQUEST_TIME_FLOAT:</b> 1479862314.51<br>
-<b>QUERY_STRING:</b> iweohf/Screen%20Shot%202016-11-13%20at%2022.00.29.png<br>
+<b>REQUEST_TIME: </b>1479972776<br>
+<b>REQUEST_TIME_FLOAT:</b> 1479972776.318<br>
+<b>QUERY_STRING:</b> 77<br>
 <b>DOCUMENT_ROOT:</b> /home/ubuntu/workspace<br>
 <b>HTTP_ACCEPT:</b> text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8<br>
 <b>HTTP_ACCEPT_CHARSET:</b> <br>
-<b>HTTP_ACCEPT_ENCODING:</b> gzip, deflate, sdch, br<br>
+<b>HTTP_ACCEPT_ENCODING:</b> gzip, deflate, sdch<br>
 <b>HTTP_ACCEPT_LANGUAGE:</b> en-US,en;q=0.8<br>
 <b>HTTP_CONNECTION:</b> <br>
 <b>HTTP_HOST:</b> pixly3-donwhelan.c9users.io<br>
-<b>HTTP_REFERER:</b> https://pixly3-donwhelan.c9users.io/admin/FlaggedPhotos.php?74<br>
-<b>HTTP_USER_AGENT:</b> Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36<br>
+<b>HTTP_REFERER:</b> https://pixly3-donwhelan.c9users.io/admin/FlaggedPhotos.php?77<br>
+<b>HTTP_USER_AGENT:</b> Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.89 Safari/537.36<br>
 <b>HTTPS:</b> <br>
-<b>REMOTE_ADDR:</b> 10.240.0.181<br>
+<b>REMOTE_ADDR:</b> 10.240.0.195<br>
 <b>REMOTE_HOST:</b> <br>
-<b>REMOTE_PORT:</b> 43066<br>
+<b>REMOTE_PORT:</b> 51754<br>
 <b>REMOTE_USER:</b> <br>
 <b>REDIRECT_REMOTE_USER:</b> <br>
 <b>SCRIPT_FILENAME:</b> /home/ubuntu/workspace/admin/deletePhoto.php<br>
@@ -33,7 +33,7 @@
 <br>
 <b>PATH_TRANSLATED:</b> <br>
 <b>SCRIPT_NAME:</b> /admin/deletePhoto.php<br>
-<b>REQUEST_URI:</b> /admin/deletePhoto.php?iweohf/Screen%20Shot%202016-11-13%20at%2022.00.29.png<br>
+<b>REQUEST_URI:</b> /admin/deletePhoto.php?77<br>
 <b>PHP_AUTH_DIGEST:</b> <br>
 <b>PHP_AUTH_USER:</b> <br>
 <b>PHP_AUTH_PW:</b> <br>
@@ -48,7 +48,7 @@
 <b>Email:</b> <br>
 <b>Session User:</b> admin<br>
 <b>Session access:</b> admin<br>
-<b>Session IP:</b> 89.101.66.86<br>
-<b>Session Cookie token:</b> 3ba3b603b00d94d73ce4190f0<br>
+<b>Session IP:</b> 194.69.198.228<br>
+<b>Session Cookie token:</b> 76880e127054034813700e9b3<br>
 
         

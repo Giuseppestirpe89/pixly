@@ -25,9 +25,6 @@
                     <a class="page-scroll" href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="../events.php">Events</a>
-                </li>
-                <li>
                     <a class="page-scroll" href="../contact.php">Contact</a>
                 </li>
                 <?php
