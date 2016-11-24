@@ -1,10 +1,10 @@
-<!--
-    index.php is the main page
-    it displays the featured pages
-    as well the events
--->
 
 <?php
+
+    /*--------------------------------- loads the main index page ----------------------------------
+     * - includeds the eventBanner which loads the imaged
+     * ---------------------------------------------------------------------------------------------
+     */
     $url = $_SERVER['REQUEST_URI'];
     include("includes/connect.php");
 ?>

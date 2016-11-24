@@ -1,9 +1,14 @@
+
 <?php
-    /*  Slug page
-     *  -- eventBanner.php prints the pannel containing the Name and scrolling gallery of each event to index.php
-     *  There is a nested While loop that pulls two selerate SQL querys to populate the page with contect
-     *  
+
+    /*-------------------------- eventManner is the include to index.php it loads the correct amount of frames per event based on the number of photos----------------
+     * - loops out all of the events 
+     * - for each event within each loop it checks how many photos are in it
+     * - It the put that value through a if to see how many frames of 4 images are needed to be loaded
+     * - within each frame a query is run for the 4 most liked photos
+     *----------------------------------------------------------------------------------------------------------------------------------------------------------------
      */
+     
     $query = "SELECT * FROM events ORDER BY eventId DESC";
     
     /*
@@ -17,7 +22,7 @@
     $incrementDivId = 1;
     // outer while loop extracts all images
     while ($row = mysql_fetch_assoc($result)) {
-    /*
+    /* 
      * The if() checks how many images are in each event
      * There is a max of 3 slides on each event, with 4 pictures on each slide
      * The 4 images per slide are within <div class='item active'> or <div class='item'> pending on there order
