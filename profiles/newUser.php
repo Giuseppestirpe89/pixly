@@ -101,55 +101,37 @@
                     if (strpos($url, 'premium') !== false) {
                 ?>
            
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-    
-                            <!-- Identify your business so that you can collect the payments. -->
-                            <input type="hidden" name="business"
-                                value="donations@rently.ie">
-                        
-                            <!-- Specify a Donate button. -->
-                            <input type="hidden" name="cmd" value="_donations">
-                        
-                            <!-- Specify details about the contribution -->
-                            <input type="hidden" name="item_name" value="Friends of the Park">
-                            <input type="hidden" name="item_number" value="Fall Cleanup Campaign">
-                            <input type="hidden" name="currency_code" value="USD">
-                        
-                            <!-- Display the payment button. -->
-                            <input type="image" name="submit"
-                            src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_cc_171x47.png"
-                            alt="Subscribe">
-                            <img alt="" width="1" height="1"
-                            src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
-    
-                        </form>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_xclick">
+                        <input type="hidden" name="business" value="subscribe@pixly.ie">
+                        <input type="hidden" name="lc" value="US">
+                        <input type="hidden" name="item_name" value="Donate">
+                        <input type="hidden" name="button_subtype" value="services">
+                        <input type="hidden" name="no_note" value="0">
+                        <input type="hidden" name="currency_code" value="EUR">
+                        <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHostedGuest">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+
                         
                 <?php   
                     }
                     if (strpos($url, 'free') !== false) {
                 ?>
-                        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-    
-                            <!-- Identify your business so that you can collect the payments. -->
-                            <input type="hidden" name="business"
-                                value="donations@rently.ie">
-                        
-                            <!-- Specify a Donate button. -->
-                            <input type="hidden" name="cmd" value="_donations">
-                        
-                            <!-- Specify details about the contribution -->
-                            <input type="hidden" name="item_name" value="Friends of the Park">
-                            <input type="hidden" name="item_number" value="Fall Cleanup Campaign">
-                            <input type="hidden" name="currency_code" value="USD">
-                        
-                            <!-- Display the payment button. -->
-                            <input type="image" name="submit"
-                            src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_donate_cc_171x47.png"
-                            alt="Subscribe">
-                            <img alt="" width="1" height="1"
-                            src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
-    
-                        </form>
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_donations">
+                        <input type="hidden" name="business" value="donation@pixly.ie">
+                        <input type="hidden" name="lc" value="US">
+                        <input type="hidden" name="item_name" value="Pixly">
+                        <input type="hidden" name="item_number" value="donation@pixly.ie">
+                        <input type="hidden" name="no_note" value="0">
+                        <input type="hidden" name="currency_code" value="EUR">
+                        <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+
                 <?php   
                     }
                 ?>
