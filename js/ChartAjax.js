@@ -1,6 +1,9 @@
+// ajax call with jquery to get the chart color and style from the canvas id and also dispaly the data from the database
+// with the data.php file  
+
 $(document).ready(function() {
 	$.ajax({
-		url: "https://pixly4-giuseppestirpe89.c9users.io/data.php",
+		url: "https://pixly5-giuseppestirpe89.c9users.io/data.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);
@@ -40,7 +43,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$.ajax({
-		url: "https://pixly4-giuseppestirpe89.c9users.io/data.php",
+		url: "https://pixly5-giuseppestirpe89.c9users.io/data.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);
@@ -108,7 +111,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$.ajax({
-		url: "https://pixly4-giuseppestirpe89.c9users.io/data.php",
+		url: "https://pixly5-giuseppestirpe89.c9users.io/data.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);
@@ -160,7 +163,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$.ajax({
-		url: "https://pixly4-giuseppestirpe89.c9users.io/data.php",
+		url: "https://pixly5-giuseppestirpe89.c9users.io/data.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);
@@ -225,7 +228,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$.ajax({
-		url: "https://pixly4-giuseppestirpe89.c9users.io/data.php",
+		url: "https://pixly5-giuseppestirpe89.c9users.io/data.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);
@@ -290,7 +293,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
 	$.ajax({
-		url: "https://pixly4-giuseppestirpe89.c9users.io/data.php",
+		url: "https://pixly5-giuseppestirpe89.c9users.io/data.php",
 		method: "GET",
 		success: function(data) {
 			console.log(data);

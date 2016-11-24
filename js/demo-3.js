@@ -1,3 +1,6 @@
+// demo-3.js is used  for the pixly main landing page color effects
+//it calls demo-3 class in the index.php file
+
 (function() {
 
     var width, height, largeHeader, canvas, ctx, triangles, target, animateHeader = true;
@@ -27,7 +30,6 @@
             addTriangle(x*10);
         }
     }
-
     function addTriangle(delay) {
         setTimeout(function() {
             var t = new Triangle();
@@ -72,7 +74,6 @@
         canvas.width = width;
         canvas.height = height;
     }
-
     function animate() {
         if(animateHeader) {
             ctx.clearRect(0,0,width,height);
@@ -82,7 +83,6 @@
         }
         requestAnimationFrame(animate);
     }
-
     // Canvas manipulation
     function Triangle() {
         var _this = this;
@@ -107,7 +107,6 @@
             _this.color = colors[Math.floor(Math.random()*colors.length)];
             setTimeout(function() { _this.alpha = 0.8; }, 10);
         }
-
         this.draw = function() {
             if(_this.alpha >= 0.005) _this.alpha -= 0.005;
             else _this.alpha = 0;
@@ -119,8 +118,6 @@
             ctx.fillStyle = 'rgba('+_this.color+','+ _this.alpha+')';
             ctx.fill();
         };
-
         this.init = init;
     }
-    
 })();

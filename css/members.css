@@ -1,3 +1,7 @@
+/*members.css is the style sheet for the contact page used to design
+* the team with left and right resposive containers 
+*/
+
 .member-content .social-content li a{
     display:inline-block;
     padding:0;

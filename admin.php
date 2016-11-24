@@ -12,34 +12,24 @@
     <link rel="shortcut icon" href="img/favicon.png">
 
     <title>Pixly admin</title>
-    <!-- Bootstrap CSS -->
+    <!-- Admin CSS -->
     <link href="css2/bootstrap.min.css" rel="stylesheet">
-    <!-- bootstrap theme -->
     <link href="css2/bootstrap-theme.css" rel="stylesheet">
-    <!--external css-->
-    <!-- font icon -->
     <link href="../css2/elegant-icons-style.css" rel="stylesheet" />
     <link href="../css2/font-awesome.min.css" rel="stylesheet" />
-    <!-- Custom styles -->
     <link href="../css2/style.css" rel="stylesheet">
     <link href="../css/social.css" rel="stylesheet">
     <link href="./css2/style-responsive.css" rel="stylesheet" />
     <!-- javascript -->
     <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="js/Chart.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/ChartAjax.js"></script>
 
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-      <script src="js/lte-ie7.js"></script>
-    <![endif]-->
     <?php
             include("includes/head.php");
         ?>
   </head>
-
+  
   <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <?php
             include("includes/header.php");
@@ -60,7 +50,7 @@
               </div>
             </div>
             <div class="row">
-              <!-- chart morris start -->
+              <!-- chart canvas start -->
               <div class="col-lg-12">
                 <section class="panel">
                   <header class="panel-heading">
@@ -69,7 +59,7 @@
                   <div class="panel-body">
                     <div class="tab-pane" id="chartjs">
                       <div class="row">
-                        <!-- Line -->
+                        <!-- Radar -->
                         <div class="col-lg-6">
                           <section class="panel">
                             <header class="panel-heading">
@@ -93,7 +83,7 @@
                         </div>
                       </div>
                       <div class="row">
-                        <!-- Radar -->
+                        <!-- Line -->
                         <div class="col-lg-6">
                           <section class="panel">
                             <header class="panel-heading">
@@ -145,7 +135,7 @@
               </div>
               </section>
             </div>
-            <!-- chart morris start -->
+            <!-- chart canvas finish -->
             </div>
           </section>
 
@@ -155,18 +145,13 @@
             ?>
         </section>
         <!-- container section end -->
-        <!-- javascripts -->
-        <script src="js/jquery.js"></script>
-        <script src="js/jquery-1.8.3.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <!-- nice scroll -->
-        <script src="js/jquery.scrollTo.min.js"></script>
-        <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-        <!-- chartjs -->
-        <script src="assets/chart-master/Chart.js"></script>
-        <!-- custom chart script for this page only-->
-        <script src="js/chartjs-custom.js"></script>
-        <!--custome script for all page-->
-        <script src="js/scripts.js"></script>
+        <!--<script src="js/jquery.js"></script>-->
+        <!--<script src="js/jquery-1.8.3.min.js"></script>-->
+        <!--<script src="js/bootstrap.min.js"></script>-->
+        <!--<script src="js/jquery.scrollTo.min.js"></script>-->
+        <!--<script src="js/jquery.nicescroll.js" type="text/javascript"></script>-->
+        <!--<script src="assets/chart-master/Chart.js"></script>-->
+        <!--<script src="js/chartjs-custom.js"></script>-->
+        <!--<script src="js/scripts.js"></script>-->
   </body>
   </html>
