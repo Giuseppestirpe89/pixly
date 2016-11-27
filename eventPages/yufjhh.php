@@ -1,4 +1,4 @@
-
+<?php $QRtoken =  '6f5e8ebb7e2689cd0ace538f6';?>
 <?php
 
     /*
@@ -9,7 +9,7 @@
      * - If URL contains a trigger string from the report button loops out the photos again with a report option below each image
      * - Shows a uplaod button if the user is logged in or if the url contains the correct Token string 
      * - If neither of these are present it displayes a create account button
-     * - Displayes the QR code only if the logged in user is the owner of the page
+     * - Displayes the QR code
      * ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
      */
      
@@ -138,14 +138,6 @@
                             <!--ref: http://bootsnipp.com/snippets/7XVM2-->
                             <?php
                             
-                                //get event owener for the event
-                                $query = "SELECT * FROM events WHERE eventName = '$filename'";
-                                $result = mysql_query($query); 
-                                // outer while loop extracts all images
-                                while ($row = mysql_fetch_assoc($result)) { 
-                                    $eventOwner = $row['ownerName'];
-                                }
-                            
                                 /*
                                  * - loops out images in order of most liked
                                  * - nested if within that look that reads the URL
@@ -223,15 +215,7 @@
                             ref: https://developers.google.com/chart/infographics/docs/qr_codes
                             creates the qr code for the event with the token appended to the end
                         -->
-                        
-    		            <?php
-    		                // only allows the owner of the page to view the QR code
-    		                if($eventOwner = $_SESSION['user'] ){
-    		            ?>
     		            <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?php echo $QRlink; ?>&choe=UTF-8"/>
-    		            <?php
-    		                }
-    		            ?>
 		            </a>
 		            <br><br><br><br><br><br>
 		            <!--

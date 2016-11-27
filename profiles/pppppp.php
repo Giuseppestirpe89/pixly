@@ -1,4 +1,5 @@
  
+             
             <?php 
                 session_start(); 
                 include('../includes/connect.php');
@@ -7,15 +8,14 @@
                 $url = $_SERVER['REQUEST_URI'];
                 
                 //removes .php
-                $username =  str_replace(".php","",$url);
+                $username =  str_replace('.php','',$url);
                 
                 //removes prefix of the url
-                $username =  str_replace("/profiles/","",$username);
+                $username =  str_replace('/profiles/','',$username);
                 
                 //Scrubs the url of any dangerious charicters that could be entered by the end user
                 $username = stripslashes(trim($username));
                 $username = escape_data($username);
-                list($username, $ditch) = explode("?", $username);
             ?>
             <html>
                 <head>
@@ -24,7 +24,7 @@
                     
                     <script>
                     $( document ).ready(function() {
-                        $("#prompt").delay(2500).fadeOut("slow");
+                        $('#prompt').delay(2500).fadeOut('slow');
                     });
                     </script>
                 </head>

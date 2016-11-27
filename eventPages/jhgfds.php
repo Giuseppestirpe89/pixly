@@ -1,4 +1,4 @@
-
+<?php $QRtoken =  '6f5e8ebb7e2689cd0ace538f6';?>
 <?php
 
     /*
@@ -252,7 +252,7 @@
         </section>
         <br><br><br><br><br><br><br>
         <section>
-            <br><br><br><br><br><br><br><br><br><br><br><br>
+           <br><br><br><br><br><br><br><br><br><br><br><br>
         <!-- Footer section -->
         <?php
              include("../includes/profileFooter.php");

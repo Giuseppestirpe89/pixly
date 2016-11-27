@@ -100,10 +100,12 @@
             $sql = "Select imageId FROM images";
             $result = mysql_query($sql); 
             $rowsBefore = mysql_num_rows($result);
+            
+            $user = $_SESSION['user'];
 
             //Write to DB
-            $sql = "INSERT INTO images (imageName, event)
-            VALUES ('$fileNameAndExtention', '$eventname')";
+            $sql = "INSERT INTO images (imageName, event, owner)
+            VALUES ('$fileNameAndExtention', '$eventname', '$user')";
             //if there is a error in writing to the db, close connection and got back to event and display error messege
             if ($conn->query($sql) === FALSE) {
                 $conn->close();
@@ -167,7 +169,7 @@
              
             //we can now close the connection 
             $conn->close();
-            header("Location: eventPages/".$eventname.".php");
+            //header("Location: eventPages/".$eventname.".php");
             exit();
             
         } else {

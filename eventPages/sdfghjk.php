@@ -1,10 +1,16 @@
-<?php $QRtoken =  '248ed9f530490a6c5f2f898d6';?>
+<?php $QRtoken =  '6f5e8ebb7e2689cd0ace538f6';?>
 <?php
 
     /*
      *--------- this file is the template for the event pages, its contents are copied into new files and that then renamed to the event name, which creats events on the webserver------------------
-     * - decatinates the url into its individual parts
-     * - 
+     * - Decatinates the url into its individual parts
+     * - If URL contains a trigger string it displays the corosponding error messege
+     * - Loops out the images in that album in order of most liked 
+     * - If URL contains a trigger string from the report button loops out the photos again with a report option below each image
+     * - Shows a uplaod button if the user is logged in or if the url contains the correct Token string 
+     * - If neither of these are present it displayes a create account button
+     * - Displayes the QR code only if the logged in user is the owner of the page
+     * ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
      */
      
     session_start();
@@ -86,6 +92,10 @@
                         <h1><?php echo $filename; ?></h1>
                         <div style = "height:70px">
                         <?php
+                            /*
+                             * - reads the url
+                             * - if URL contains the correct string displayes the corrosponding error messege, which fads after 2.5 seconds
+                             */
                             if (strpos($url, 'E1') !== false) {
                                     echo " <div class='alert alert-danger' id='prompt'>
                                             File is not an image.
@@ -127,6 +137,22 @@
                         <div class="row">
                             <!--ref: http://bootsnipp.com/snippets/7XVM2-->
                             <?php
+                            
+                                //get event owener for the event
+                                $query = "SELECT * FROM events WHERE eventName = '$filename'";
+                                $result = mysql_query($query); 
+                                // outer while loop extracts all images
+                                while ($row = mysql_fetch_assoc($result)) { 
+                                    $eventOwner = $row['ownerName'];
+                                }
+                            
+                                /*
+                                 * - loops out images in order of most liked
+                                 * - nested if within that look that reads the URL
+                                 * - if the URL containg the report image string appended to it 
+                                 * - loops out the images with a 'report image' option at the end
+                                 */
+                                 
                                 $query = "SELECT * FROM images WHERE event = '$filename' ORDER BY likes DESC";
                                 $result = mysql_query($query); 
                                 // outer while loop extracts all images
@@ -185,7 +211,9 @@
                     ?>
 
                     <?php 
+                        // gets the full url
                         $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+                        // concatanates the $QRtoken to the end of the actual full url so traffic from the qy code do not have to create accounts
                         $QRlink = $actual_link."?".$QRtoken;
                     ?>
                     <a href="<?php echo $url."?reportimage"?>"><span>report image</span></a>
@@ -195,7 +223,15 @@
                             ref: https://developers.google.com/chart/infographics/docs/qr_codes
                             creates the qr code for the event with the token appended to the end
                         -->
+                        
+    		            <?php
+    		                // only allows the owner of the page to view the QR code
+    		                if($eventOwner = $_SESSION['user'] ){
+    		            ?>
     		            <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?php echo $QRlink; ?>&choe=UTF-8"/>
+    		            <?php
+    		                }
+    		            ?>
 		            </a>
 		            <br><br><br><br><br><br>
 		            <!--

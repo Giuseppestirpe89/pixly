@@ -4,6 +4,7 @@
     /*
      *----------------- Displays the individual flagged images, and displays the list of reported images to review----------------------------------
      * - Checks user has permission to view contents of the page
+     * - decatinates the URL into useful information
      * - loops out the flagged image to be reviewed
      *----------------------------------------------------------------------------------------------------------------------------------------------
      */

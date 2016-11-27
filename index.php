@@ -5,8 +5,11 @@
 -->
 
 <?php
-    $url = $_SERVER['REQUEST_URI'];
+    session_start(); 
     include("includes/connect.php");
+    
+    //gets the URL
+    $url = $_SERVER['REQUEST_URI'];
 ?>
 
     <!DOCTYPE html>
