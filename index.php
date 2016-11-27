@@ -19,7 +19,7 @@
         <!--script has fade effect on error messeges-->
     <script>
         $( document ).ready(function() {
-         $("#prompt").delay(2500).fadeOut("slow");
+         $("#prompt").delay(4000).fadeOut("slow");
         });
     </script>
     </head>

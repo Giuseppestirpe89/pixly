@@ -1,9 +1,5 @@
 
 <?php 
-    session_start();
-    include("../includes/connect.php");
-    //saves url so we can referance it for the appeneded errors from createUser.php
-    $url = $_SERVER['REQUEST_URI'];
     
     /*
      * ----------------- This page sends the user input for new CreateEvents.php so as events can be created ------------------------- 
@@ -15,6 +11,10 @@
      * -------------------------------------------------------------------------------------------------------------------------------
      */
      
+    session_start();
+    include("../includes/connect.php");
+    //saves url so we can referance it for the appeneded errors from createUser.php
+    $url = $_SERVER['REQUEST_URI'];
 ?>
 <html>
 

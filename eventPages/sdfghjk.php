@@ -1,16 +1,10 @@
-
+<?php $QRtoken =  '248ed9f530490a6c5f2f898d6';?>
 <?php
 
     /*
      *--------- this file is the template for the event pages, its contents are copied into new files and that then renamed to the event name, which creats events on the webserver------------------
-     * - Decatinates the url into its individual parts
-     * - If URL contains a trigger string it displays the corosponding error messege
-     * - Loops out the images in that album in order of most liked 
-     * - If URL contains a trigger string from the report button loops out the photos again with a report option below each image
-     * - Shows a uplaod button if the user is logged in or if the url contains the correct Token string 
-     * - If neither of these are present it displayes a create account button
-     * - Displayes the QR code
-     * ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+     * - decatinates the url into its individual parts
+     * - 
      */
      
     session_start();
@@ -92,10 +86,6 @@
                         <h1><?php echo $filename; ?></h1>
                         <div style = "height:70px">
                         <?php
-                            /*
-                             * - reads the url
-                             * - if URL contains the correct string displayes the corrosponding error messege, which fads after 2.5 seconds
-                             */
                             if (strpos($url, 'E1') !== false) {
                                     echo " <div class='alert alert-danger' id='prompt'>
                                             File is not an image.
@@ -137,14 +127,6 @@
                         <div class="row">
                             <!--ref: http://bootsnipp.com/snippets/7XVM2-->
                             <?php
-                            
-                                /*
-                                 * - loops out images in order of most liked
-                                 * - nested if within that look that reads the URL
-                                 * - if the URL containg the report image string appended to it 
-                                 * - loops out the images with a 'report image' option at the end
-                                 */
-                                 
                                 $query = "SELECT * FROM images WHERE event = '$filename' ORDER BY likes DESC";
                                 $result = mysql_query($query); 
                                 // outer while loop extracts all images
@@ -203,9 +185,7 @@
                     ?>
 
                     <?php 
-                        // gets the full url
                         $actual_link = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
-                        // concatanates the $QRtoken to the end of the actual full url so traffic from the qy code do not have to create accounts
                         $QRlink = $actual_link."?".$QRtoken;
                     ?>
                     <a href="<?php echo $url."?reportimage"?>"><span>report image</span></a>

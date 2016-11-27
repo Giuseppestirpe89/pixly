@@ -1,6 +1,4 @@
 <?php
-    session_start();
-    include("../includes/connect.php");
     
     /*
      * ------ This file creates new events, which involves writes to the DB and creation of files and directories ------------------------
@@ -15,6 +13,9 @@
      * - Redirect user to the new event page
      * ------------------------------------------------------------------------------------------------------------------------------------
      */
+     
+    session_start();
+    include("../includes/connect.php");     
     
     /*
      * $passedRegex is set to true

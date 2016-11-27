@@ -1,23 +1,32 @@
-<!--
-    index.php is the main page
-    it displays the featured pages
-    as well the events
--->
 
 <?php
+
+    /*
+     *-------------- displays the images the user clicked to report and asks them to confirm their choice -----------------
+     * - reads the URL and decatinates the URL string to get just the image filepath
+     * - uses that filepath to display the image to the user asking them to confirm their choice
+     * - When the user confirms it directs to them to report.php and appends the filepathe to the end of the URL
+     *---------------------------------------------------------------------------------------------------------------------
+     */
+
     session_start();
     include("../includes/connect.php");
+    
     $url = $_SERVER['REQUEST_URI'];
     //gets the name of the PHP file so it can be referanced for the SQL query
     $thisFile = $url;
     //discatenates the url string to just the name of the file
-    $file = basename($thisFile);         
+    $file = basename($thisFile);     
+    //removes the .php
     $filename = basename($thisFile, ".php");
     $variable = substr($thisFile, 0, strpos($thisFile, "."));
+    //extracts the image file pathe from the url    
     $filename2 =  str_replace("/eventPages/","",$variable);
+    //handels whitespace in the url
     $filename =  str_replace("%20","-",$filename2);
     //ref: http://stackoverflow.com/questions/11405493/get-everything-after-a-certain-character
-    $filepath = substr($url, strpos($url, "?") + 1);    
+    $filepath = substr($url, strpos($url, "?") + 1);  
+    
 ?>
 
     <!DOCTYPE html>
