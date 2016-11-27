@@ -226,7 +226,7 @@
                         
     		            <?php
     		                // only allows the owner of the page to view the QR code
-    		                if($eventOwner = $_SESSION['user'] ){
+    		                if($eventOwner == $_SESSION['user'] ){
     		            ?>
     		            <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?php echo $QRlink; ?>&choe=UTF-8"/>
     		            <?php
@@ -255,7 +255,7 @@
             <br><br><br><br><br><br><br><br><br><br><br><br>
         <!-- Footer section -->
         <?php
-             include("../includes/profileFooter.php");
+             //include("../includes/profileFooter.php");
         ?>
         </section>
         <script src="../js/photos.js"></script>
