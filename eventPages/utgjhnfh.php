@@ -1,4 +1,4 @@
-
+<?php $QRtoken =  '9b4713fb4c2045e980931b7b8';?>
 <?php
 
     /*
@@ -186,9 +186,8 @@
                                         <a title='Image 1' href='#'>
                                          <img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'>
                                    </a>
-    <div class='fb-like' data-href='https://developers.facebook.com/docs/plugins/' data-layout='button_count'data-action='like' data-size='small' data-show-faces='true' data-share='false'></div> &emsp;
-    <a class='twitter-follow-button'href='https://twitter.com/Pixly' data-size='small'>Follow us</a>
-          ";
+         <div class='fb-like' data-href='https://developers.facebook.com/docs/plugins/' data-layout='button_count'data-action='like' data-size='small' data-show-faces='true' data-share='false'>
+         <a class='twitter-follow-button'href='https://twitter.com/Pixly' data-size='small'>Follow us</a> &emsp;</button></div> ";
                                     }
                                 }
                             ?>

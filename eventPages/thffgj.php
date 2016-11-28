@@ -1,4 +1,4 @@
-
+<?php $QRtoken =  'f01a7dc32114a108154ec15a4';?>
 <?php
 
     /*
@@ -187,7 +187,7 @@
                                          <img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'>
                                    </a>
     <div class='fb-like' data-href='https://developers.facebook.com/docs/plugins/' data-layout='button_count'data-action='like' data-size='small' data-show-faces='true' data-share='false'></div> &emsp;
-    <a class='twitter-follow-button'href='https://twitter.com/Pixly' data-size='small'>Follow us</a>
+         <a class='twitter-follow-button'href='https://twitter.com/Pixly' data-size='small'></a>
           ";
                                     }
                                 }
