@@ -28,12 +28,42 @@
     </head>
 
     <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div style=height:80px>
+                        </div>
+                        <div style=height:48px height>
+                            
+                        <?php
+                            if (strpos($url, 'inactive') !== false) {
+                                echo " <div class='alert alert-danger' id='prompt'>
+                                 You have been logged out due to inactivity.
+                                 </div>";
+                            }
+                            
+                            if (strpos($url, 'reported') !== false) {
+                                echo " <div class='alert alert-danger' id='prompt'>
+                                 The Image has been reported.
+                                 </div>";
+                            }
+                        ?>
+                        
+                        
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <?php
             include("includes/header.php");
         ?>
         
         <!--fancy header -->
         <div class="demo-3">
+            
 			<div class="content">
                 <div id="large-header" class="large-header">
                     <canvas id="demo-canvas"></canvas>
@@ -52,24 +82,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div style=height:70px>
-                        <?php
-                            if (strpos($url, 'inactive') !== false) {
-                                echo " <div class='alert alert-danger' id='prompt'>
-                                 You have been logged out due to inactivity.
-                                 </div>";
-                            }
-                            
-                            if (strpos($url, 'reported') !== false) {
-                                echo " <div class='alert alert-danger' id='prompt'>
-                                 The Image has been reported.
-                                 </div>";
-                            }
-                        ?>
-                        </div>
-                        
                         <h2>Featured Event</h2>
-                        
                     </div>
                 </div>
             </div>
