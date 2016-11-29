@@ -1,4 +1,4 @@
-
+<?php $QRtoken =  '7928d9f37eba055ec7f8fdaff';?>
 <?php
 
     /*
@@ -174,8 +174,8 @@
                                 while ($row = mysql_fetch_assoc($result)) { 
                                    if (strpos($url, 'reportimage') !== false) {
                                         echo " 
-                                        <div class='col-sm-5 .col-md-6'>
-                                        
+                                        <div class='col-lg-3 col-sm-4 col-xs-6'>
+                                         <div class='hovereffect'>
                                         <a title='Image 1' href='#'>
                                          <img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'>
                                         </a>
@@ -187,8 +187,9 @@
                                         <a title='Image 1' href='#'>
                                          <img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'>
                                     </a>
-                                 <div class='fb-like' data-href='https://developers.facebook.com/docs/plugins/' data-layout='button_count'data-action='like' data-size='small' data-show-faces='true' data-share='false'></div> &emsp;
-                                 <a class='twitter-follow-button'href='https://twitter.com/Pixly' data-size='small'>Follow us</a> </div>";
+    <div class='fb-like' data-href='https://developers.facebook.com/docs/plugins/' data-layout='button_count'data-action='like' data-size='small' data-show-faces='true' data-share='false'></div> &emsp;
+    <a class='twitter-follow-button'href='https://twitter.com/Pixly' data-size='small'>Follow us</a> </div></div>
+          ";
                                     }
                                 }
                             ?>

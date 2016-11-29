@@ -1,4 +1,13 @@
   /* used as a test for events2.php in the junk  */
   
 .modal-dialog2 {width:600px;}
-.thumbnail {margin-bottom:6px;}
+
+.thumbnail {margin-bottom:6px;
+}
+
+img {
+    transition: -webkit-transform 0.25s ease;
+}
+ img:active {
+    -webkit-transform: scale(3);
+}

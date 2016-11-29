@@ -1,4 +1,4 @@
-<?php $QRtoken =  '69bceae5d27427ba45e3ce3dc';?>
+<?php $QRtoken =  'ea9fbbae1bb48af34be7e2838';?>
 <?php
 
     /*
@@ -175,8 +175,9 @@
                                    if (strpos($url, 'reportimage') !== false) {
                                         echo " 
                                         <div class='col-lg-3 col-sm-4 col-xs-6'>
+                                        
                                         <a title='Image 1' href='#'>
-                                         <img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'>
+                                         <img class='pop' src='../event/".$row['event']."/".$row['imageName']."'>
                                         </a>
                                         <a href='reportImage.php?".$row['event']."/".$row['imageName']."'>report</a>
                                         </div>";
@@ -184,12 +185,21 @@
                                         echo "
                                         <div class='col-lg-3 col-sm-4 col-xs-6'>
                                         <a title='Image 1' href='#'>
-                                         <img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'>
+                                         <img class='pop' src='../event/".$row['event']."/".$row['imageName']."'>
                                     </a>
-                                   
     <div class='fb-like' data-href='https://developers.facebook.com/docs/plugins/' data-layout='button_count'data-action='like' data-size='small' data-show-faces='true' data-share='false'></div> &emsp;
     <a class='twitter-follow-button'href='https://twitter.com/Pixly' data-size='small'>Follow us</a> </div>
-          ";
+    
+    <div class='modal fade' id='imagemodal' tabindex='-1' role='dialog' aria-labelledby='myModalLabel'aria-hidden='true'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>              
+      <div class='modal-body'>
+      	<button type='button' class='close' data-dismiss='modal'><span aria-hidden='true'>&times;</span><span class='sr-only'>Close</span></button>
+        <img src="" class='imagepreview' style='width: 100%';" >
+      </div>
+    </div>
+  </div>
+</div>";
                                     }
                                 }
                             ?>

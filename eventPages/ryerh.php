@@ -1,4 +1,4 @@
-<?php $QRtoken =  'ba6b678c553faa12c5da6ba8e';?>
+<?php $QRtoken =  '93461bf59956037a590aaeb1c';?>
 <?php
 
     /*
@@ -34,6 +34,21 @@
     $filename =  str_replace("%20","-",$filename2);
 ?>
 
+ <!--twitter function for button in modal -->
+ <script src="https://platform.twitter.com/widgets.js"></script>
+ <div id="fb-root"></div>
+ <div id="fb-root"></div>
+ 
+  <!--facebook sdk for share button in modal -->
+ <script>(function(d, s, id) {
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) return;
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));</script>
+ 
+ 
     <!DOCTYPE html>
     <html lang="en">
 
@@ -159,7 +174,8 @@
                                 while ($row = mysql_fetch_assoc($result)) { 
                                    if (strpos($url, 'reportimage') !== false) {
                                         echo " 
-                                        <div class='col-lg-3 col-sm-4 col-xs-6'>
+                                        
+                                        <div class='col-sm-5 .col-md-6'>
                                         <a title='Image 1' href='#'>
                                          <img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'>
                                         </a>
@@ -168,10 +184,12 @@
                                     }else{
                                         echo "
                                         <div class='col-lg-3 col-sm-4 col-xs-6'>
+                                        <br/><br/><br/>
                                         <a title='Image 1' href='#'>
                                          <img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'>
-                                        </a>
-                                        </div>";
+                                    </a>
+                                 <div class='fb-like' data-href='https://developers.facebook.com/docs/plugins/' data-layout='button_count'data-action='like' data-size='small' data-show-faces='true' data-share='false'></div> &emsp;
+                                 <a class='twitter-follow-button'href='https://twitter.com/Pixly' data-size='small'>Follow us</a> </div>";
                                     }
                                 }
                             ?>

@@ -169,7 +169,7 @@
              
             //we can now close the connection 
             $conn->close();
-            //header("Location: eventPages/".$eventname.".php");
+            header("Location: eventPages/".$eventname.".php");
             exit();
             
         } else {

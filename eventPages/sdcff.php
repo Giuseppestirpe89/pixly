@@ -1,4 +1,4 @@
-<?php $QRtoken =  '94a269fabf77332eaff82c582';?>
+<?php $QRtoken =  '2bc745378c5399b842cd5b45c';?>
 <?php
 
     /*
@@ -9,7 +9,7 @@
      * - If URL contains a trigger string from the report button loops out the photos again with a report option below each image
      * - Shows a uplaod button if the user is logged in or if the url contains the correct Token string 
      * - If neither of these are present it displayes a create account button
-     * - Displayes the QR code
+     * - Displayes the QR code only if the logged in user is the owner of the page
      * ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
      */
      
@@ -34,6 +34,21 @@
     $filename =  str_replace("%20","-",$filename2);
 ?>
 
+ <!--twitter function for button in modal -->
+ <script src="https://platform.twitter.com/widgets.js"></script>
+ <div id="fb-root"></div>
+ <div id="fb-root"></div>
+ 
+  <!--facebook sdk for share button in modal -->
+ <script>(function(d, s, id) {
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) return;
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));</script>
+ 
+ 
     <!DOCTYPE html>
     <html lang="en">
 
@@ -138,6 +153,14 @@
                             <!--ref: http://bootsnipp.com/snippets/7XVM2-->
                             <?php
                             
+                                //get event owener for the event
+                                $query = "SELECT * FROM events WHERE eventName = '$filename'";
+                                $result = mysql_query($query); 
+                                // outer while loop extracts all images
+                                while ($row = mysql_fetch_assoc($result)) { 
+                                    $eventOwner = $row['ownerName'];
+                                }
+                            
                                 /*
                                  * - loops out images in order of most liked
                                  * - nested if within that look that reads the URL
@@ -151,7 +174,8 @@
                                 while ($row = mysql_fetch_assoc($result)) { 
                                    if (strpos($url, 'reportimage') !== false) {
                                         echo " 
-                                        <div class='col-lg-3 col-sm-4 col-xs-6'>
+                                        <div class='col-sm-5 .col-md-6'>
+                                        <br>
                                         <a title='Image 1' href='#'>
                                          <img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'>
                                         </a>
@@ -159,11 +183,12 @@
                                         </div>";
                                     }else{
                                         echo "
-                                        <div class='col-lg-3 col-sm-4 col-xs-6'>
+                                        <div class='col-sm-5 .col-md-6'>
                                         <a title='Image 1' href='#'>
                                          <img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'>
-                                        </a>
-                                        </div>";
+                                    </a>
+                                 <div class='fb-like' data-href='https://developers.facebook.com/docs/plugins/' data-layout='button_count'data-action='like' data-size='small' data-show-faces='true' data-share='false'></div> &emsp;
+                                 <a class='twitter-follow-button'href='https://twitter.com/Pixly' data-size='small'>Follow us</a> </div>";
                                     }
                                 }
                             ?>
@@ -215,7 +240,15 @@
                             ref: https://developers.google.com/chart/infographics/docs/qr_codes
                             creates the qr code for the event with the token appended to the end
                         -->
+                        
+    		            <?php
+    		                // only allows the owner of the page to view the QR code
+    		                if($eventOwner == $_SESSION['user'] ){
+    		            ?>
     		            <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=<?php echo $QRlink; ?>&choe=UTF-8"/>
+    		            <?php
+    		                }
+    		            ?>
 		            </a>
 		            <br><br><br><br><br><br>
 		            <!--
@@ -236,9 +269,10 @@
         </section>
         <br><br><br><br><br><br><br>
         <section>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
         <!-- Footer section -->
         <?php
-             include("../includes/profileFooter.php");
+             //include("../includes/profileFooter.php");
         ?>
         </section>
         <script src="../js/photos.js"></script>
