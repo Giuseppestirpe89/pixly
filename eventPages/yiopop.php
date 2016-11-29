@@ -1,4 +1,4 @@
-
+<?php $QRtoken =  'bb3ca80f61ad3fdb92a5a3a4c';?>
 <?php
 
     /*

@@ -1,4 +1,4 @@
-
+<?php $QRtoken =  'c89d1af5492c3c4c0fc730188';?>
 <?php
 
     /*
@@ -150,6 +150,7 @@
                         ?>
                         </div>
                         <div class="row">
+                            
                             <!--ref: http://bootsnipp.com/snippets/7XVM2-->
                             <?php
                             
@@ -174,6 +175,7 @@
                                 while ($row = mysql_fetch_assoc($result)) { 
                                    if (strpos($url, 'reportimage') !== false) {
                                         echo " 
+                                        
                                         <div class='col-sm-5 .col-md-6'>
                                         <a title='Image 1' href='#'>
                                          <img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'>
@@ -187,7 +189,7 @@
                                         <img class='thumbnail img-responsive' src='../event/".$row['event']."/".$row['imageName']."'>
                                         </a>
                                         <div class='fb-like' data-href='https://developers.facebook.com/docs/plugins/' data-layout='button_count'data-action='like' data-size='small' data-show-faces='true' data-share='false'></div> &emsp;
-                                        <a class='twitter-follow-button'href='https://twitter.com/Pixly' data-size='small'>Follow us</a> </div>
+                                        <a class='twitter-follow-button'href='https://twitter.com/Pixly' data-size='small'>Follow us</a> <br/><br/></div> 
                                               ";
                                     }
                                 }
