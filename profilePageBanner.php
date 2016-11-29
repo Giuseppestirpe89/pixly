@@ -79,11 +79,13 @@
                     </div>
                     <?php
                         // gives option for user to change privecy of the event 
-                        if($OwnerOnPage){
-                            if($row['private'] == 1){
-                                echo "this event is private (<a href='../changeAccess.php?".$row['eventName']."'>change</a>)";  
-                            }else{
-                                echo "this event is public (<a href='../changeAccess.php?".$row['eventName']."'>change</a>)";    
+                        if($OwnerOnPage) {
+                            if($row['accountLevel'] == 'admin' || $row['accountLevel'] == 'true'){
+                                if($row['private'] == 1){
+                                    echo "this event is private (<a href='../changeAccess.php?".$row['eventName']."'>change</a>)";  
+                                }else{
+                                    echo "this event is public (<a href='../changeAccess.php?".$row['eventName']."'>change</a>)";    
+                                }
                             }
                         }
                     ?>
@@ -146,13 +148,15 @@
                     </div>
                     <?php
                     // gives option for user to change privecy of the event 
-                        if($OwnerOnPage){
-                            if($row['private'] == 1){
-                                echo "this event is private (<a href='../changeAccess.php?".$row['eventName']."'>change</a>)";  
-                            }else{
-                                echo "this event is public (<a href='../changeAccess.php?".$row['eventName']."'>change</a>)";    
+                        if($OwnerOnPage) {
+                            if($row['accountLevel'] == 'admin' || $row['accountLevel'] == 'true'){
+                                if($row['private'] == 1){
+                                    echo "this event is private (<a href='../changeAccess.php?".$row['eventName']."'>change</a>)";  
+                                }else{
+                                    echo "this event is public (<a href='../changeAccess.php?".$row['eventName']."'>change</a>)";    
+                                }
                             }
-                        }
+                        }s
                     ?>
                 </div>
             </div>
@@ -231,11 +235,13 @@
                     </div>
                     <?php
                     // gives option for user to change privecy of the event 
-                        if($OwnerOnPage){
-                            if($row['private'] == 1){
-                                echo "this event is private (<a href='../changeAccess.php?".$row['eventName']."'>change</a>)";  
-                            }else{
-                                echo "this event is public (<a href='../changeAccess.php?".$row['eventName']."'>change</a>)";    
+                        if($OwnerOnPage) {
+                            if($row['accountLevel'] == 'admin' || $row['accountLevel'] == 'true'){
+                                if($row['private'] == 1){
+                                    echo "this event is private (<a href='../changeAccess.php?".$row['eventName']."'>change</a>)";  
+                                }else{
+                                    echo "this event is public (<a href='../changeAccess.php?".$row['eventName']."'>change</a>)";    
+                                }
                             }
                         }
                     ?>

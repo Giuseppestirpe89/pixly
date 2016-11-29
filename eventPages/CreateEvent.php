@@ -107,11 +107,12 @@
         }
         
         $owner = $_SESSION['user'];
+        $accountLevel = $_SESSION['premium'];
         //if the username is free
         if($eventNameFree){
             $conn = new mysqli(HOST, USER, PASS, DB);
-            $sql = "INSERT INTO events (eventName, numOfPhotos, ownerName)
-            VALUES ('$eventname', '0', '$owner')";
+            $sql = "INSERT INTO events (eventName, numOfPhotos, ownerName, accountLevel)
+            VALUES ('$eventname', '0', '$owner', '$accountLevel')";
             
             if ($conn->query($sql) === TRUE) {
                 echo "New record created successfully";
