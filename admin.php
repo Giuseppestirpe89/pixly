@@ -144,14 +144,6 @@
                 include("includes/footer.php");
             ?>
         </section>
-        <!-- container section end -->
-        <!--<script src="js/jquery.js"></script>-->
-        <!--<script src="js/jquery-1.8.3.min.js"></script>-->
-        <!--<script src="js/bootstrap.min.js"></script>-->
-        <!--<script src="js/jquery.scrollTo.min.js"></script>-->
-        <!--<script src="js/jquery.nicescroll.js" type="text/javascript"></script>-->
-        <!--<script src="assets/chart-master/Chart.js"></script>-->
-        <!--<script src="js/chartjs-custom.js"></script>-->
-        <!--<script src="js/scripts.js"></script>-->
+
   </body>
   </html>

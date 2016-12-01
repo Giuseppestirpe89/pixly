@@ -4,10 +4,3 @@
 
 .thumbnail {margin-bottom:6px;
 }
-
-img {
-    transition: -webkit-transform 0.25s ease;
-}
- img:active {
-    -webkit-transform: scale(3);
-}
