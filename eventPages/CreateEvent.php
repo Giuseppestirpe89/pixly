@@ -42,7 +42,7 @@
      */
      
     $trimmedFormEventname = stripslashes(trim($formEventname));
-    if (preg_match ('%^[A-Za-z0-9\.\' \-!_]{3,25}$%',$trimmedFormEventname)) {
+    if (preg_match ('%^[A-Za-z0-9\. \-!_]{3,25}$%',$trimmedFormEventname)) {
         $eventname = escape_data($trimmedFormEventname);
     } else {
         //If criteria is not met $passedRegex is set to false so the query connection will not open
