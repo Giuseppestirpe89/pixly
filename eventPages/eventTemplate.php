@@ -37,7 +37,6 @@
  <!--twitter function for button in modal -->
  <script src="https://platform.twitter.com/widgets.js"></script>
  <div id="fb-root"></div>
- <div id="fb-root"></div>
  
   <!--facebook sdk for share button in modal -->
  <script>(function(d, s, id) {
@@ -186,9 +185,9 @@
                                         <a class='fancybox' title='Image 1' href='#'>
                                         <img class='thumbnail img-responsive'  src='../event/".$row['event']."/".$row['imageName']."'>
                                         </a>
-                                        <div class='fb-like' data-href='https://developers.facebook.com/docs/plugins/' data-layout='button_count'data-action='like' data-size='small' data-show-faces='true' data-share='false'></div> &emsp;
-                                        <a class='twitter-follow-button'href='https://twitter.com/Pixly' data-size='small'>Follow us</a> <br/><br/></div>
-                                              ";
+                                         <div class='fb-like' data-href='https://developers.facebook.com/pixlyireland' data-layout='button_count'data-action='like' data-size='small' data-show-faces='true' data-share='false'></div> &emsp;
+                                        <a class='twitter-follow-button'href='https://twitter.com/PixlyIreland' data-size='small'>Follow us</a> <br/><br/></div>
+                                         ";
                                     }
                                 }
                             ?>
